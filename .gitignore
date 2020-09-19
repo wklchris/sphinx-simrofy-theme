@@ -1,0 +1,19 @@
+# Editor configurations
+.vscode
+
+# Sphinx build
+docs/doctrees
+**/_build
+docs/
+docsrc/
+make.bat
+
+# Setuptools build
+build/
+dist/
+*.egg-info/
+
+# Python auxiliary files
+__pycache__
+*.pyc
+*.pyo
