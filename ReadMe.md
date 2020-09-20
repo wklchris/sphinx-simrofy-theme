@@ -1,4 +1,4 @@
-# sphinx-simrofy <!-- omit in toc -->
+# sphinx-simrofy-theme <!-- omit in toc -->
 
 Simrofy is a theme for the [Sphinx](https://www.sphinx-doc.org/) documentation generator. It is NOT designed for writing techinical documenation, but for building a portfolio/CV website to introduce yourself to those who may concern. 
 
