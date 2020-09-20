@@ -1,21 +1,6 @@
 import os, re
 from pkg_resources import parse_version
 
-# For the version naming, refer to setuptools' documentation:
-# https://setuptools.readthedocs.io/en/latest/setuptools.html#specifying-your-project-s-version
-#
-# * A pre-release tag is a series of letters that are alphabetically before “final”.
-#   Specially, 'pre', 'preview', and 'rc' are same to single letter 'c'.   
-#
-# * A post-release tag is either a series of letters that are alphabetically greater than
-#   or equal to “final”, or a dash (-).
-# 
-# e.g.
-#     newest: 2.4.1 > 2.4-1 (post) > 2.4 > 2.4c1 (pre) > 2.4b1 :oldest
-#
-# Simrofy version format:    x.y.z
-
-
 ENCODING = 'utf-8'
 PYTHON = "python"
 
@@ -76,7 +61,15 @@ def main(release_new, ignore_tag_conflict=False, build=True, repo=None):
         f"Upload:\t\t{msg_upload}." 
     ]))
 
-# Main
+
+# --- Main ----------------------------------------
+
+# For the version naming, refer to setuptools' documentation:
+# https://setuptools.readthedocs.io/en/latest/setuptools.html#specifying-your-project-s-version
+#
+# Simrofy version format:
+#     2.4.1-r1 > 2.4.1 > 2.4.1pre1
+
 
 release_new = "0.0.1"
 main(release_new, ignore_tag_conflict=True)
