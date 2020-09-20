@@ -4,9 +4,6 @@
 # Sphinx build
 docs/doctrees
 **/_build
-docs/
-docsrc/
-make.bat
 
 # Setuptools build
 build/
