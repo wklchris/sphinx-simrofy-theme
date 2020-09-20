@@ -13,9 +13,12 @@ Table of contents:
 
 ## Installation \& Usage
 
-Simrofy is a theme for Sphinx, so you can't use it without installing Sphinx.
+Simrofy is a theme for Sphinx, so you can't use it without installing Sphinx. Users are required to install:
 
-You can install Simrofy using pip:
+- Python (>= 3.6)
+- [Sphinx](https://www.sphinx-doc.org/)
+
+Then you can install Simrofy using pip:
 
 ```
 pip install sphinx-simrofy-theme

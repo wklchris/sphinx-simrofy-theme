@@ -1,2 +1,2 @@
 include LICENSE README.md
-recursive-include simrofy *.*
+recursive-include sphinx_simrofy_theme *.*

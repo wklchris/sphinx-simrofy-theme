@@ -1,5 +1,5 @@
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("ReadMe.md", encoding='utf-8') as f:
     _long_description = f.read()
@@ -18,7 +18,7 @@ setup(
     long_description = _long_description,
     long_description_content_type = "text/markdown",
     entry_points={
-        'sphinx.html_themes': ['sphinx-simrofy-theme = simrofy']
+        'sphinx.html_themes': ['sphinx-simrofy-theme = sphinx_simrofy_theme']
     },
     classifiers=[
         "Programming Language :: Python :: 3",
