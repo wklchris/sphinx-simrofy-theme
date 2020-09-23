@@ -1,4 +1,4 @@
-@import url("basic.css");
+/* @import url("basic.css"); */
 
 body {
     margin: 0 8px;
@@ -27,7 +27,6 @@ div.document {
     padding: 0;
 }
 
-div.sidebar { all: unset; }
 div.sidebar {
     z-index: 1;
     position: fixed;
@@ -43,3 +42,44 @@ div.sidebar {
         border-right: 3px solid steelblue;
     {%- endif %}
 }
+
+/* admonitions */
+
+{% macro admn_style(admn_color) %}
+    background-color: {{ admn_color }};
+    padding-bottom: 5px;
+{% endmacro %}
+
+div.admonition.attention { {{ admn_style(theme_admonition_attention_color) }} }
+div.admonition.caution { {{ admn_style(theme_admonition_caution_color) }} }
+div.admonition.danger { {{ admn_style(theme_admonition_danger_color) }} }
+div.admonition.error { {{ admn_style(theme_admonition_error_color) }} }
+div.admonition.hint { {{ admn_style(theme_admonition_hint_color) }} }
+div.admonition.important { {{ admn_style(theme_admonition_important_color) }} }
+div.admonition.note { {{ admn_style(theme_admonition_note_color) }} }
+div.admonition.tip { {{ admn_style(theme_admonition_tip_color) }} }
+div.admonition.warning { {{ admn_style(theme_admonition_warning_color) }} }
+
+/* admonition titles */
+
+{% macro admn_title_style(admn_color) %}
+    {{ admn_style(admn_color) }}
+    filter: brightness(0.85);
+{% endmacro %}
+
+div.admonition { margin-bottom: 1em; }
+div.admonition > * {  /* select all children */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+p.admonition-title { font-weight: bold; margin: 0; }
+
+div.admonition.attention > .admonition-title { {{ admn_title_style(theme_admonition_attention_color) }} }
+div.admonition.caution > .admonition-title { {{ admn_title_style(theme_admonition_caution_color) }} }
+div.admonition.danger > .admonition-title { {{ admn_title_style(theme_admonition_danger_color) }} }
+div.admonition.error > .admonition-title { {{ admn_title_style(theme_admonition_error_color) }} }
+div.admonition.hint > .admonition-title { {{ admn_title_style(theme_admonition_hint_color) }} }
+div.admonition.important > .admonition-title { {{ admn_title_style(theme_admonition_important_color) }} }
+div.admonition.note > .admonition-title { {{ admn_title_style(theme_admonition_note_color) }} }
+div.admonition.tip > .admonition-title { {{ admn_title_style(theme_admonition_tip_color) }} }
+div.admonition.warning > .admonition-title { {{ admn_title_style(theme_admonition_warning_color) }} }
