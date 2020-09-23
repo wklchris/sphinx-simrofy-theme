@@ -1,0 +1,45 @@
+@import url("basic.css");
+
+body {
+    margin: 0 8px;
+}
+
+div.container {
+    margin: 0;
+    padding: 0.5em 20px;
+}
+
+div.body {
+    max-width: unset;
+}
+
+div.bodywrapper, div.footerwrapper {
+    margin-top: 0;
+    {%- if theme_sidebar_position == 'right' %}
+        margin-right: calc({{ theme_sidebar_width|todim }} + 10px);
+    {%- elif theme_sidebar_position == 'left' %}
+        margin-left: calc({{ theme_sidebar_width|todim }} + 10px);
+    {%- endif %}
+}
+
+div.document {
+    margin: 0;
+    padding: 0;
+}
+
+div.sidebar { all: unset; }
+div.sidebar {
+    z-index: 1;
+    position: fixed;
+    background-color: #ffe;
+    height: 100%;
+    padding: 10px 5px;
+    width: {{ theme_sidebar_width|todim }};
+    {%- if theme_sidebar_position == 'right' %}
+        right: calc({{ theme_sidebar_width|todim }} + 10px);
+        border-left: 3px solid steelblue;
+    {%- elif theme_sidebar_position == 'left' %}
+        left: 0;
+        border-right: 3px solid steelblue;
+    {%- endif %}
+}

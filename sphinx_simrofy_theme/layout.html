@@ -1,0 +1,116 @@
+{# 
+    This is the main template of Simrofy theme. It doesn't explicitly import other templates,
+    but it does borrow many ideas from following themes:
+
+    * basic
+    * sphinx-doc
+    * python-docs-theme
+    * sphinx-rtd-theme
+   
+    And Simrofy direcly borrowed these marcos from Sphinx basic/layout.html to ensure its
+    extendability for most extensions. A small number of extensions (e.g. MathJax) have been
+    confirmed to work under Simrofy properly, yet others may or may not. 
+    
+    * css()
+    * script()
+#}
+
+{% set simrofy_url = "https://github.com/wklchris/sphinx-simrofy-theme" %}
+{% set simrofy_version = '0.0.1' %}
+
+{% set simrofy_toc = toctree(maxdepth=theme_toc_depth|int, includehidden=true) %}
+{% set url_mainsite = pathto(master_doc) %}
+
+{# --- MACROS --- #}
+
+{%- macro simrofy_sidebar() %}
+{%- if theme_sidebar_position in ['right', 'left'] %}
+<div class="sidebar container" role="navigation" aria-label="main navigation">
+    <div class="sidebarwrapper">
+        <div id="sidebar_home">
+            {% trans url_mainsite=url_mainsite|e %}<a href={{ url_mainsite }}>Homepage</a>{% endtrans %}
+        </div>
+        {{ simrofy_toc }}
+    </div>
+</div>
+{%- endif %}
+{% endmacro %}
+
+{%- macro css() %}
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1)|e }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    {%- for css in css_files %}
+        {%- if css|attr("filename") %}
+            {{ css_tag(css) }}
+        {%- else %}
+            <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+        {%- endif %}
+    {%- endfor %}
+{%- endmacro %}
+
+{%- macro script() %}
+    <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+    {%- for js in script_files %}
+        {{ js_tag(js) }}
+    {%- endfor %}
+{%- endmacro %}
+
+
+{# --- HEAD --- #}
+
+<head>
+{% block head %}
+    {%- block css %}{{ css() }}{%- endblock css %}
+    {%- block scripts %}{{- script() }}{%- endblock scripts %}
+    {%- block extrahead %}{# user customize #}{% endblock extrahead %}
+{% endblock head %}
+</head>
+
+
+{# --- BODY --- #}
+
+<body>
+
+{# SIDEBAR #}
+{%- block sidebar %}{{ simrofy_sidebar() }}{%- endblock sidebar %}
+
+{%- block content %}
+
+<div class="document">
+    <div class="documentwrapper">
+
+    {# MAIN DOCUMENT PROCESSED BY BUILDER #}
+    {%- block document %}
+    <div class="body container" role="main">
+        <div class="bodywrapper">{% block body %}{% endblock %}</div>
+    </div>
+    {%- endblock document %}
+
+    {# FOOTER #}
+    {%- block footer %}
+    <div class="footer container" role="contentinfo">
+        <div class="footerwrapper">
+        {%- if show_copyright %}
+            {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+        {%- endif %}
+        {%- if last_updated %}
+            {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+        {%- endif %}
+        {%- if show_sphinx %}
+            {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+            <br>
+            {% trans simrofy_url=simrofy_url|e, simrofy_version=simrofy_version|e -%}
+                Formatted by theme <a href={{ simrofy_url }}>Simrofy</a> {{ simrofy_version }}, a Sphinx theme for building portfolio/CV websites.
+            {%- endtrans %}
+        {%- endif %}
+        {%- block extrafooter %}{# user customize #}{%- endblock extrafooter %}
+        </div>
+    </div>
+    {%- endblock footer %}
+
+    {%- block extracontent %}{# user customize #}{% endblock extracontent %}
+    </div>
+</div>
+{%- endblock content %}
+
+</body>

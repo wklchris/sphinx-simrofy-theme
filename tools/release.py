@@ -30,11 +30,15 @@ def build_dist():
     os.system(f"{PYTHON} setup.py sdist bdist_wheel")
     return "Build finished"
 
+def pip_install_editable():
+    os.system(f"{PYTHON} -m pip install -e .")
+    return "Installed via pip editable mode."
+
 def twine_upload(repo):
     os.system(f"{PYTHON} -m twine upload --repository {repo} dist/*")
     return "Upload to {repo}"
 
-def main(release_new, ignore_tag_conflict=False, build=True, repo=None):
+def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=None):
     regex = "version\s*=\s*[\'\"](.+?)[\'\"]"
     repl = f"version = '{release_new}'"
     release_previous, _ = get_current_release_and_filestr(regex)
@@ -44,12 +48,21 @@ def main(release_new, ignore_tag_conflict=False, build=True, repo=None):
         assert parse_version(release_new) > parse_version(release_previous), \
             f"Invalid new release tag: '{release_new}' (not larger than '{release_previous}')."
 
-    # Update files: setup.py
+    # Update files: setup.py, layout.html, conf.py
     replace_regex(regex, repl, 'setup.py')
+
+    simrofy_prefix = "simrofy_"
+    simrofy_file_layout = os.path.join("sphinx_simrofy_theme", "layout.html")
+    replace_regex(simrofy_prefix + regex, simrofy_prefix + repl, simrofy_file_layout)
+
+    conf_str_func = lambda s: s.replace("version", "release")
+    conf_file = os.path.join("docsrc", "conf.py")
+    replace_regex(conf_str_func(regex), conf_str_func(repl), conf_file)
 
     # Build the dist
     msg_build = build_dist() if build else "No build"
-    
+    msg_pip = pip_install_editable() if pip else "No installation via pip"
+
     # Upload to testPypi for testing
     msg_upload = twine_upload(repo) if repo else "No upload"
         
@@ -58,6 +71,7 @@ def main(release_new, ignore_tag_conflict=False, build=True, repo=None):
         "\n---",
         f"Version:\t{release_previous}  -->  {release_new}",
         f"Build:\t\t{msg_build}.",
+        f"Pip:\t\t{msg_pip}.",
         f"Upload:\t\t{msg_upload}." 
     ]))
 
