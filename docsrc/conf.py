@@ -2,7 +2,7 @@
 project = 'sphinx-simrofy-theme'
 copyright = '2020, wklchris'
 author = 'wklchris'
-release = '0.0.1'
+release = '0.1.0'
 
 
 # Sphinx configurations

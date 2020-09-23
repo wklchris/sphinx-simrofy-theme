@@ -35,7 +35,7 @@ def pip_install_editable():
     return "Installed via pip editable mode."
 
 def twine_upload(repo):
-    os.system(f"{PYTHON} -m twine upload --repository {repo} dist/*")
+    os.system(f"{PYTHON} -m twine upload --repository {repo} --skip-existing dist/*")
     return "Upload to {repo}"
 
 def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=None):
@@ -85,5 +85,5 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
 #     2.4.1-r1 > 2.4.1 > 2.4.1pre1
 
 
-release_new = "0.0.1"
-main(release_new, ignore_tag_conflict=True)
+release_new = "0.1.0"
+main(release_new, ignore_tag_conflict=True, repo='testpypi')
