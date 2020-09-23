@@ -30,6 +30,10 @@ def build_dist():
     os.system(f"{PYTHON} setup.py sdist bdist_wheel")
     return "Build finished"
 
+def build_sphinx():
+    os.system(f"{PYTHON} tools/make.py")
+    return "Doc build finished"
+
 def pip_install_editable():
     os.system(f"{PYTHON} -m pip install -e .")
     return "Installed via pip editable mode."
@@ -59,9 +63,11 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
     conf_file = os.path.join("docsrc", "conf.py")
     replace_regex(conf_str_func(regex), conf_str_func(repl), conf_file)
 
-    # Build the dist
+    # Build the dist and the docs
     msg_build = build_dist() if build else "No build"
+    msg_sphinx = build_sphinx() if build else "No sphinx"
     msg_pip = pip_install_editable() if pip else "No installation via pip"
+
 
     # Upload to testPypi for testing
     msg_upload = twine_upload(repo) if repo else "No upload"
@@ -71,6 +77,7 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
         "\n---",
         f"Version:\t{release_previous}  -->  {release_new}",
         f"Build:\t\t{msg_build}.",
+        f"Doc:\t\t{msg_sphinx}",
         f"Pip:\t\t{msg_pip}.",
         f"Upload:\t\t{msg_upload}." 
     ]))
