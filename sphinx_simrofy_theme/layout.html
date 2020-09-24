@@ -23,19 +23,6 @@
 
 {# --- MACROS --- #}
 
-{%- macro simrofy_sidebar() %}
-{%- if theme_sidebar_position in ['right', 'left'] %}
-<div class="sidebar container" role="navigation" aria-label="main navigation">
-    <div class="sidebarwrapper">
-        <div id="sidebar_home">
-            {% trans url_mainsite=url_mainsite|e %}<a href={{ url_mainsite }}>Homepage</a>{% endtrans %}
-        </div>
-        {{ simrofy_toc }}
-        <p>{{ admonition_colors }}</p>
-    </div>
-</div>
-{%- endif %}
-{% endmacro %}
 
 {%- macro css() %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1)|e }}" type="text/css" />
@@ -55,6 +42,38 @@
         {{ js_tag(js) }}
     {%- endfor %}
 {%- endmacro %}
+
+{%- macro pathto_static(filepath, static_build_path='_static/') -%}
+    {# static_build_path is the static file path AFTER sphinx build.
+       Usually it is '_static/' (attention the tailing slash). #}
+    {{ pathto(static_build_path + filepath|e, 1) }}
+{%- endmacro %}
+
+{%- macro simrofy_sidebar() %}
+{%- if theme_sidebar_position in ['right', 'left'] %}
+<div class="sidebar container" role="navigation" aria-label="main navigation">
+    <div class="sidebarwrapper">
+        <div id="sidebar_home">
+            {# Logo in sidebar #}
+            <a class="logo" href={{ url_mainsite }}>
+            {% if theme_image_logo %}
+                {%- block sidebar_logo %}
+                <img class="align-center" id="sidebar_logo" alt="Website logo"
+                    src="{{ pathto_static(theme_image_logo) }}" />  
+                {%- endblock sidebar_logo %}
+            {% else %}
+                {% trans url_mainsite=url_mainsite|e %}Homepage{% endtrans %}
+            {% endif %}
+            </a>
+        </div>
+        <div id="sidebar_rel">
+            {{ simrofy_toc }}
+        </div>
+    </div>
+    {%- block extrasidebar %}{# user customize #}{%- endblock extrasidebar %}
+</div>
+{%- endif %}
+{% endmacro %}
 
 
 {# --- HEAD --- #}
@@ -76,7 +95,6 @@
 {%- block sidebar %}{{ simrofy_sidebar() }}{%- endblock sidebar %}
 
 {%- block content %}
-
 <div class="document">
     <div class="documentwrapper">
 

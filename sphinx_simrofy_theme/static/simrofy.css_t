@@ -1,5 +1,7 @@
 /* @import url("basic.css"); */
 
+/* meta */
+
 body {
     margin: 0 8px;
 }
@@ -27,21 +29,45 @@ div.document {
     padding: 0;
 }
 
+/* webkit browser beautify */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: lightgray; }
+::-webkit-scrollbar-thumb { background: darkgray; }
+::-webkit-scrollbar-thumb:hover { background: dimgray; }
+
+
+/* images */
+
+img.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* sidebar */
+
 div.sidebar {
     z-index: 1;
     position: fixed;
     background-color: #ffe;
     height: 100%;
     padding: 10px 5px;
+    overflow-y: auto;
     width: {{ theme_sidebar_width|todim }};
     {%- if theme_sidebar_position == 'right' %}
-        right: calc({{ theme_sidebar_width|todim }} + 10px);
+        right: 0;
         border-left: 3px solid steelblue;
     {%- elif theme_sidebar_position == 'left' %}
         left: 0;
         border-right: 3px solid steelblue;
     {%- endif %}
 }
+div.sidebar::-webkit-scrollbar { width: 5px; }
+
+#sidebar_logo {
+    width: {{ (theme_sidebar_width|int * 0.8)|int }}px;
+}   
 
 /* admonitions */
 
@@ -59,6 +85,7 @@ div.admonition.important { {{ admn_style(theme_admonition_important_color) }} }
 div.admonition.note { {{ admn_style(theme_admonition_note_color) }} }
 div.admonition.tip { {{ admn_style(theme_admonition_tip_color) }} }
 div.admonition.warning { {{ admn_style(theme_admonition_warning_color) }} }
+
 
 /* admonition titles */
 
