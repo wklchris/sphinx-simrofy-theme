@@ -1,2 +1,2 @@
-include LICENSE README.md
+include LICENSE README.md logo.png
 recursive-include sphinx_simrofy_theme *.*

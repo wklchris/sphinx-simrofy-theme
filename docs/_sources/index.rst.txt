@@ -7,19 +7,22 @@ Welcome to sphinx-simrofy-theme's documentation!
    :hidden:
    
    Publications.rst
-   AboutMe.rst
+   Development.rst
+   Documentation.rst
 
 .. warning::
 
-    Simrofy theme is still under active development. If its release number is lower than 1.0.0, it implies that the author doesn't think it is good enough for a wide distribution.
+    Simrofy theme is still in beta version and currently under active development. If its release number is lower than 1.0.0, it implies that the author doesn't think it is good enough for a wide distribution.
 
-    Last build (but not necessarily with text modification) of this toy website was on |today| with Simrofy version |release|\ .
+    Last build (but not necessarily with text modification) of this website was on |today| with Simrofy version |release|\ .
 
 -----
 
 Simrofy is a theme for the Sphinx_ documentation generator. It is NOT designed for writing techinical documenation, but for building a portfolio/CV website to introduce yourself to those who may concern. 
 
 Simrofy was intendedly developed to build personal neat website to share around academia, so it owns some features merely useful for academic users. However, Simrofy also serves well as an easy-to-use static website choice for non-academic users.
+
+Read the :ref:`chapter-simrofy-doc` chapter for installation and guides.
 
 -----
 
@@ -56,10 +59,10 @@ Subsection 2.1
 
 Quisque ullamcorper placerat ipsum. Cras nibh. Morbi vel justo vitaelacus tincidunt ultrices. Lorem ipsum dolor sit amet, consectetuer adipiscingelit. In hac habitasse platea dictumst. Integer tempus convallis augue. Etiamfacilisis. Nunc elementum fermentum wisi. Aenean placerat. Ut imperdiet,enim sed gravida sollicitudin, felis odio placerat quam, ac pulvinar elit puruseget enim. Nunc vitae tortor. Proin tempus nibh sit amet nisl. Vivamusquis tortor vitae risus porta vehicula.
 
-.. image:: _static/logo.png
+.. image:: _static/photos/self.jpg
     :width: 128px
     :align: center
-    :alt: Simrofy Logo
+    :alt: An example picture of self.
 
 Fusce mauris. Vestibulum luctus nibh at lectus. Sed biben a faucibus semper, leo velit ultricies tellus, ac venenatis arcu wisi vel nisl.Vestibulum diam. Aliquam pellentesque, augue quis sagittis posuere, turpislacus congue quam, in hendrerit risus eros eget felis. Maecenas eget erat insapien mattis porttitor. Vestibulum porttitor. Nulla facilisi. Sed a turpiseu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, justolectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligulased lacus. Duis cursus enim ut augue. Cras ac magna. Cras nulla. Nullaegestas. Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacusvel est. Curabitur consectetuer.
 

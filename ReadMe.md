@@ -1,6 +1,8 @@
 # sphinx-simrofy-theme <!-- omit in toc -->
 
-Simrofy has NOT been prepared for wide distribution. *Now it is only avaliable on TestPypi*\ and you can install \& upgrade it via pip (see dependency):
+<img src="./logo.png" alt="Simrofy logo" style="display: block; display: block; margin: 1em; width: 100px;">
+
+Simrofy has NOT been prepared for wide distribution. *Now it is only avaliable on TestPypi* and you can install \& upgrade it via pip (see dependency):
 
 ```
 pip install --index-url https://test.pypi.org/simple/ --upgrade sphinx-simrofy-theme

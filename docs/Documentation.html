@@ -1,0 +1,247 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+
+    <link rel="stylesheet" href="_static/simrofy.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+
+
+
+<body>
+
+
+<div class="sidebar container" role="navigation" aria-label="main navigation">
+    <div class="sidebarwrapper">
+        <div id="sidebar_home">
+            
+            <a class="logo" href=index.html>
+            
+                <img class="align-center" id="sidebar_logo" alt="Website logo"
+                    src="
+    _static/logo.png" />
+            
+            </a>
+        </div>
+        <div id="sidebar_rel">
+            <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-guide">Quick Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-options">Theme Options</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="document">
+    <div class="documentwrapper">
+
+    
+    <div class="body container" role="main">
+        <div class="bodywrapper">
+  <div class="section" id="documentation">
+<span id="chapter-simrofy-doc"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p>This is the documentation of Sphinx theme Simrofy. Last updated was on 2020-09-24.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Simrofy relies on few Dependencies and is easily to fetch using pip, the command line package manager that goes with Python.</p>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<p>Simrofy is a Sphinx theme, so I assume that you don't need it if you haven't installed <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a>.</p>
+<p>Dependencies:</p>
+<ul>
+<li><p><strong>Python (&gt;=3.6 recommended)</strong></p>
+<p>Version &gt;= 3.6 is rcommended because f-string syntax is added in this version and I used that a lot. Lower version may be OK but I didn't test.</p>
+<p>Visit <a class="reference external" href="https://www.python.org/downloads/">Python Official Website</a> to install Python.</p>
+</li>
+<li><p><strong>Sphinx</strong></p>
+<p>Always better to choose a newer Sphinx version. You can scroll down to read the footer of current webpage and find under which Sphinx version this document was built; all versions no earlier than it should be good.</p>
+<p>After installing Python, you can follow the download instruction of <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> to install it via <code class="docutils literal notranslate"><span class="pre">pip</span></code> command.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="installation-via-pip">
+<h3>Installation via Pip<a class="headerlink" href="#installation-via-pip" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The early version of Simrofy won't be avaliable on Pypi (but on TestPypi instead) since I think it is not good enough to be post there. However, if you still want to install it and play around, you can get it via TestPypi:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --index-url https://test.pypi.org/simple/ -U sphinx-simrofy-theme
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<p>This is the recommended way to install Simrofy theme. Open your command line terminal and run following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U sphinx-simrofy-theme
+</pre></div>
+</div>
+<p>The arg <code class="docutils literal notranslate"><span class="pre">-U</span></code> ensures upgrading to the newest version.</p>
+</div>
+<div class="section" id="building-simrofy-by-yourself">
+<h3>Building Simrofy by yourself<a class="headerlink" href="#building-simrofy-by-yourself" title="Permalink to this headline">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Skip this step if you've successfully installed Simrofy through pip command.</p>
+</div>
+<p>If you can't install it via pip, an alternative is to consider downloading the source code of Simrofy and compile it by yourself.</p>
+<ol class="arabic">
+<li><p>Download the source code of Simrofy from the Github repository. You can click on the Github link on the webpage sidebar.</p></li>
+<li><p>Enter the folder and focus on following files:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dist/
+sphinx_simrofy_theme/
+    ...
+setup.py
+...
+</pre></div>
+</div>
+<p>Then launch your command line terminal with current folder as the working directory.</p>
+</li>
+<li><p>In your terminal, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py sdist bdist_wheel
+</pre></div>
+</div>
+</li>
+<li><p>You will find compiled packages under the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder. Then you can directly install it by pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install dist/sphinx_simrofy_theme-VERSION.EXTENSION
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> with version string of your build (like <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> ) and <code class="docutils literal notranslate"><span class="pre">EXTENSION</span></code> with package extension (either <code class="docutils literal notranslate"><span class="pre">.whl</span></code> or <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> ).</p>
+</li>
+<li><p>You have finished building Simrofy and it has been installed on your machine.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="quick-guide">
+<h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h2>
+<p>To apply Simrofy theme to your Sphinx project, put following line inside your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx-simrofy-theme&#39;</span>  <span class="c1"># These symbols are hyphens, not underlines!</span>
+</pre></div>
+</div>
+<p>Then you can follow the general Sphinx writing process. To customize Simrofy theme, use <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file. See <a class="reference internal" href="#theme-options"><span class="std std-ref">Theme Options</span></a> section below.</p>
+</div>
+<div class="section" id="theme-options">
+<span id="id1"></span><h2>Theme Options<a class="headerlink" href="#theme-options" title="Permalink to this headline">¶</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, we can specify theme options through the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary variable. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;sidebar_position&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidebar_width&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>All dictionary keys used here should be designed in the Simrofy theme. Here is a parameter list for Simrofy's theme options:</p>
+<dl class="glossary">
+<dt id="term-admonition_-_color">admonition_**_color</dt><dd><p>Passing a CSS color strings to override the default admonition background color, where ** is the admonition name (attention, caution, etc.).</p>
+<p>For example, user can change the color of these admonitions by passing values to the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;admonition_attention_color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;admonition_note_color&quot;</span><span class="p">:</span> <span class="s2">&quot;#C8EBFA&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Default admonition colors are similar to (yet not exactly the same with) the default settings of Read the Docs theme's admonitions (see <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/demo.html#admonitions">their documentation</a> ). Although users can assign any color to admonitions, <em>light colors</em> are highly recommended since the title color of an admonition is an auto &quot;darker&quot; version of the body color using CSS' <code class="docutils literal notranslate"><span class="pre">brightness</span></code> filter.</p>
+<p>All supported admonition name with default colors are showing below:</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Attention.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Caution.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Danger.</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Error.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Hint.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Important.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tip.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Warning.</p>
+</div>
+</dd>
+<dt id="term-image_logo">image_logo</dt><dd><p>The logo image file path. Default is undefined. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
+<p>Note that the file path is the subpath under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> defined in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. For example, if you have following lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code in your conf.py</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_my_static&quot;</span><span class="p">]</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;image_logo&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then you should put your logo file at <code class="docutils literal notranslate"><span class="pre">_my_static/logo.png</span></code>.</p>
+</dd>
+<dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is <code class="docutils literal notranslate"><span class="pre">photos/self.jpg</span></code> . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> for details.</p>
+</dd>
+<dt id="term-sidebar_position">sidebar_position</dt><dd><p>The position of the sidebar. Default is <code class="docutils literal notranslate"><span class="pre">'right'</span></code> and users can also select <code class="docutils literal notranslate"><span class="pre">left</span></code>. Any other value will disable the sidebar.</p>
+</dd>
+<dt id="term-sidebar_width">sidebar_width</dt><dd><p>The width of the sidebar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">240</span></code></p>
+</dd>
+<dt id="term-toc_depth">toc_depth</dt><dd><p>The maximal depth of the table of content (toc) items. Default is <code class="docutils literal notranslate"><span class="pre">2</span></code> , i.e. only showing HTML h1 (page title) and h2 tags.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+</div>
+    </div>
+
+    
+    <div class="footer container" role="contentinfo">
+        <div class="footerwrapper">
+            &#169; Copyright 2020, wklchris.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+            <br>
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.1.0, a Sphinx theme for building portfolio/CV websites.
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>
