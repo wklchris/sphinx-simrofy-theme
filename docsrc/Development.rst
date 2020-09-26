@@ -35,11 +35,11 @@ This log shows what features have been implemented:
 * 0.1.x
 
   * Sidebar: basic style; homepage (text & logo) link; toctree
-  * Footer: Simrofy information.
-  * Main document:
-    
+  * Head: Meta Charset, title.
+  * Style:
+
     * Admonition style: A crude style mimicking the Read the Docs admonitions.
     * Code highlighting style: Default Pygments highlighting style.
-  
+
+  * Footer: Simrofy information; Theme and top border.
   * Others: Scrollbar beautification for webkit browsers.
-    

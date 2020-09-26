@@ -38,8 +38,13 @@ This log shows what features have been implemented:
   * Footer: Simrofy information.
   * Main document:
     
-    * Admonition style: A crude style mimicking the Read the Docs admonitions.
-    * Code highlighting style: Default Pygments highlighting style.
-  
+    * Head: Meta Charset, title.
+    * Style:
+
+        * Admonition style: A crude style mimicking the Read the Docs admonitions.
+        * Code highlighting style: Default Pygments highlighting style.
+    
+    * Footer: Theme and top border.
+    
   * Others: Scrollbar beautification for webkit browsers.
     

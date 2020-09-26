@@ -1,5 +1,5 @@
 # Project metadata
-project = 'sphinx-simrofy-theme'
+project = 'Simrofy'
 copyright = '2020, wklchris'
 author = 'wklchris'
 release = '0.1.0'
