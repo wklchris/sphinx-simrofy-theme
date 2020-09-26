@@ -21,6 +21,11 @@ def main(preview=True):
     )
     shutil.rmtree(build_tmp_dir)
 
+    # Create a .nojekyll for Github Pages
+    nojekyll = os.path.join(docs, ".nojekyll")
+    if not os.path.exists(nojekyll):
+        with open(nojekyll, 'w'):
+            pass
 
     # Automatically open the HTML file in the browser
     if preview:
