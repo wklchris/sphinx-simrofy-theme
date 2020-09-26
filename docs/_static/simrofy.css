@@ -2,9 +2,7 @@
 
 /* meta */
 
-body {
-    margin: 0 8px;
-}
+body { margin: 0 8px; }
 
 div.container {
     margin: 0;
@@ -19,6 +17,10 @@ div.bodywrapper, div.footerwrapper {
     margin-top: 0;
         margin-left: calc(240px + 10px);
 }
+div.footerwrapper { 
+    border-top: 1px double gray;
+    padding-top: 0.5ex;
+ }
 
 div.document {
     margin: 0;
@@ -31,6 +33,10 @@ div.document {
 ::-webkit-scrollbar-thumb { background: darkgray; }
 ::-webkit-scrollbar-thumb:hover { background: dimgray; }
 
+/* list */
+
+li > p, dd > p { margin-bottom: 0.5em; }
+li > p:first-child, dd > p:first-child { margin-top: 0.5em; }
 
 /* images */
 
@@ -48,7 +54,7 @@ div.sidebar {
     position: fixed;
     background-color: #ffe;
     height: 100%;
-    padding: 10px 5px;
+    padding: 10px 5px; 
     overflow-y: auto;
     width: 240px;
         left: 0;
@@ -56,9 +62,7 @@ div.sidebar {
 }
 div.sidebar::-webkit-scrollbar { width: 5px; }
 
-#sidebar_logo {
-    width: 192px;
-}   
+#sidebar_home { padding-bottom: 10px; }
 
 /* admonitions */
 
@@ -176,3 +180,25 @@ div.admonition.warning > .admonition-title {
 
     filter: brightness(0.85);
  }
+
+/* code highlight */
+
+div.highlight > pre {
+    background-color: #eee;
+    padding: 5px;
+}
+
+span.pre {
+    border: 1px solid gray;
+    padding: 2px 0.5ex;
+}
+
+/* Sphinx glossary */
+
+dl.glossary > dt {
+    background-color: lightblue;
+    font-family: monospace;
+    padding-left: 0.5ex;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

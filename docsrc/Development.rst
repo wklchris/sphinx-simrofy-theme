@@ -11,14 +11,15 @@ Here are the features on the schedule:
 
 - **Urgent**\ :
 
-  * Style: Code highlight; link
   * Sidebar toctree
+  * Previous/next button if no sidebar
 
 - **Important but not urgent**\ :
   
   * Enable/disable sidebar
   * Topbar
   * Bibliography
+  * Mobile device adaptation
 
 - Minor:
 
@@ -37,7 +38,8 @@ This log shows what features have been implemented:
   * Footer: Simrofy information.
   * Main document:
     
-    * Admonition style
+    * Admonition style: A crude style mimicking the Read the Docs admonitions.
+    * Code highlighting style: Default Pygments highlighting style.
   
   * Others: Scrollbar beautification for webkit browsers.
     

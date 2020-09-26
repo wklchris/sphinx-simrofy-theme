@@ -7,7 +7,7 @@
     * python-docs-theme
     * sphinx-rtd-theme
    
-    And Simrofy direcly borrowed these marcos from Sphinx basic/layout.html to ensure its
+    And Simrofy direcly borrowed these macros from Sphinx basic/layout.html to ensure its
     extendability for most extensions. A small number of extensions (e.g. MathJax) have been
     confirmed to work under Simrofy properly, yet others may or may not. 
     
@@ -15,11 +15,22 @@
     * script()
 #}
 
-{% set simrofy_url = "https://github.com/wklchris/sphinx-simrofy-theme" %}
-{% set simrofy_version = '0.1.0' %}
+{%- block doctype -%}
+    {# Borrow from basic/layout.html #}
+    {%- if html5_doctype -%}
+        <!DOCTYPE html>
+    {%- else -%}
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    {%- endif -%}
+{%- endblock -%}
 
-{% set simrofy_toc = toctree(maxdepth=theme_toc_depth|int, includehidden=true) %}
-{% set url_mainsite = pathto(master_doc) %}
+
+{%- set simrofy_url = "https://github.com/wklchris/sphinx-simrofy-theme" %}
+{%- set simrofy_version = '0.1.0' %}
+
+{%- set simrofy_toc = toctree(maxdepth=theme_toc_depth|int, includehidden=true) %}
+{%- set url_mainsite = pathto(master_doc) %}
 
 {# --- MACROS --- #}
 
@@ -59,7 +70,13 @@
             {% if theme_image_logo %}
                 {%- block sidebar_logo %}
                 <img class="align-center" id="sidebar_logo" alt="Website logo"
-                    src="{{ pathto_static(theme_image_logo) }}" />  
+                    src="{{ pathto_static(theme_image_logo) }}"
+                    style="width:
+                        {%- if theme_image_logo_width|float <= 1 -%}
+                            {{ (theme_sidebar_width|int * theme_image_logo_width|float)|int }}
+                        {%- else -%}
+                            {{ theme_image_logo_width|int }}
+                        {%- endif -%}px;"/>  
                 {%- endblock sidebar_logo %}
             {% else %}
                 {% trans url_mainsite=url_mainsite|e %}Homepage{% endtrans %}

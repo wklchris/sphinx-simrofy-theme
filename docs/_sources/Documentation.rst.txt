@@ -3,7 +3,13 @@
 Documentation
 ===================
 
-This is the documentation of Sphinx theme Simrofy. Last updated was on |today|\ .
+This is the documentation of Sphinx theme Simrofy. 
+
+.. caution::
+
+    Simrofy is still in beta and its features and options may change very often. 
+    
+    Last updated was on |today|\ .
 
 
 Installation
@@ -69,6 +75,7 @@ If you can't install it via pip, an alternative is to consider downloading the s
       
       dist/
       sphinx_simrofy_theme/
+          static/  
           ...
       setup.py
       ...
@@ -117,7 +124,19 @@ In the ``conf.py`` file, we can specify theme options through the ``html_theme_o
         ...
     }
 
-All dictionary keys used here should be designed in the Simrofy theme. Here is a parameter list for Simrofy's theme options:
+Default values of theme options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All dictionary keys used here should be designed in the Simrofy theme. Please check the ``theme.conf`` file's ``[options]`` sections for details. For convinience, I also put the whole file here:
+
+.. literalinclude:: ../sphinx_simrofy_theme/theme.conf
+    :language: ini
+
+
+Full references of theme options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Here is a parameter list for Simrofy's theme options:
 
 .. glossary::
     :sorted:
@@ -191,11 +210,20 @@ All dictionary keys used here should be designed in the Simrofy theme. Here is a
         
         Then you should put your logo file at ``_my_static/logo.png``\ .
 
+    image_logo_width
+        (Only valid when :term:`image_logo` is specified)
+
+        The logo width in percentage (for a value <= 1.0 ) or unit of px (for a value > 1.0). Default is ``0.8`` , or say 80% sidebar width.
+
     image_self
-        The photograph of the site owner, which is often seen on portfolio-style websites. Default is ``photos/self.jpg`` . Keep in mind that it is a path under your ``html_static_path`` instead of you main folder, see :term:`image_logo` for details.
+        The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your ``html_static_path`` instead of you main folder, see :term:`image_logo` for details.
 
     sidebar_position
-        The position of the sidebar. Default is ``'right'`` and users can also select ``left``. Any other value will disable the sidebar.
+        The position of the sidebar. Users can also select:
+        
+        * ``'left'``\ : Display the sidebar on the left. This is the default value.
+        * ``'right'``\ : Display the sidebar on the right.
+        * Any other value will disable the sidebar.
 
     sidebar_width
         The width of the sidebar in unit of px. Default is ``240``

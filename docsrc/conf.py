@@ -27,7 +27,8 @@ html_static_path = ["_static"]
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
     'sidebar_position': 'left',
-    'image_logo': 'logo.png'
+    'image_logo': 'logo.png',
+    'image_logo_width': 0.75
 }
 
 

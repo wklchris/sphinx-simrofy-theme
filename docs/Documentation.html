@@ -1,10 +1,4 @@
-
-
-
-
-
-
-
+<!DOCTYPE html>
 
 
 
@@ -38,7 +32,8 @@
             
                 <img class="align-center" id="sidebar_logo" alt="Website logo"
                     src="
-    _static/logo.png" />
+    _static/logo.png"
+                    style="width:180px;"/>
             
             </a>
         </div>
@@ -67,7 +62,12 @@
         <div class="bodywrapper">
   <div class="section" id="documentation">
 <span id="chapter-simrofy-doc"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
-<p>This is the documentation of Sphinx theme Simrofy. Last updated was on 2020-09-24.</p>
+<p>This is the documentation of Sphinx theme Simrofy.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Simrofy is still in beta and its features and options may change very often.</p>
+<p>Last updated was on 2020-09-26.</p>
+</div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Simrofy relies on few Dependencies and is easily to fetch using pip, the command line package manager that goes with Python.</p>
@@ -115,6 +115,7 @@
 <li><p>Enter the folder and focus on following files:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dist/
 sphinx_simrofy_theme/
+    static/
     ...
 setup.py
 ...
@@ -155,7 +156,37 @@ setup.py
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>All dictionary keys used here should be designed in the Simrofy theme. Here is a parameter list for Simrofy's theme options:</p>
+<div class="section" id="default-values-of-theme-options">
+<h3>Default values of theme options<a class="headerlink" href="#default-values-of-theme-options" title="Permalink to this headline">¶</a></h3>
+<p>All dictionary keys used here should be designed in the Simrofy theme. Please check the <code class="docutils literal notranslate"><span class="pre">theme.conf</span></code> file's <code class="docutils literal notranslate"><span class="pre">[options]</span></code> sections for details. For convinience, I also put the whole file here:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[theme]</span>
+<span class="na">inherit</span> <span class="o">=</span> <span class="s">basic</span>
+<span class="na">stylesheet</span> <span class="o">=</span> <span class="s">simrofy.css</span>
+<span class="na">pygments_style</span> <span class="o">=</span> <span class="s">default</span>
+
+<span class="k">[options]</span>
+<span class="na">image_logo</span> <span class="o">=</span>
+<span class="na">image_logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
+<span class="na">image_self</span> <span class="o">=</span>
+<span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
+<span class="na">sidebar_width</span> <span class="o">=</span> <span class="s">240</span>
+<span class="na">toc_depth</span> <span class="o">=</span> <span class="s">2</span>
+
+<span class="na">admonition_attention_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
+<span class="na">admonition_caution_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
+<span class="na">admonition_danger_color</span> <span class="o">=</span> <span class="s">lightpink</span>
+<span class="na">admonition_error_color</span> <span class="o">=</span> <span class="s">lightpink</span>
+<span class="na">admonition_hint_color</span> <span class="o">=</span> <span class="s">lightgreen</span>
+<span class="na">admonition_important_color</span> <span class="o">=</span> <span class="s">lightgreen</span>
+<span class="na">admonition_note_color</span> <span class="o">=</span> <span class="s">lightskyblue</span>
+<span class="na">admonition_tip_color</span> <span class="o">=</span> <span class="s">lightgreen</span>
+<span class="na">admonition_warning_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-references-of-theme-options">
+<h3>Full references of theme options<a class="headerlink" href="#full-references-of-theme-options" title="Permalink to this headline">¶</a></h3>
+<p>Here is a parameter list for Simrofy's theme options:</p>
 <dl class="glossary">
 <dt id="term-admonition_-_color">admonition_**_color</dt><dd><p>Passing a CSS color strings to override the default admonition background color, where ** is the admonition name (attention, caution, etc.).</p>
 <p>For example, user can change the color of these admonitions by passing values to the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary:</p>
@@ -217,15 +248,24 @@ setup.py
 </div>
 <p>Then you should put your logo file at <code class="docutils literal notranslate"><span class="pre">_my_static/logo.png</span></code>.</p>
 </dd>
-<dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is <code class="docutils literal notranslate"><span class="pre">photos/self.jpg</span></code> . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> for details.</p>
+<dt id="term-image_logo_width">image_logo_width</dt><dd><p>(Only valid when <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> is specified)</p>
+<p>The logo width in percentage (for a value &lt;= 1.0 ) or unit of px (for a value &gt; 1.0). Default is <code class="docutils literal notranslate"><span class="pre">0.8</span></code> , or say 80% sidebar width.</p>
 </dd>
-<dt id="term-sidebar_position">sidebar_position</dt><dd><p>The position of the sidebar. Default is <code class="docutils literal notranslate"><span class="pre">'right'</span></code> and users can also select <code class="docutils literal notranslate"><span class="pre">left</span></code>. Any other value will disable the sidebar.</p>
+<dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> for details.</p>
+</dd>
+<dt id="term-sidebar_position">sidebar_position</dt><dd><p>The position of the sidebar. Users can also select:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'left'</span></code>: Display the sidebar on the left. This is the default value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'right'</span></code>: Display the sidebar on the right.</p></li>
+<li><p>Any other value will disable the sidebar.</p></li>
+</ul>
 </dd>
 <dt id="term-sidebar_width">sidebar_width</dt><dd><p>The width of the sidebar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">240</span></code></p>
 </dd>
 <dt id="term-toc_depth">toc_depth</dt><dd><p>The maximal depth of the table of content (toc) items. Default is <code class="docutils literal notranslate"><span class="pre">2</span></code> , i.e. only showing HTML h1 (page title) and h2 tags.</p>
 </dd>
 </dl>
+</div>
 </div>
 </div>
 
