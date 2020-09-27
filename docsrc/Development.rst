@@ -16,13 +16,12 @@ Here are the features on the schedule:
 
 - **Important but not urgent**\ :
   
-  * Enable/disable sidebar
   * Bibliography
   * Mobile device adaptation
 
 - Minor:
 
-  * logo width: in sidebar/topbar
+  * logo width: in sidebar/headbar
   * Dark theme
 
 
@@ -34,7 +33,7 @@ This log shows what features have been implemented:
 * 0.1.x
 
   * Sidebar: basic style; homepage (text & logo) link; toctree
-  * Headbar: basic style; source file link
+  * Headbar: basic style; source file link; github link; customized doc links
   * Head: Meta Charset, title.
   * Style:
 

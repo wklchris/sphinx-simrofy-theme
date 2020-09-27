@@ -109,6 +109,11 @@ To apply Simrofy theme to your Sphinx project, put following line inside your ``
 Then you can follow the general Sphinx writing process. To customize Simrofy theme, use ``html_theme_options`` variable in the ``conf.py`` file. See :ref:`theme-options` section below.
 
 
+Other notes:
+
+* The 'Raw' button on the headbar can be removed by disabling copy source files into ``_sources`` path of the output folder. Use ``html_copy_source = False`` in ``conf.py`` to disable it.
+
+
 .. _theme-options:
 
 Theme Options
@@ -196,7 +201,7 @@ Here is a parameter list for Simrofy's theme options:
             Warning.
 
     github_user
-        Github username. It will create a icon-weblink on the headbar that allows others visit your Github profile page ``https://github.com/GITHUB_USER``\ .
+        Github username. It will create a icon-weblink to ``https://github.com/GITHUB_USER``\ on the headbar that allows others visit your Github profile page.
 
     github_repo
         (Only valid when :term:`github_user` is specified)

@@ -141,8 +141,8 @@
 <div class="headbar container" role="contenthead">
     <div class="headbarwrapper">
         <div id="headbar_home"><a href={{ url_mainsite|e }}>{{ _('Homepage') }}</a>&nbsp;|&nbsp;</div>
-        <div class="headbarsources">|&nbsp;{#- Source links -#}
-        {%- if show_source and has_source and sourcename -%}
+        <div class="headbarsources">
+        {%- if show_source and has_source and sourcename -%}|&nbsp;{#- delim -#}
             <a class="sourcelink" href="{{ pathto_source(sourcename)|e }}">{{ _('Raw') }}</a>
         {%- endif -%}
         {%- if theme_github_user -%}
@@ -150,7 +150,7 @@
                 {% set gh_url = ['https://github.com', theme_github_user, theme_github_repo]|join('/') %}
             {%- else -%}
                 {% set gh_url = 'https://github.com/' + theme_github_user %}
-            {%- endif -%}&nbsp;|&nbsp;
+            {%- endif -%}&nbsp;|&nbsp;{#- delim -#}
             <a class="sourcelink" href="{{ gh_url|e }}">
                 <img src="{{ pathto_static('github-icon.png')|e }}" alt="Github Icon"
                     style="height: {{ (0.8 * theme_headbar_height|int)|int|todim }};" />

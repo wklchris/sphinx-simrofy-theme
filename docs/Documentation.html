@@ -61,8 +61,7 @@
 <div class="headbar container" role="contenthead">
     <div class="headbarwrapper">
         <div id="headbar_home"><a href=index.html>Homepage</a>&nbsp;|&nbsp;</div>
-        <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Documentation.rst.txt">Raw</a>&nbsp;|&nbsp;
-            <a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
+        <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Documentation.rst.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
                 <img src="
     _static/github-icon.png" alt="Github Icon"
                     style="height: 24px;" />
@@ -167,6 +166,10 @@ setup.py
 </pre></div>
 </div>
 <p>Then you can follow the general Sphinx writing process. To customize Simrofy theme, use <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file. See <a class="reference internal" href="#theme-options"><span class="std std-ref">Theme Options</span></a> section below.</p>
+<p>Other notes:</p>
+<ul class="simple">
+<li><p>The 'Raw' button on the headbar can be removed by disabling copy source files into <code class="docutils literal notranslate"><span class="pre">_sources</span></code> path of the output folder. Use <code class="docutils literal notranslate"><span class="pre">html_copy_source</span> <span class="pre">=</span> <span class="pre">False</span></code> in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to disable it.</p></li>
+</ul>
 </div>
 <div class="section" id="theme-options">
 <span id="id1"></span><h2>Theme Options<a class="headerlink" href="#theme-options" title="Permalink to this headline">¶</a></h2>
@@ -268,7 +271,7 @@ setup.py
 <dt id="term-github_repo">github_repo</dt><dd><p>(Only valid when <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> is specified)</p>
 <p>Show a Github repo link of <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER/GITHUB_REPO</span></code>instead of your user profile page.</p>
 </dd>
-<dt id="term-github_user">github_user</dt><dd><p>Github username. It will create a icon-weblink on the headbar that allows others visit your Github profile page <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER</span></code>.</p>
+<dt id="term-github_user">github_user</dt><dd><p>Github username. It will create a icon-weblink to <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER</span></code>on the headbar that allows others visit your Github profile page.</p>
 </dd>
 <dt id="term-headbar_height">headbar_height</dt><dd><p>The height of headbar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">30</span></code></p>
 </dd>
