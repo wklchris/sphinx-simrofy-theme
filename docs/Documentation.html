@@ -42,7 +42,7 @@
         <div id="sidebar_rel">
             <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Publications.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
@@ -56,9 +56,29 @@
     </div>
 </div>
 
+
+
+<div class="headbar container" role="contenthead">
+    <div class="headbarwrapper">
+        <div id="headbar_home"><a href=index.html>Homepage</a>&nbsp;|&nbsp;</div>
+        <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Documentation.rst.txt">Raw</a>&nbsp;|&nbsp;
+            <a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
+                <img src="
+    _static/github-icon.png" alt="Github Icon"
+                    style="height: 24px;" />
+            </a></div>
+        <div class="headbarlinks">
+            
+        
+        
+            <a href="Development.html">Development</a>
+        
+        
+        </div>
+    </div>
+</div>
 <div class="document">
     <div class="documentwrapper">
-
     
     <div class="body container" role="main">
         <div class="bodywrapper">
@@ -68,7 +88,7 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-09-26.</p>
+<p>Last updated was on 2020-09-27.</p>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -109,7 +129,7 @@
 <h3>Building Simrofy by yourself<a class="headerlink" href="#building-simrofy-by-yourself" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Skip this step if you've successfully installed Simrofy through pip command.</p>
+<p>Skip this section if you've successfully installed Simrofy through pip command.</p>
 </div>
 <p>If you can't install it via pip, an alternative is to consider downloading the source code of Simrofy and compile it by yourself.</p>
 <ol class="arabic">
@@ -170,6 +190,12 @@ setup.py
 <span class="na">image_logo</span> <span class="o">=</span>
 <span class="na">image_logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
 <span class="na">image_self</span> <span class="o">=</span>
+<span class="na">github_user</span> <span class="o">=</span>
+<span class="na">github_repo</span> <span class="o">=</span>
+
+<span class="na">headbar_height</span> <span class="o">=</span> <span class="s">30</span>
+<span class="na">headbar_links</span> <span class="o">=</span> 
+
 <span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
 <span class="na">sidebar_width</span> <span class="o">=</span> <span class="s">240</span>
 <span class="na">toc_depth</span> <span class="o">=</span> <span class="s">2</span>
@@ -238,6 +264,21 @@ setup.py
 <p class="admonition-title">Warning</p>
 <p>Warning.</p>
 </div>
+</dd>
+<dt id="term-github_repo">github_repo</dt><dd><p>(Only valid when <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> is specified)</p>
+<p>Show a Github repo link of <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER/GITHUB_REPO</span></code>instead of your user profile page.</p>
+</dd>
+<dt id="term-github_user">github_user</dt><dd><p>Github username. It will create a icon-weblink on the headbar that allows others visit your Github profile page <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER</span></code>.</p>
+</dd>
+<dt id="term-headbar_height">headbar_height</dt><dd><p>The height of headbar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">30</span></code></p>
+</dd>
+<dt id="term-headbar_links">headbar_links</dt><dd><p>Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">'headbar_links':</span> <span class="pre">['Development',</span> <span class="pre">'Documentation']</span></code> will show:</p>
+<ul class="simple">
+<li><p>'Development' link only if the user is browsing the 'Documentation' webpage</p></li>
+<li><p>'Documentation' link only if the user is browsing the 'Development' webpage</p></li>
+<li><p>Both 'Development' and 'Documentation' links if the user is browsing other webpages.</p></li>
+</ul>
 </dd>
 <dt id="term-image_logo">image_logo</dt><dd><p>The logo image file path. Default is undefined. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
 <p>Note that the file path is the subpath under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> defined in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. For example, if you have following lines:</p>

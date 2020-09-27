@@ -1,4 +1,4 @@
-Publications
+Bibliography
 ==================
 
 This page contains a publication list of the website owner.

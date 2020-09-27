@@ -61,17 +61,37 @@
     {{ pathto(static_build_path + filepath|e, 1) }}
 {%- endmacro %}
 
+{%- macro pathto_source(filepath, source_path='_sources/') -%}
+    {{ pathto(source_path + filepath|e, 1) }}
+{%- endmacro %}
+
+
+{%- macro simrofy_headlinks() -%}
+    {%- set tocstr = toctree(titles_only=true, includehidden=true)
+        | replace("href=", "></a>")
+        | replace("</li>", "</li>;;") | striptags -%}
+    {%- set headlinks = ''.join(tocstr.split(':')[1:]).split(';;') -%}
+    {%- for item in headlinks -%}
+        {% set plink = item.split('>')[0] | trim | trim('"') %}
+        {% set ptitle = item.split('>')[1] %}
+        {%- if plink != "#" and (not theme_headbar_links) or plink|replace(".html", "") in theme_headbar_links %}
+            <a href="{{ plink|e }}">{{ ptitle }}</a>
+        {%- endif %}
+    {%- endfor -%}
+{%- endmacro -%}
+
+
 {%- macro simrofy_sidebar() %}
 {%- if theme_sidebar_position in ['right', 'left'] %}
 <div class="sidebar container" role="navigation" aria-label="main navigation">
     <div class="sidebarwrapper">
         <div id="sidebar_home">
             {# Logo in sidebar #}
-            <a class="logo" href={{ url_mainsite }}>
+            <a class="logo" href={{ url_mainsite|e }}>
             {% if theme_image_logo %}
                 {%- block sidebar_logo %}
                 <img class="align-center" id="sidebar_logo" alt="Website logo"
-                    src="{{ pathto_static(theme_image_logo) }}"
+                    src="{{ pathto_static(theme_image_logo)|e }}"
                     style="width:
                         {%- if theme_image_logo_width|float <= 1 -%}
                             {{ (theme_sidebar_width|int * theme_image_logo_width|float)|int }}
@@ -116,10 +136,37 @@
 {# SIDEBAR #}
 {%- block sidebar %}{{ simrofy_sidebar() }}{%- endblock sidebar %}
 
+{# CONTENT HEADBAR #}
+{%- block headbar %}
+<div class="headbar container" role="contenthead">
+    <div class="headbarwrapper">
+        <div id="headbar_home"><a href={{ url_mainsite|e }}>{{ _('Homepage') }}</a>&nbsp;|&nbsp;</div>
+        <div class="headbarsources">|&nbsp;{#- Source links -#}
+        {%- if show_source and has_source and sourcename -%}
+            <a class="sourcelink" href="{{ pathto_source(sourcename)|e }}">{{ _('Raw') }}</a>
+        {%- endif -%}
+        {%- if theme_github_user -%}
+            {%- if theme_github_repo -%}
+                {% set gh_url = ['https://github.com', theme_github_user, theme_github_repo]|join('/') %}
+            {%- else -%}
+                {% set gh_url = 'https://github.com/' + theme_github_user %}
+            {%- endif -%}&nbsp;|&nbsp;
+            <a class="sourcelink" href="{{ gh_url|e }}">
+                <img src="{{ pathto_static('github-icon.png')|e }}" alt="Github Icon"
+                    style="height: {{ (0.8 * theme_headbar_height|int)|int|todim }};" />
+            </a>
+        {%- endif -%}
+        </div>
+        <div class="headbarlinks">
+            {{ simrofy_headlinks() }}
+        </div>
+    </div>
+</div>
+{%- endblock headbar %}
+
 {%- block content %}
 <div class="document">
     <div class="documentwrapper">
-
     {# MAIN DOCUMENT PROCESSED BY BUILDER #}
     {%- block document %}
     <div class="body container" role="main">

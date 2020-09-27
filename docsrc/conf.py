@@ -26,7 +26,10 @@ html_static_path = ["_static"]
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
+    'headbar_links': ['Development', 'Documentation'],
     'sidebar_position': 'left',
+    'github_user': 'wklchris',
+    'github_repo': 'sphinx-simrofy-theme',
     'image_logo': 'logo.png',
     'image_logo_width': 0.75
 }

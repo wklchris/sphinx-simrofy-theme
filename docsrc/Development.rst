@@ -17,7 +17,6 @@ Here are the features on the schedule:
 - **Important but not urgent**\ :
   
   * Enable/disable sidebar
-  * Topbar
   * Bibliography
   * Mobile device adaptation
 
@@ -35,6 +34,7 @@ This log shows what features have been implemented:
 * 0.1.x
 
   * Sidebar: basic style; homepage (text & logo) link; toctree
+  * Headbar: basic style; source file link
   * Head: Meta Charset, title.
   * Style:
 

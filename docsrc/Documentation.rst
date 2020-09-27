@@ -64,7 +64,7 @@ Building Simrofy by yourself
 
 .. tip::
 
-    Skip this step if you've successfully installed Simrofy through pip command.
+    Skip this section if you've successfully installed Simrofy through pip command.
 
 If you can't install it via pip, an alternative is to consider downloading the source code of Simrofy and compile it by yourself.
 
@@ -194,6 +194,26 @@ Here is a parameter list for Simrofy's theme options:
         .. warning::
 
             Warning.
+
+    github_user
+        Github username. It will create a icon-weblink on the headbar that allows others visit your Github profile page ``https://github.com/GITHUB_USER``\ .
+
+    github_repo
+        (Only valid when :term:`github_user` is specified)
+
+        Show a Github repo link of ``https://github.com/GITHUB_USER/GITHUB_REPO``\ instead of your user profile page.
+
+    headbar_links
+        Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.
+
+        For example: ``'headbar_links': ['Development', 'Documentation']`` will show:
+
+        * 'Development' link only if the user is browsing the 'Documentation' webpage
+        * 'Documentation' link only if the user is browsing the 'Development' webpage
+        * Both 'Development' and 'Documentation' links if the user is browsing other webpages.
+
+    headbar_height
+        The height of headbar in unit of px. Default is ``30``
 
     image_logo
         The logo image file path. Default is undefined. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).
