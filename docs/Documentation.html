@@ -42,14 +42,15 @@
         <div id="sidebar_rel">
             <p class="caption"><span class="caption-text">Table of Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Publications.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quick-guide">Quick Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#theme-options">Theme Options</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
 </ul>
 
         </div>
@@ -69,10 +70,10 @@
         <div class="headbarlinks">
             
         
-        
             <a href="Development.html">Development</a>
         
         
+            <a href="Examples.html">Examples</a>
         </div>
     </div>
 </div>
@@ -84,13 +85,41 @@
   <div class="section" id="documentation">
 <span id="chapter-simrofy-doc"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
 <p>This is the documentation of Sphinx theme Simrofy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> for details. In additional, the <a class="reference internal" href="Examples.html#chapter-examples"><span class="std std-ref">Examples</span></a> chapter of this website also provides a lot of useful information.</p>
+<p>reStructuredText is not mandantor but <strong>highly recommended</strong>. Although you can write Markdown with <a class="reference external" href="https://recommonmark.readthedocs.io/en/latest/">recommonmark</a> extension, many features of Sphinx is only avaliable to reStructuredText syntax.</p>
+</div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
 <p>Last updated was on 2020-09-27.</p>
 </div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Simrofy theme provides following features (for a full theme options list, see <a class="reference internal" href="#theme-options"><span class="std std-ref">Theme Options</span></a> section below):</p>
+<ul class="simple">
+<li><p>Headbar: It can't be hidden. Users can decide what link to display (<a class="reference internal" href="#term-headbar_links"><span class="xref std std-term">headbar_links</span></a>), adjust its height (<a class="reference internal" href="#term-headbar_height"><span class="xref std std-term">headbar_height</span></a>).</p>
+<ul>
+<li><p>The &quot;Raw&quot; button can be disabled in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> (see <a class="reference internal" href="#section-quick-guide"><span class="std std-ref">Quick Guide</span></a> section).</p></li>
+<li><p>The Github button is disabled by default, unless user use options <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> and <a class="reference internal" href="#term-github_repo"><span class="xref std std-term">github_repo</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Sidebar: Users can enable/disable it, adjust its width and position. See options <a class="reference internal" href="#term-sidebar_position"><span class="xref std std-term">sidebar_position</span></a> and <a class="reference internal" href="#term-sidebar_width"><span class="xref std std-term">sidebar_width</span></a>.</p>
+<ul>
+<li><p>The logo image is enabled by <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-image_logo_width"><span class="xref std std-term">image_logo_width</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Others</p>
+<ul>
+<li><p>Customize admonition colors by options like <code class="docutils literal notranslate"><span class="pre">admonition_**_color</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Other customization can be achieved through adding/editing template, CSS or JavaScript files. Please view the source code of Simrofy and/or <a class="reference external" href="https://www.sphinx-doc.org/en/master/templating.html">Sphinx' templating guide</a>.</p>
+</div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Simrofy relies on few Dependencies and is easily to fetch using pip, the command line package manager that goes with Python.</p>
 <div class="section" id="dependencies">
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
@@ -104,6 +133,12 @@
 <li><p><strong>Sphinx</strong></p>
 <p>Always better to choose a newer Sphinx version. You can scroll down to read the footer of current webpage and find under which Sphinx version this document was built; all versions no earlier than it should be good.</p>
 <p>After installing Python, you can follow the download instruction of <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> to install it via <code class="docutils literal notranslate"><span class="pre">pip</span></code> command.</p>
+</li>
+</ul>
+<p>Optional dependencies:</p>
+<ul>
+<li><p><strong>sphinxcontrib-bibtex</strong></p>
+<p>This extension if for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (<code class="docutils literal notranslate"><span class="pre">*.bib</span></code>) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at <a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a>, or read <a class="reference internal" href="Examples.html#sec-bib-example"><span class="std std-ref">Bibliography</span></a> section of Simrofy documentation.</p>
 </li>
 </ul>
 </div>
@@ -148,31 +183,44 @@ setup.py
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py sdist bdist_wheel
 </pre></div>
 </div>
+<p>If you encounter an error, probably because you haven't installed the <code class="docutils literal notranslate"><span class="pre">wheel</span></code> package. Install it and try above building again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install wheel
+</pre></div>
+</div>
 </li>
 <li><p>You will find compiled packages under the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder. Then you can directly install it by pip:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install dist/sphinx_simrofy_theme-VERSION.EXTENSION
 </pre></div>
 </div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> with version string of your build (like <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> ) and <code class="docutils literal notranslate"><span class="pre">EXTENSION</span></code> with package extension (either <code class="docutils literal notranslate"><span class="pre">.whl</span></code> or <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> ).</p>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> with version string of your build (like <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> ) and <code class="docutils literal notranslate"><span class="pre">EXTENSION</span></code> with package extension (either <code class="docutils literal notranslate"><span class="pre">whl</span></code> or <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> ). For example, &quot;sphinx_simrofy_theme-0.1.0.whl&quot; is a common choice for Windows users who are installing version 0.1.0.</p>
 </li>
 <li><p>You have finished building Simrofy and it has been installed on your machine.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="quick-guide">
-<h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h2>
+<span id="section-quick-guide"></span><h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h2>
 <p>To apply Simrofy theme to your Sphinx project, put following line inside your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx-simrofy-theme&#39;</span>  <span class="c1"># These symbols are hyphens, not underlines!</span>
 </pre></div>
 </div>
 <p>Then you can follow the general Sphinx writing process. To customize Simrofy theme, use <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file. See <a class="reference internal" href="#theme-options"><span class="std std-ref">Theme Options</span></a> section below.</p>
 <p>Other notes:</p>
-<ul class="simple">
+<ul>
 <li><p>The 'Raw' button on the headbar can be removed by disabling copy source files into <code class="docutils literal notranslate"><span class="pre">_sources</span></code> path of the output folder. Use <code class="docutils literal notranslate"><span class="pre">html_copy_source</span> <span class="pre">=</span> <span class="pre">False</span></code> in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to disable it.</p></li>
+<li><p>The mechanism behind the default headbar links (or user-defined <code class="docutils literal notranslate"><span class="pre">headbar_links</span></code> ) is pretty unclear since Sphinx doesn't provide a simple way to read the doctree list. User needs to avoid using any of following substrings in document filenames:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">href=</span></code> , or</p></li>
+<li><p>double semicolons <code class="docutils literal notranslate"><span class="pre">;;</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<p>These strings are used for processing the output of <code class="docutils literal notranslate"><span class="pre">toctree</span></code> call of the Sphinx builder. Embedding them in filenames may cause building error or unexpected HTTML outputs.</p>
+</li>
 </ul>
 </div>
 <div class="section" id="theme-options">
-<span id="id1"></span><h2>Theme Options<a class="headerlink" href="#theme-options" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Theme Options<a class="headerlink" href="#theme-options" title="Permalink to this headline">¶</a></h2>
 <p>In the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, we can specify theme options through the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary variable. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;sidebar_position&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
@@ -183,7 +231,7 @@ setup.py
 </div>
 <div class="section" id="default-values-of-theme-options">
 <h3>Default values of theme options<a class="headerlink" href="#default-values-of-theme-options" title="Permalink to this headline">¶</a></h3>
-<p>All dictionary keys used here should be designed in the Simrofy theme. Please check the <code class="docutils literal notranslate"><span class="pre">theme.conf</span></code> file's <code class="docutils literal notranslate"><span class="pre">[options]</span></code> sections for details. For convinience, I also put the whole file here:</p>
+<p>All dictionary keys used in <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> should be designed in the Simrofy theme. Please check the <code class="docutils literal notranslate"><span class="pre">theme.conf</span></code> file's <code class="docutils literal notranslate"><span class="pre">[options]</span></code> sections for details. For convinience, I also put the whole file here:</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[theme]</span>
 <span class="na">inherit</span> <span class="o">=</span> <span class="s">basic</span>
 <span class="na">stylesheet</span> <span class="o">=</span> <span class="s">simrofy.css</span>
@@ -269,13 +317,13 @@ setup.py
 </div>
 </dd>
 <dt id="term-github_repo">github_repo</dt><dd><p>(Only valid when <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> is specified)</p>
-<p>Show a Github repo link of <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER/GITHUB_REPO</span></code>instead of your user profile page.</p>
+<p>Show a Github repo link of <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER/GITHUB_REPO</span></code> instead of your user profile page.</p>
 </dd>
-<dt id="term-github_user">github_user</dt><dd><p>Github username. It will create a icon-weblink to <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER</span></code>on the headbar that allows others visit your Github profile page.</p>
+<dt id="term-github_user">github_user</dt><dd><p>Github username. It will create a icon-weblink to <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER</span></code> on the headbar that allows others visit your Github profile page.</p>
 </dd>
 <dt id="term-headbar_height">headbar_height</dt><dd><p>The height of headbar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">30</span></code></p>
 </dd>
-<dt id="term-headbar_links">headbar_links</dt><dd><p>Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.</p>
+<dt id="term-headbar_links">headbar_links</dt><dd><p>Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> and the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.</p>
 <p>For example: <code class="docutils literal notranslate"><span class="pre">'headbar_links':</span> <span class="pre">['Development',</span> <span class="pre">'Documentation']</span></code> will show:</p>
 <ul class="simple">
 <li><p>'Development' link only if the user is browsing the 'Documentation' webpage</p></li>

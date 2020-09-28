@@ -10,7 +10,8 @@ smartquotes = False          # Show double-dashes clearly
 today_fmt = "%Y-%m-%d"       # Date format when using |today| replacement syntax
 extensions = [
     'sphinx.ext.mathjax',    # Math equation support
-    'recommonmark'           # Markdown support if you don't like reStructuredText
+    'recommonmark',          # Markdown support if you don't like reStructuredText
+    'sphinxcontrib.bibtex'   # Bibliography support
 ]
 
 
@@ -26,7 +27,7 @@ html_static_path = ["_static"]
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
-    'headbar_links': ['Development', 'Documentation'],
+    # 'headbar_links': ['Development', 'Documentation'],
     'sidebar_position': 'left',
     'github_user': 'wklchris',
     'github_repo': 'sphinx-simrofy-theme',
@@ -39,4 +40,6 @@ html_theme_options = {
 templates_path = ['_templates']
 rst_epilog = """
 .. _Sphinx: https://www.sphinx-doc.org/
+.. _sphinxcontrib-bibtex: https://sphinxcontrib-bibtex.readthedocs.io/
+.. _recommonmark: https://recommonmark.readthedocs.io/en/latest/
 """

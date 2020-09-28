@@ -108,6 +108,7 @@ div.headbarlinks a {
     margin-right: 20px;
     text-decoration: underline dotted;
 }
+div.headbarlinks a:last-child { margin-right: 10px;}
 div.sourcelink { margin-right: 10px; }
 
 /* sidebar */
@@ -184,9 +185,10 @@ code { font-size: smaller;  }
 div.highlight > pre {
     background-color: #eee;
     padding: 5px;
+    white-space: pre-wrap;
 }
 
-span.pre {
+code {
     border: 1px solid gray;
     padding: 2px 0.5ex;
 }

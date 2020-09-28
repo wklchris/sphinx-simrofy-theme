@@ -12,6 +12,7 @@ Here are the features on the schedule:
 - **Urgent**\ :
 
   * Sidebar toctree
+  * Collapsible sidebar?
   * Previous/next button if no sidebar
 
 - **Important but not urgent**\ :
@@ -34,7 +35,7 @@ This log shows what features have been implemented:
 
   * Sidebar: basic style; homepage (text & logo) link; toctree
   * Headbar: basic style; source file link; github link; customized doc links
-  * Head: Meta Charset, title.
+  * Head: meta charset; title.
   * Style:
 
     * Admonition style: A crude style mimicking the Read the Docs admonitions.

@@ -6,9 +6,9 @@ Welcome to sphinx-simrofy-theme's documentation!
    :caption: Table of Contents:
    :hidden:
    
-   Publications.rst
    Development.rst
    Documentation.rst
+   Examples.rst
 
 .. warning::
 
@@ -39,7 +39,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,vestibul
 
 .. math::
 
-    \int_0^\pi \sin^2 x dx = \frac{\pi}{2}
+    \int_0^\pi \sin^2 x\,dx = \frac{\pi}{2}
 
 Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbiauctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, ultricieset, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquetmagna, vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis.Suspendisse ut massa.  Cras nec ante.  Pellentesque a nulla.  Cum sociisnatoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Aliquam tincidunt urna. Nulla ullamcorper vestibulum turpis. Pellentesquecursus luctus mauris.
 

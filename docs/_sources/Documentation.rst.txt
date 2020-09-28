@@ -5,12 +5,42 @@ Documentation
 
 This is the documentation of Sphinx theme Simrofy. 
 
+.. note::
+
+    This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website Sphinx_ for details. In additional, the :ref:`chapter-examples` chapter of this website also provides a lot of useful information.
+
+    reStructuredText is not mandantor but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax.
+
 .. caution::
 
     Simrofy is still in beta and its features and options may change very often. 
     
     Last updated was on |today|\ .
 
+
+Overview
+--------------------
+
+The Simrofy theme provides following features (for a full theme options list, see :ref:`theme-options` section below):
+
+* Headbar: It can't be hidden. Users can decide what link to display (\ :term:`headbar_links`\ ), adjust its height (\ :term:`headbar_height`\ ).
+
+  * The "Raw" button can be disabled in ``conf.py`` (see :ref:`section-quick-guide` section).
+  * The Github button is disabled by default, unless user use options :term:`github_user` and :term:`github_repo`\ .
+
+* Sidebar: Users can enable/disable it, adjust its width and position. See options :term:`sidebar_position` and :term:`sidebar_width`\ . 
+  
+  * The logo image is enabled by :term:`image_logo` and its width can be adjusted by :term:`image_logo_width`\ .
+
+* Others
+
+  * Customize admonition colors by options like ``admonition_**_color``\ .
+
+
+Other customization can be achieved through adding/editing template, CSS or JavaScript files. Please view the source code of Simrofy and/or `Sphinx' templating guide <https://www.sphinx-doc.org/en/master/templating.html>`_.
+
+
+.. _installation:
 
 Installation
 --------------------
@@ -36,6 +66,12 @@ Dependencies:
   Always better to choose a newer Sphinx version. You can scroll down to read the footer of current webpage and find under which Sphinx version this document was built; all versions no earlier than it should be good.
 
   After installing Python, you can follow the download instruction of Sphinx_ to install it via ``pip`` command.
+
+Optional dependencies:
+
+- **sphinxcontrib-bibtex**
+
+  This extension if for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (\ ``*.bib``\ ) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at sphinxcontrib-bibtex_, or read :ref:`sec-bib-example` section of Simrofy documentation.
 
 
 Installation via Pip
@@ -87,15 +123,24 @@ If you can't install it via pip, an alternative is to consider downloading the s
 
       python setup.py sdist bdist_wheel
 
+   If you encounter an error, probably because you haven't installed the ``wheel`` package. Install it and try above building again:
+
+   .. code-block:: bash
+
+      pip install wheel 
+
 4. You will find compiled packages under the ``dist/`` folder. Then you can directly install it by pip:
    
    .. code-block:: bash
       
       pip install dist/sphinx_simrofy_theme-VERSION.EXTENSION
    
-   Replace ``VERSION`` with version string of your build (like ``1.0.0`` ) and ``EXTENSION`` with package extension (either ``.whl`` or ``.tar.gz`` ).
+   Replace ``VERSION`` with version string of your build (like ``1.0.0`` ) and ``EXTENSION`` with package extension (either ``whl`` or ``tar.gz`` ). For example, "sphinx_simrofy_theme-|release|.whl" is a common choice for Windows users who are installing version |release|.
+
 5. You have finished building Simrofy and it has been installed on your machine.
 
+
+.. _section-quick-guide:
 
 Quick Guide
 --------------------
@@ -112,7 +157,12 @@ Then you can follow the general Sphinx writing process. To customize Simrofy the
 Other notes:
 
 * The 'Raw' button on the headbar can be removed by disabling copy source files into ``_sources`` path of the output folder. Use ``html_copy_source = False`` in ``conf.py`` to disable it.
-
+* The mechanism behind the default headbar links (or user-defined ``headbar_links`` ) is pretty unclear since Sphinx doesn't provide a simple way to read the doctree list. User needs to avoid using any of following substrings in document filenames:
+    
+    * ``href=`` , or
+    * double semicolons ``;;``\ . 
+  
+  These strings are used for processing the output of ``toctree`` call of the Sphinx builder. Embedding them in filenames may cause building error or unexpected HTTML outputs.
 
 .. _theme-options:
 
@@ -132,7 +182,7 @@ In the ``conf.py`` file, we can specify theme options through the ``html_theme_o
 Default values of theme options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All dictionary keys used here should be designed in the Simrofy theme. Please check the ``theme.conf`` file's ``[options]`` sections for details. For convinience, I also put the whole file here:
+All dictionary keys used in ``html_theme_options`` should be designed in the Simrofy theme. Please check the ``theme.conf`` file's ``[options]`` sections for details. For convinience, I also put the whole file here:
 
 .. literalinclude:: ../sphinx_simrofy_theme/theme.conf
     :language: ini
@@ -201,15 +251,15 @@ Here is a parameter list for Simrofy's theme options:
             Warning.
 
     github_user
-        Github username. It will create a icon-weblink to ``https://github.com/GITHUB_USER``\ on the headbar that allows others visit your Github profile page.
+        Github username. It will create a icon-weblink to ``https://github.com/GITHUB_USER`` on the headbar that allows others visit your Github profile page.
 
     github_repo
         (Only valid when :term:`github_user` is specified)
 
-        Show a Github repo link of ``https://github.com/GITHUB_USER/GITHUB_REPO``\ instead of your user profile page.
+        Show a Github repo link of ``https://github.com/GITHUB_USER/GITHUB_REPO`` instead of your user profile page.
 
     headbar_links
-        Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.
+        Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the ``index.rst`` and the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.
 
         For example: ``'headbar_links': ['Development', 'Documentation']`` will show:
 

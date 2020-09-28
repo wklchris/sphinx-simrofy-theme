@@ -70,7 +70,7 @@
     {%- set tocstr = toctree(titles_only=true, includehidden=true)
         | replace("href=", "></a>")
         | replace("</li>", "</li>;;") | striptags -%}
-    {%- set headlinks = ''.join(tocstr.split(':')[1:]).split(';;') -%}
+    {%- set headlinks = ''.join(tocstr.split(':')[1:]).strip(';;').split(';;') -%}
     {%- for item in headlinks -%}
         {% set plink = item.split('>')[0] | trim | trim('"') %}
         {% set ptitle = item.split('>')[1] %}
