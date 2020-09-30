@@ -6,7 +6,7 @@ with open("ReadMe.md", encoding='utf-8') as f:
 
 setup(
     name = "sphinx-simrofy-theme",
-    version = '0.1.0',
+    version = '0.2.0',
     packages = ['sphinx_simrofy_theme'],
     include_package_data = True,
     install_requires = ["sphinx"],
