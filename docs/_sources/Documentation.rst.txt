@@ -29,8 +29,10 @@ The Simrofy theme provides following features (for a full theme options list, se
   * The Github button is disabled by default, unless user use options :term:`github_user` and :term:`github_repo`\ .
 
 * Sidebar: Users can enable/disable it, adjust its width and position. See options :term:`sidebar_position` and :term:`sidebar_width`\ . 
-  
+
+  * Sidebar generates a toctree with maxdepth 2 (i.e. only including ``<h1>`` and ``<h2>`` headings).
   * The logo image is enabled by :term:`image_logo` and its width can be adjusted by :term:`image_logo_width`\ .
+  * The background color of sidebar is given by :term:`sidebar_color`\ .
 
 * Others
 
@@ -303,6 +305,5 @@ Here is a parameter list for Simrofy's theme options:
     sidebar_width
         The width of the sidebar in unit of px. Default is ``240``
 
-    toc_depth
-        The maximal depth of the table of content (toc) items. Default is ``2`` , i.e. only showing HTML h1 (page title) and h2 tags.
-    
+    sidebar_color
+        The background color of sidebar. Default is color code ``'#009966'`` (a medium dark green).

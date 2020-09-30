@@ -40,19 +40,27 @@
             </a>
         </div>
         <div id="sidebar_rel">
-            <p class="caption"><span class="caption-text">Table of Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quick-guide">Quick Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#theme-options">Theme Options</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
-</ul>
-
+        
+                <div class="sidetoc_collapse"><a href="Development.html">Development</a></div>
+        
+                    <div class="sidetoc_expand">
+                        <a href="#">Documentation</a>
+                    </div>
+                    <div class="sidetoc_lower">
+                        <a href="#overview">Overview</a>
+                    </div>
+                    <div class="sidetoc_lower">
+                        <a href="#installation">Installation</a>
+                    </div>
+                    <div class="sidetoc_lower">
+                        <a href="#quick-guide">Quick Guide</a>
+                    </div>
+                    <div class="sidetoc_lower">
+                        <a href="#theme-options">Theme Options</a>
+                    </div>
+        
+                <div class="sidetoc_collapse"><a href="Examples.html">Examples</a></div>
+        
         </div>
     </div>
 </div>
@@ -93,7 +101,7 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-09-27.</p>
+<p>Last updated was on 2020-09-29.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -107,7 +115,9 @@
 </li>
 <li><p>Sidebar: Users can enable/disable it, adjust its width and position. See options <a class="reference internal" href="#term-sidebar_position"><span class="xref std std-term">sidebar_position</span></a> and <a class="reference internal" href="#term-sidebar_width"><span class="xref std std-term">sidebar_width</span></a>.</p>
 <ul>
+<li><p>Sidebar generates a toctree with maxdepth 2 (i.e. only including <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code> headings).</p></li>
 <li><p>The logo image is enabled by <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-image_logo_width"><span class="xref std std-term">image_logo_width</span></a>.</p></li>
+<li><p>The background color of sidebar is given by <a class="reference internal" href="#term-sidebar_color"><span class="xref std std-term">sidebar_color</span></a>.</p></li>
 </ul>
 </li>
 <li><p>Others</p>
@@ -249,6 +259,7 @@ setup.py
 
 <span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
 <span class="na">sidebar_width</span> <span class="o">=</span> <span class="s">240</span>
+<span class="na">sidebar_color</span> <span class="o">=</span> <span class="s">#009966</span>
 <span class="na">toc_depth</span> <span class="o">=</span> <span class="s">2</span>
 
 <span class="na">admonition_attention_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
@@ -347,6 +358,8 @@ setup.py
 </dd>
 <dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> for details.</p>
 </dd>
+<dt id="term-sidebar_color">sidebar_color</dt><dd><p>The background color of sidebar. Default is color code <code class="docutils literal notranslate"><span class="pre">'#009966'</span></code> (a medium dark green).</p>
+</dd>
 <dt id="term-sidebar_position">sidebar_position</dt><dd><p>The position of the sidebar. Users can also select:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'left'</span></code>: Display the sidebar on the left. This is the default value.</p></li>
@@ -355,8 +368,6 @@ setup.py
 </ul>
 </dd>
 <dt id="term-sidebar_width">sidebar_width</dt><dd><p>The width of the sidebar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">240</span></code></p>
-</dd>
-<dt id="term-toc_depth">toc_depth</dt><dd><p>The maximal depth of the table of content (toc) items. Default is <code class="docutils literal notranslate"><span class="pre">2</span></code> , i.e. only showing HTML h1 (page title) and h2 tags.</p>
 </dd>
 </dl>
 </div>

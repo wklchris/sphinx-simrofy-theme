@@ -30,7 +30,6 @@
 {%- set simrofy_version = '0.1.0' %}
 {%- set titlesuffix = ' - ' + project %}
 
-{%- set simrofy_toc = toctree(maxdepth=theme_toc_depth|int, includehidden=true) %}
 {%- set url_mainsite = pathto(master_doc) %}
 
 {# --- MACROS --- #}
@@ -105,7 +104,28 @@
             </a>
         </div>
         <div id="sidebar_rel">
-            {{ simrofy_toc }}
+        {%- set sidebar_toc = toctree(maxdepth=theme_toc_depth|int, includehidden=true)
+                | replace("href=", "></a>")
+                | replace(' current">', 'current">')
+                | replace('current">', '">') %}
+        {%- set sidetoc = sidebar_toc.split('<li class="toctree-l1">') %}
+        {% for item in sidetoc if '</li>' in item %}
+            {%- set item = item | striptags | trim('"') %}
+            {%- if ' "' in item %}
+                {%- for subitem in item.split(' "') %}
+                    {%- set plink = subitem.split('">')[0] | trim %}
+                    {%- set ptitle = subitem.split('">')[1] %}
+                    {%- set pclass = 'sidetoc_expand' if loop.index == 1 else 'sidetoc_lower' %}
+                    <div class="{{ pclass }}">
+                        <a href="{{ plink|e }}">{{ ptitle }}</a>
+                    </div>
+                {%- endfor %}
+            {%- else %}
+                {%- set plink = item.split('">')[0] | trim %}
+                {%- set ptitle = item.split('">')[1] %}
+                <div class="sidetoc_collapse"><a href="{{ plink|e }}">{{ ptitle }}</a></div>
+            {%- endif %}
+        {% endfor %}
         </div>
     </div>
     {%- block extrasidebar %}{# user customize #}{%- endblock extrasidebar %}

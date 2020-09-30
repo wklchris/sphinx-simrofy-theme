@@ -17,7 +17,6 @@ Here are the features on the schedule:
 
 - **Important but not urgent**\ :
   
-  * Bibliography
   * Mobile device adaptation
 
 - Minor:

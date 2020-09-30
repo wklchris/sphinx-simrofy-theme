@@ -21,7 +21,7 @@ div.bodywrapper, div.footerwrapper, div.headbarwrapper {
     margin-top: 0;
         margin-left: calc(240px + 10px);
 }
-div.bodywrapper { padding-top: calc(30px + 20px); }
+div.bodywrapper { padding-top: calc(30px + 10px); }
 div.footerwrapper { 
     border-top: 1px double gray;
     padding-top: 0.5ex;
@@ -107,22 +107,36 @@ div.headbarlinks a {
 div.headbarlinks a:last-child { margin-right: 10px;}
 div.sourcelink { margin-right: 10px; }
 
+:target::before {  /* headbar anchor offset */
+    display: block; 
+    content: " "; 
+    margin-top: -calc(30px + 25px); 
+    height: calc(30px + 25px); 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+
 /* sidebar */
 
 div.sidebar {
     z-index: 10;
     position: fixed;
-    background-color: #ffe;
     height: 100%;
-    padding: 10px 5px; 
+    padding: 10px 0; 
     overflow-y: auto;
     width: 240px;
+    max-width: 240px;
+    background-color: #009966;
         left: 0;
-        border-right: 3px solid steelblue;
+        border-right: 5px solid darkgray;
 }
 div.sidebar::-webkit-scrollbar { width: 5px; }
+div.sidebarwrapper > * { width: inherit; max-width: inherit; }
 
 #sidebar_home { padding-bottom: 10px; }
+
+div[class^="sidetoc_"] > a { color: white; text-decoration-line: none; }
 
 /* admonitions */
 

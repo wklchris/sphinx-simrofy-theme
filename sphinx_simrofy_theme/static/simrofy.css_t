@@ -25,7 +25,7 @@ div.bodywrapper, div.footerwrapper, div.headbarwrapper {
         margin-left: calc({{ theme_sidebar_width|todim }} + 10px);
     {%- endif %}
 }
-div.bodywrapper { padding-top: calc({{ theme_headbar_height|todim }} + 20px); }
+div.bodywrapper { padding-top: calc({{ theme_headbar_height|todim }} + 10px); }
 div.footerwrapper { 
     border-top: 1px double gray;
     padding-top: 0.5ex;
@@ -111,27 +111,41 @@ div.headbarlinks a {
 div.headbarlinks a:last-child { margin-right: 10px;}
 div.sourcelink { margin-right: 10px; }
 
+:target::before {  /* headbar anchor offset */
+    display: block; 
+    content: " "; 
+    margin-top: -calc({{ theme_headbar_height|todim }} + 25px); 
+    height: calc({{ theme_headbar_height|todim }} + 25px); 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+
 /* sidebar */
 
 div.sidebar {
     z-index: 10;
     position: fixed;
-    background-color: #ffe;
     height: 100%;
-    padding: 10px 5px; 
+    padding: 10px 0; 
     overflow-y: auto;
     width: {{ theme_sidebar_width|todim }};
+    max-width: {{ theme_sidebar_width|todim }};
+    background-color: {{ theme_sidebar_color }};
     {%- if theme_sidebar_position == 'right' %}
         right: 0;
-        border-left: 3px solid steelblue;
+        border-left: 5px solid darkgray;
     {%- elif theme_sidebar_position == 'left' %}
         left: 0;
-        border-right: 3px solid steelblue;
+        border-right: 5px solid darkgray;
     {%- endif %}
 }
 div.sidebar::-webkit-scrollbar { width: 5px; }
+div.sidebarwrapper > * { width: inherit; max-width: inherit; }
 
 #sidebar_home { padding-bottom: 10px; }
+
+div[class^="sidetoc_"] > a { color: white; text-decoration-line: none; }
 
 /* admonitions */
 
