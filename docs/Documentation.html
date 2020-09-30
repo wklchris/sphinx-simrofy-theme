@@ -38,26 +38,29 @@
                     style="width:180px;"/>
             
             </a>
+                    <p class="home_text">Simrofy v0.1.0</p>
         </div>
         <div id="sidebar_rel">
         
                 <div class="sidetoc_collapse"><a href="Development.html">Development</a></div>
         
-                    <div class="sidetoc_expand">
-                        <a href="#">Documentation</a>
-                    </div>
-                    <div class="sidetoc_lower">
+                <div class="sidetoc_expand">
+                    <a href="#">Documentation</a>
+                </div>
+                <div class="sidetocview">
+                     <div class="sidetoc_lower">
                         <a href="#overview">Overview</a>
                     </div>
-                    <div class="sidetoc_lower">
+                     <div class="sidetoc_lower">
                         <a href="#installation">Installation</a>
                     </div>
-                    <div class="sidetoc_lower">
+                     <div class="sidetoc_lower">
                         <a href="#quick-guide">Quick Guide</a>
                     </div>
-                    <div class="sidetoc_lower">
+                     <div class="sidetoc_lower">
                         <a href="#theme-options">Theme Options</a>
                     </div>
+                </div>
         
                 <div class="sidetoc_collapse"><a href="Examples.html">Examples</a></div>
         
@@ -72,7 +75,7 @@
         <div id="headbar_home"><a href=index.html>Homepage</a>&nbsp;|&nbsp;</div>
         <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Documentation.rst.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
                 <img src="
-    _static/github-icon.png" alt="Github Icon"
+    _static/icon/github.png" alt="Github Icon"
                     style="height: 24px;" />
             </a></div>
         <div class="headbarlinks">
@@ -101,7 +104,7 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-09-29.</p>
+<p>Last updated was on 2020-09-30.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -257,9 +260,10 @@ setup.py
 <span class="na">headbar_height</span> <span class="o">=</span> <span class="s">30</span>
 <span class="na">headbar_links</span> <span class="o">=</span> 
 
+<span class="na">sidebar_home_text</span> <span class="o">=</span> 
 <span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
 <span class="na">sidebar_width</span> <span class="o">=</span> <span class="s">240</span>
-<span class="na">sidebar_color</span> <span class="o">=</span> <span class="s">#009966</span>
+<span class="na">sidebar_color</span> <span class="o">=</span> <span class="s">#23A97F</span>
 <span class="na">toc_depth</span> <span class="o">=</span> <span class="s">2</span>
 
 <span class="na">admonition_attention_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
@@ -342,7 +346,7 @@ setup.py
 <li><p>Both 'Development' and 'Documentation' links if the user is browsing other webpages.</p></li>
 </ul>
 </dd>
-<dt id="term-image_logo">image_logo</dt><dd><p>The logo image file path. Default is undefined. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
+<dt id="term-image_logo">image_logo</dt><dd><p>The logo image file path. Default is undefined, which will display a text hyperlink &quot;Homepage&quot; instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
 <p>Note that the file path is the subpath under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> defined in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. For example, if you have following lines:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code in your conf.py</span>
 <span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_my_static&quot;</span><span class="p">]</span>
@@ -359,6 +363,8 @@ setup.py
 <dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> for details.</p>
 </dd>
 <dt id="term-sidebar_color">sidebar_color</dt><dd><p>The background color of sidebar. Default is color code <code class="docutils literal notranslate"><span class="pre">'#009966'</span></code> (a medium dark green).</p>
+</dd>
+<dt id="term-sidebar_home_text">sidebar_home_text</dt><dd><p>A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.</p>
 </dd>
 <dt id="term-sidebar_position">sidebar_position</dt><dd><p>The position of the sidebar. Users can also select:</p>
 <ul class="simple">

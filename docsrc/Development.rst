@@ -11,9 +11,9 @@ Here are the features on the schedule:
 
 - **Urgent**\ :
 
-  * Sidebar toctree
   * Collapsible sidebar?
   * Previous/next button if no sidebar
+  * Social media links in footer & sidebar.
 
 - **Important but not urgent**\ :
   
@@ -21,7 +21,6 @@ Here are the features on the schedule:
 
 - Minor:
 
-  * logo width: in sidebar/headbar
   * Dark theme
 
 

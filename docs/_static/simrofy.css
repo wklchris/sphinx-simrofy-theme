@@ -127,16 +127,41 @@ div.sidebar {
     overflow-y: auto;
     width: 240px;
     max-width: 240px;
-    background-color: #009966;
+    background-color: #23A97F;
         left: 0;
-        border-right: 5px solid darkgray;
 }
+div.sidebar * { background-color: #23A97F; }
 div.sidebar::-webkit-scrollbar { width: 5px; }
 div.sidebarwrapper > * { width: inherit; max-width: inherit; }
 
-#sidebar_home { padding-bottom: 10px; }
+#sidebar_home {
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+p.home_text { margin: 0; padding: 15px 5px 0; color:white; font-weight: bold; }
 
+#sidebar_rel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div[class^="sidetoc_"] {
+        padding-left: 10px; padding-right: 5px;
+}
 div[class^="sidetoc_"] > a { color: white; text-decoration-line: none; }
+div[class^="sidetoc_"]:hover { filter: brightness(1.2); }
+
+div.sidetoc_lower {
+    padding-top: 1px;
+    padding-bottom: 1px;
+        padding-left: 20px;
+    filter: brightness(0.85);
+}
+
+div.sidetocview > div:first-child {  padding-top: 5px; }
+div.sidetocview > div:last-child { padding-bottom: 5px; }
+
 
 /* admonitions */
 

@@ -273,7 +273,7 @@ Here is a parameter list for Simrofy's theme options:
         The height of headbar in unit of px. Default is ``30``
 
     image_logo
-        The logo image file path. Default is undefined. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).
+        The logo image file path. Default is undefined, which will display a text hyperlink "Homepage" instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).
 
         Note that the file path is the subpath under your ``html_static_path`` defined in your ``conf.py``\ . For example, if you have following lines:
 
@@ -294,6 +294,9 @@ Here is a parameter list for Simrofy's theme options:
 
     image_self
         The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your ``html_static_path`` instead of you main folder, see :term:`image_logo` for details.
+
+    sidebar_home_text
+        A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.
 
     sidebar_position
         The position of the sidebar. Users can also select:

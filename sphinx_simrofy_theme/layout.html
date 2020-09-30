@@ -102,6 +102,11 @@
                 {% trans url_mainsite=url_mainsite|e %}Homepage{% endtrans %}
             {% endif %}
             </a>
+            {%- block sidebar_home_text %}
+                {%- if theme_sidebar_home_text %}
+                    <p class="home_text">{{ theme_sidebar_home_text|e }}</p>
+                {%- endif %}
+            {%- endblock sidebar_home_text %}
         </div>
         <div id="sidebar_rel">
         {%- set sidebar_toc = toctree(maxdepth=theme_toc_depth|int, includehidden=true)
@@ -112,14 +117,21 @@
         {% for item in sidetoc if '</li>' in item %}
             {%- set item = item | striptags | trim('"') %}
             {%- if ' "' in item %}
-                {%- for subitem in item.split(' "') %}
+                {%- set subitem = item.split(' "')[0] %}
+                {%- set plink = subitem.split('">')[0] | trim %}
+                {%- set ptitle = subitem.split('">')[1] %}
+                <div class="sidetoc_expand">
+                    <a href="{{ plink|e }}">{{ ptitle }}</a>
+                </div>
+                <div class="sidetocview">
+                {%- for subitem in item.split(' "')[1:] %}
                     {%- set plink = subitem.split('">')[0] | trim %}
                     {%- set ptitle = subitem.split('">')[1] %}
-                    {%- set pclass = 'sidetoc_expand' if loop.index == 1 else 'sidetoc_lower' %}
-                    <div class="{{ pclass }}">
+                     <div class="sidetoc_lower">
                         <a href="{{ plink|e }}">{{ ptitle }}</a>
                     </div>
                 {%- endfor %}
+                </div>
             {%- else %}
                 {%- set plink = item.split('">')[0] | trim %}
                 {%- set ptitle = item.split('">')[1] %}
@@ -172,7 +184,7 @@
                 {% set gh_url = 'https://github.com/' + theme_github_user %}
             {%- endif -%}&nbsp;|&nbsp;{#- delim -#}
             <a class="sourcelink" href="{{ gh_url|e }}">
-                <img src="{{ pathto_static('github-icon.png')|e }}" alt="Github Icon"
+                <img src="{{ pathto_static('icon/github.png')|e }}" alt="Github Icon"
                     style="height: {{ (0.8 * theme_headbar_height|int)|int|todim }};" />
             </a>
         {%- endif -%}
