@@ -97,11 +97,17 @@ div.headbar a {
     text-decoration: none;
 }
 div.headbarwrapper {
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 10px;
 }
 div.headbarwrapper div { display: inline-block; }
 
+#headbar_logo {
+    height: {{ (theme_headbar_height|int * 0.8)|int|todim }};
+    clip-path: circle();
+    background-color: white;
+    margin-right: 10px;
+}
 div.headbarsources, div.headbarlinks { float: right; }
 div.headbarlinks { margin-right: 10px; }
 div.headbarlinks a {
@@ -122,7 +128,7 @@ div.sourcelink { margin-right: 10px; }
 
 
 /* sidebar */
-
+{%- if theme_sidebar_position in ['right', 'left'] -%}
 div.sidebar {
     z-index: 10;
     position: fixed;
@@ -146,6 +152,19 @@ div.sidebarwrapper > * { width: inherit; max-width: inherit; }
     padding-bottom: 10px;
     border-bottom: 1px solid white;
     text-align: center;
+}
+#sidebar_logo {
+    background-color: white;
+    /* logo width */
+    {%- if theme_logo_width|float <= 1 -%}
+        width: {{ (theme_sidebar_width|int * theme_logo_width|float)|int }}px;
+    {%- else -%}
+        width: {{ theme_logo_width|int }}px;
+    {%- endif -%}
+    /* logo clip to circle, max radius limited to 50% */
+    {%- if theme_logo_radius -%}
+        clip-path: circle({{ '{:.0%}'.format(theme_logo_radius|float) }});
+    {%- endif -%}
 }
 p.home_text { margin: 0; padding: 15px 5px 0; color:white; font-weight: bold; }
 
@@ -177,7 +196,7 @@ div.sidetoc_lower {
 
 div.sidetocview > div:first-child {  padding-top: 5px; }
 div.sidetocview > div:last-child { padding-bottom: 5px; }
-
+{%- endif -%}
 
 /* admonitions */
 

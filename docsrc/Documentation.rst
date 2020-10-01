@@ -31,7 +31,7 @@ The Simrofy theme provides following features (for a full theme options list, se
 * Sidebar: Users can enable/disable it, adjust its width and position. See options :term:`sidebar_position` and :term:`sidebar_width`\ . 
 
   * Sidebar generates a toctree with maxdepth 2 (i.e. only including ``<h1>`` and ``<h2>`` headings).
-  * The logo image is enabled by :term:`image_logo` and its width can be adjusted by :term:`image_logo_width`\ .
+  * The logo image is enabled by :term:`logo` and its width can be adjusted by :term:`logo_width`\ .
   * The background color of sidebar is given by :term:`sidebar_color`\ .
 
 * Others
@@ -272,7 +272,7 @@ Here is a parameter list for Simrofy's theme options:
     headbar_height
         The height of headbar in unit of px. Default is ``30``
 
-    image_logo
+    logo
         The logo image file path. Default is undefined, which will display a text hyperlink "Homepage" instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).
 
         Note that the file path is the subpath under your ``html_static_path`` defined in your ``conf.py``\ . For example, if you have following lines:
@@ -282,18 +282,25 @@ Here is a parameter list for Simrofy's theme options:
             # Code in your conf.py  
             html_static_path = ["_my_static"]
             html_theme_options = {
-                'image_logo': 'logo.png'
+                'logo': 'logo.png'
             }
         
         Then you should put your logo file at ``_my_static/logo.png``\ .
 
-    image_logo_width
-        (Only valid when :term:`image_logo` is specified)
+    logo_radius
+        (Only valid when :term:`logo` is specified)
+
+        The radius of the clipping circle to logo. The user input wil be converted into a percentage value and then passed to the ``circle(...)`` function of CSS style ``clip-path``\ . When the value is exact 0.5, it will draw a inscribed-circle viewbox (with respect to the height, if the image is not squared).
+
+        Default is undefined, which means the logo will be displayed in normal rectangle shape. 
+
+    logo_width
+        (Only valid when :term:`logo` is specified)
 
         The logo width in percentage (for a value <= 1.0 ) or unit of px (for a value > 1.0). Default is ``0.8`` , or say 80% sidebar width.
 
     image_self
-        The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your ``html_static_path`` instead of you main folder, see :term:`image_logo` for details.
+        The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your ``html_static_path`` instead of you main folder, see :term:`logo` for details.
 
     sidebar_home_text
         A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.
@@ -309,4 +316,4 @@ Here is a parameter list for Simrofy's theme options:
         The width of the sidebar in unit of px. Default is ``240``
 
     sidebar_color
-        The background color of sidebar. Default is color code ``'#009966'`` (a medium dark green).
+        The background color of sidebar. Default is color code ``'#23A97F'`` (a medium dark green).

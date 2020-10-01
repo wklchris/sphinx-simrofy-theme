@@ -34,8 +34,7 @@
             
                 <img class="align-center" id="sidebar_logo" alt="Website logo"
                     src="
-    _static/logo.png"
-                    style="width:180px;"/>
+    _static/logo.png" />
             
             </a>
                     <p class="home_text">Simrofy v0.2.0</p>
@@ -72,7 +71,9 @@
 
 <div class="headbar container" role="contenthead">
     <div class="headbarwrapper">
-        <div id="headbar_home"><a href=index.html>Homepage</a>&nbsp;|&nbsp;</div>
+        <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
+    _static/logo.png" /><a href=index.html>Homepage</a>&nbsp;|&nbsp;
+        </div>
         <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Documentation.rst.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
                 <img src="
     _static/icon/github.png" alt="Github Icon"
@@ -104,7 +105,7 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-09-30.</p>
+<p>Last updated was on 2020-10-01.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -119,7 +120,7 @@
 <li><p>Sidebar: Users can enable/disable it, adjust its width and position. See options <a class="reference internal" href="#term-sidebar_position"><span class="xref std std-term">sidebar_position</span></a> and <a class="reference internal" href="#term-sidebar_width"><span class="xref std std-term">sidebar_width</span></a>.</p>
 <ul>
 <li><p>Sidebar generates a toctree with maxdepth 2 (i.e. only including <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code> headings).</p></li>
-<li><p>The logo image is enabled by <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-image_logo_width"><span class="xref std std-term">image_logo_width</span></a>.</p></li>
+<li><p>The logo image is enabled by <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-logo_width"><span class="xref std std-term">logo_width</span></a>.</p></li>
 <li><p>The background color of sidebar is given by <a class="reference internal" href="#term-sidebar_color"><span class="xref std std-term">sidebar_color</span></a>.</p></li>
 </ul>
 </li>
@@ -251,8 +252,10 @@ setup.py
 <span class="na">pygments_style</span> <span class="o">=</span> <span class="s">default</span>
 
 <span class="k">[options]</span>
-<span class="na">image_logo</span> <span class="o">=</span>
-<span class="na">image_logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
+<span class="na">logo</span> <span class="o">=</span>
+<span class="na">logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
+<span class="na">logo_radius</span> <span class="o">=</span> 
+
 <span class="na">image_self</span> <span class="o">=</span>
 <span class="na">github_user</span> <span class="o">=</span>
 <span class="na">github_repo</span> <span class="o">=</span>
@@ -346,23 +349,27 @@ setup.py
 <li><p>Both 'Development' and 'Documentation' links if the user is browsing other webpages.</p></li>
 </ul>
 </dd>
-<dt id="term-image_logo">image_logo</dt><dd><p>The logo image file path. Default is undefined, which will display a text hyperlink &quot;Homepage&quot; instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
+<dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> for details.</p>
+</dd>
+<dt id="term-logo">logo</dt><dd><p>The logo image file path. Default is undefined, which will display a text hyperlink &quot;Homepage&quot; instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
 <p>Note that the file path is the subpath under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> defined in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. For example, if you have following lines:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code in your conf.py</span>
 <span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_my_static&quot;</span><span class="p">]</span>
 <span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;image_logo&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span>
+    <span class="s1">&#39;logo&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Then you should put your logo file at <code class="docutils literal notranslate"><span class="pre">_my_static/logo.png</span></code>.</p>
 </dd>
-<dt id="term-image_logo_width">image_logo_width</dt><dd><p>(Only valid when <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> is specified)</p>
+<dt id="term-logo_radius">logo_radius</dt><dd><p>(Only valid when <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> is specified)</p>
+<p>The radius of the clipping circle to logo. The user input wil be converted into a percentage value and then passed to the <code class="docutils literal notranslate"><span class="pre">circle(...)</span></code> function of CSS style <code class="docutils literal notranslate"><span class="pre">clip-path</span></code>. When the value is exact 0.5, it will draw a inscribed-circle viewbox (with respect to the height, if the image is not squared).</p>
+<p>Default is undefined, which means the logo will be displayed in normal rectangle shape.</p>
+</dd>
+<dt id="term-logo_width">logo_width</dt><dd><p>(Only valid when <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> is specified)</p>
 <p>The logo width in percentage (for a value &lt;= 1.0 ) or unit of px (for a value &gt; 1.0). Default is <code class="docutils literal notranslate"><span class="pre">0.8</span></code> , or say 80% sidebar width.</p>
 </dd>
-<dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-image_logo"><span class="xref std std-term">image_logo</span></a> for details.</p>
-</dd>
-<dt id="term-sidebar_color">sidebar_color</dt><dd><p>The background color of sidebar. Default is color code <code class="docutils literal notranslate"><span class="pre">'#009966'</span></code> (a medium dark green).</p>
+<dt id="term-sidebar_color">sidebar_color</dt><dd><p>The background color of sidebar. Default is color code <code class="docutils literal notranslate"><span class="pre">'#23A97F'</span></code> (a medium dark green).</p>
 </dd>
 <dt id="term-sidebar_home_text">sidebar_home_text</dt><dd><p>A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.</p>
 </dd>

@@ -31,8 +31,9 @@ html_theme_options = {
     'sidebar_position': 'left',
     'github_user': 'wklchris',
     'github_repo': 'sphinx-simrofy-theme',
-    'image_logo': 'logo.png',
-    'image_logo_width': 0.75,
+    'logo': 'logo.png',
+    'logo_width': 0.75,
+    'logo_radius': 0.5,
     'sidebar_home_text': f'Simrofy v{release}'
 }
 

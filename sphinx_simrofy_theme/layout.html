@@ -87,16 +87,10 @@
         <div id="sidebar_home">
             {# Logo in sidebar #}
             <a class="logo" href={{ url_mainsite|e }}>
-            {% if theme_image_logo %}
+            {% if theme_logo %}
                 {%- block sidebar_logo %}
                 <img class="align-center" id="sidebar_logo" alt="Website logo"
-                    src="{{ pathto_static(theme_image_logo)|e }}"
-                    style="width:
-                        {%- if theme_image_logo_width|float <= 1 -%}
-                            {{ (theme_sidebar_width|int * theme_image_logo_width|float)|int }}
-                        {%- else -%}
-                            {{ theme_image_logo_width|int }}
-                        {%- endif -%}px;"/>  
+                    src="{{ pathto_static(theme_logo)|e }}" />  
                 {%- endblock sidebar_logo %}
             {% else %}
                 {% trans url_mainsite=url_mainsite|e %}Homepage{% endtrans %}
@@ -172,7 +166,12 @@
 {%- block headbar %}
 <div class="headbar container" role="contenthead">
     <div class="headbarwrapper">
-        <div id="headbar_home"><a href={{ url_mainsite|e }}>{{ _('Homepage') }}</a>&nbsp;|&nbsp;</div>
+        <div id="headbar_home">
+        {%- if theme_logo -%}
+            <img id="headbar_logo" alt="Website logo" src="{{ pathto_static(theme_logo)|e }}" />
+        {%- endif -%}
+        <a href={{ url_mainsite|e }}>{{ _('Homepage') }}</a>&nbsp;|&nbsp;
+        </div>
         <div class="headbarsources">
         {%- if show_source and has_source and sourcename -%}|&nbsp;{#- delim -#}
             <a class="sourcelink" href="{{ pathto_source(sourcename)|e }}">{{ _('Raw') }}</a>

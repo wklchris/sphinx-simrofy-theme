@@ -93,11 +93,17 @@ div.headbar a {
     text-decoration: none;
 }
 div.headbarwrapper {
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 10px;
 }
 div.headbarwrapper div { display: inline-block; }
 
+#headbar_logo {
+    height: 24px;
+    clip-path: circle();
+    background-color: white;
+    margin-right: 10px;
+}
 div.headbarsources, div.headbarlinks { float: right; }
 div.headbarlinks { margin-right: 10px; }
 div.headbarlinks a {
@@ -117,9 +123,7 @@ div.sourcelink { margin-right: 10px; }
 }
 
 
-/* sidebar */
-
-div.sidebar {
+/* sidebar */div.sidebar {
     z-index: 10;
     position: fixed;
     height: 100%;
@@ -139,6 +143,9 @@ div.sidebarwrapper > * { width: inherit; max-width: inherit; }
     border-bottom: 1px solid white;
     text-align: center;
 }
+#sidebar_logo {
+    background-color: white;
+    /* logo width */width: 180px;/* logo clip to circle, max radius limited to 50% */clip-path: circle(50%);}
 p.home_text { margin: 0; padding: 15px 5px 0; color:white; font-weight: bold; }
 
 #sidebar_rel {
@@ -160,10 +167,7 @@ div.sidetoc_lower {
 }
 
 div.sidetocview > div:first-child {  padding-top: 5px; }
-div.sidetocview > div:last-child { padding-bottom: 5px; }
-
-
-/* admonitions */
+div.sidetocview > div:last-child { padding-bottom: 5px; }/* admonitions */
 
 
 

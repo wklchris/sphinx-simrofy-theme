@@ -11,7 +11,7 @@ Here are the features on the schedule:
 
 - **Urgent**\ :
 
-  * Collapsible sidebar?
+  * Feature for excluding docs from sidebar doctree
   * Previous/next button if no sidebar
   * Social media links in footer & sidebar.
 
@@ -29,7 +29,7 @@ Update log
 
 This log shows what features have been implemented:
 
-* 0.1.x
+* Version <= 0.2.0
 
   * Sidebar: basic style; homepage (text & logo) link; toctree
   * Headbar: basic style; source file link; github link; customized doc links
