@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+    
 
 
 
@@ -80,7 +81,6 @@
                     style="height: 24px;" />
             </a></div>
         <div class="headbarlinks">
-            
         
             <a href="Development.html">Development</a>
         
@@ -105,7 +105,7 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-10-01.</p>
+<p>Last updated was on 2020-10-02.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -120,13 +120,14 @@
 <li><p>Sidebar: Users can enable/disable it, adjust its width and position. See options <a class="reference internal" href="#term-sidebar_position"><span class="xref std std-term">sidebar_position</span></a> and <a class="reference internal" href="#term-sidebar_width"><span class="xref std std-term">sidebar_width</span></a>.</p>
 <ul>
 <li><p>Sidebar generates a toctree with maxdepth 2 (i.e. only including <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code> headings).</p></li>
-<li><p>The logo image is enabled by <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-logo_width"><span class="xref std std-term">logo_width</span></a>.</p></li>
+<li><p>The logo image is enabled by <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-logo_width"><span class="xref std std-term">logo_width</span></a>. You can use a circle-cropped style logo by given <a class="reference internal" href="#term-logo_radius"><span class="xref std std-term">logo_radius</span></a>.</p></li>
 <li><p>The background color of sidebar is given by <a class="reference internal" href="#term-sidebar_color"><span class="xref std std-term">sidebar_color</span></a>.</p></li>
 </ul>
 </li>
 <li><p>Others</p>
 <ul>
 <li><p>Customize admonition colors by options like <code class="docutils literal notranslate"><span class="pre">admonition_**_color</span></code>.</p></li>
+<li><p>Add social media icons and weblinks by <a class="reference internal" href="#term-social_accounts"><span class="xref std std-term">social_accounts</span></a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -259,6 +260,7 @@ setup.py
 <span class="na">image_self</span> <span class="o">=</span>
 <span class="na">github_user</span> <span class="o">=</span>
 <span class="na">github_repo</span> <span class="o">=</span>
+<span class="na">social_accounts</span> <span class="o">=</span> 
 
 <span class="na">headbar_height</span> <span class="o">=</span> <span class="s">30</span>
 <span class="na">headbar_links</span> <span class="o">=</span> 
@@ -382,6 +384,112 @@ setup.py
 </dd>
 <dt id="term-sidebar_width">sidebar_width</dt><dd><p>The width of the sidebar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">240</span></code></p>
 </dd>
+<dt id="term-social_accounts">social_accounts</dt><dd><p>Social accounts information. User can pass a dictionary with a similar structure as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;social_accounts&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;facebook&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Keys of the dictionary should be social media website names. A full list of supported social media names are shown in <code class="docutils literal notranslate"><span class="pre">socialmedia.html</span></code>, or you can also view it inside the collapsible container below.</p></li>
+<li><p>Each entry should contain a sub-dictionary that at least has <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">url</span></code> keys. The <code class="docutils literal notranslate"><span class="pre">user</span></code> string will be displayed as the link text and the <code class="docutils literal notranslate"><span class="pre">url</span></code> is the link to your social media account webpage.</p></li>
+<li><p>You need to specify Github user again even if you have done it in <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a>.</p></li>
+</ul>
+<details><summary>A full list of supported social media names</summary><div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="c">{# </span>
+<span class="c">    This is the social media template of Simrofy theme. Simrofy supports social media icons from the Github:</span>
+
+<span class="c">    Original: https://github.com/konsav/social-icons</span>
+<span class="c">    Forked &amp; Split: https://github.com/wklchris/social-icons</span>
+
+<span class="c">    Simrofy also allows users to use social media icons not listed here by specifying an icon file path for the website they like.</span>
+<span class="c">#}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">set</span> <span class="nv">socials</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="s2">&quot;500px&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;aboutme&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;amazon&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;android&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;angellist&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;apple&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;behance&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;bookmate&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;buffer&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;codepen&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;coub&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;delicious&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;devianart&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;digg&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;dribble&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;dropbox&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;ello&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;envato&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;etsy&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;etsy-short&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;evernote&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;facebook&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;favorite&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;flikr&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;foursquare&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;github&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;google+&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;googledrive&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;googleplay&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;habrahabr&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;instagram&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;jsfiddle&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;kickstarter&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;like&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;line&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;line-icon&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;linkedin&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;livejournal&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;mail&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;map&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;medium&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;messenger&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;ok&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;periscope&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;photobucket&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;pinterest&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;pinterest-light&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;pocket&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;producthunt&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;quora&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;reddit&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;reddit-light&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;rss&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;send&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;send-light&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;shopify&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;sketch&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;skype&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;slack&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;slideshare&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;snapchat&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;stackoverflow&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;stumbleupon&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;swarm&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;tripadvisor&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;tumblr&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;twitter&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;upwork&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;viadeo&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;vimeo&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;vk&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;vscogrid&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;web&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;windows&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;wordpress&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;xing&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;yelp&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;youtube&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;youtube-play&quot;</span>
+<span class="o">]</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+</details></dd>
 </dl>
 </div>
 </div>
@@ -393,6 +501,29 @@ setup.py
     
     <div class="footer container" role="contentinfo">
         <div class="footerwrapper">
+        <div class="footersocial">
+            <ul class="footersociallist">
+            
+                <li><a class="socialicon" href=None>
+                    <span class="socialicon">
+                        <img class="social" src="
+    _static/icon/social-facebook.png"
+                            alt="facebook icon">
+                    </span>
+                    <span class="socialuser">eg-facebook</span>
+                </a></li>
+            
+                <li><a class="socialicon" href=None>
+                    <span class="socialicon">
+                        <img class="social" src="
+    _static/icon/social-linkedin.png"
+                            alt="linkedin icon">
+                    </span>
+                    <span class="socialuser">eg-linkedin</span>
+                </a></li>
+            
+            </ul>
+        </div>
             &#169; Copyright 2020, wklchris.
             Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
             <br>

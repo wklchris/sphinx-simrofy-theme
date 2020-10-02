@@ -31,12 +31,13 @@ The Simrofy theme provides following features (for a full theme options list, se
 * Sidebar: Users can enable/disable it, adjust its width and position. See options :term:`sidebar_position` and :term:`sidebar_width`\ . 
 
   * Sidebar generates a toctree with maxdepth 2 (i.e. only including ``<h1>`` and ``<h2>`` headings).
-  * The logo image is enabled by :term:`logo` and its width can be adjusted by :term:`logo_width`\ .
+  * The logo image is enabled by :term:`logo` and its width can be adjusted by :term:`logo_width`\ . You can use a circle-cropped style logo by given :term:`logo_radius`\ .
   * The background color of sidebar is given by :term:`sidebar_color`\ .
 
 * Others
 
   * Customize admonition colors by options like ``admonition_**_color``\ .
+  * Add social media icons and weblinks by :term:`social_accounts`\ .
 
 
 Other customization can be achieved through adding/editing template, CSS or JavaScript files. Please view the source code of Simrofy and/or `Sphinx' templating guide <https://www.sphinx-doc.org/en/master/templating.html>`_.
@@ -317,3 +318,28 @@ Here is a parameter list for Simrofy's theme options:
 
     sidebar_color
         The background color of sidebar. Default is color code ``'#23A97F'`` (a medium dark green).
+    
+    social_accounts
+        Social accounts information. User can pass a dictionary with a similar structure as follows:
+
+        .. code-block:: python
+        
+            'social_accounts': {
+                'facebook': {'user': 'eg-facebook', 'url': 'linkhere'},
+                'linkedin': {'user': 'eg-linkedin', 'url': 'linkhere'}
+            }
+        
+        * Keys of the dictionary should be social media website names. A full list of supported social media names are shown in ``socialmedia.html``\ , or you can also view it inside the collapsible container below.
+        * Each entry should contain a sub-dictionary that at least has ``user`` and ``url`` keys. The ``user`` string will be displayed as the link text and the ``url`` is the link to your social media account webpage.
+        * You need to specify Github user again even if you have done it in :term:`github_user`\ .
+
+        .. raw:: html
+
+            <details><summary>A full list of supported social media names</summary>
+
+        .. literalinclude:: ../sphinx_simrofy_theme/socialmedia.html
+            :language: jinja
+
+        .. raw:: html
+
+            </details>

@@ -12,8 +12,10 @@ Simrofy was intendedly developed to build personal neat website to share around 
 
 Table of contents:
 1. [Installation \& Usage](#installation--usage)
-2. [What does "simrofy" mean?](#what-does-simrofy-mean)
-3. [Who created this confusing logo?](#who-created-this-confusing-logo)
+2. [Projects contributes to Simrofy](#projects-contributes-to-simrofy)
+3. [Anecdotes](#anecdotes)
+   1. [What does "simrofy" mean?](#what-does-simrofy-mean)
+   2. [Who created this confusing logo?](#who-created-this-confusing-logo)
 4. [LICENSE](#license)
 
 
@@ -45,7 +47,23 @@ html_theme = 'sphinx-simrofy-theme'
 Please visit the Simrofy documentation website for full details.
 
 
-## What does "simrofy" mean?
+## Projects contributes to Simrofy
+
+Simrofy was developed with the help of following existing projects:
+
+* [konsav/social-icons](https://github.com/konsav/social-icons): A repo providing many social media icons. See [my forked version](https://github.com/wklchris/social-icons) that adpats the orignal large PNG into separate icons. These icons are put under `static/icon/` of the Simrofy theme folder.
+
+Simrofy also learned a lot from many Sphinx themes, especially:
+
+* Sphinx' builtin [basic](https://github.com/sphinx-doc/sphinx/tree/3.x/sphinx/themes/basic) theme
+* Sphinx official website's [sphinx-doc (3.x)](https://github.com/sphinx-doc/sphinx/tree/3.x/doc) theme
+* Python official website's [python-docs-theme](https://github.com/python/python-docs-theme) theme
+* Read the Docs' Sphinx theme [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme)
+
+
+## Anecdotes
+
+### What does "simrofy" mean?
 
 The name "simrofy" is a weird abbreviation of "simple profile", though it is difficult to realize it. 
 
@@ -59,7 +77,7 @@ Like many programmers, I am not good at naming things. This strange word is tran
 6. Now we have "simrofy". I am super pleased with my naming skill.
 
 
-## Who created this confusing logo?
+### Who created this confusing logo?
 
 If there is only one person in the world can draw such an ugly logo, that person must be me. 
 

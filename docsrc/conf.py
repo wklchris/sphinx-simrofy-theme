@@ -27,14 +27,17 @@ html_static_path = ["_static"]
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
-    # 'headbar_links': ['Development', 'Documentation'],
     'sidebar_position': 'left',
     'github_user': 'wklchris',
     'github_repo': 'sphinx-simrofy-theme',
     'logo': 'logo.png',
     'logo_width': 0.75,
     'logo_radius': 0.5,
-    'sidebar_home_text': f'Simrofy v{release}'
+    'sidebar_home_text': f'Simrofy v{release}',
+    'social_accounts': {
+        'facebook': {'user': 'eg-facebook', 'url': 'linkhere'},
+        'linkedin': {'user': 'eg-linkedin', 'url': 'linkhere'}
+    }
 }
 
 

@@ -267,3 +267,35 @@ dl.glossary > dt {
     padding-top: 2px;
     padding-bottom: 2px;
 }
+
+/* social icons */
+
+div.footersocial {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a.socialicon {
+    color: crimson;
+    text-decoration: none;
+}
+img.social {
+    display: inline-block;
+    height: 1.2em;
+    vertical-align: middle;
+}
+
+ul.footersociallist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.footersociallist li { display: inline; }
+ul.footersociallist li:not(:last-child) {
+    margin-right: 5px;
+}
+
+/* others */
+details > summary::after {
+    content: " (Click to expand/collapse)";
+}
+details > summary {color: royalblue; }
