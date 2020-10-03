@@ -34,6 +34,11 @@ The Simrofy theme provides following features (for a full theme options list, se
   * The logo image is enabled by :term:`logo` and its width can be adjusted by :term:`logo_width`\ . You can use a circle-cropped style logo by given :term:`logo_radius`\ .
   * The background color of sidebar is given by :term:`sidebar_color`\ .
 
+* Page components:
+
+  * Bibliography: Print a bibliography by parsing a ``*.bib`` file. See :ref:`sec-bib-example` section for details.
+  * Team photos: Show photos of team members with their contact information using :term:`people` and :term:`people_pages`\ .
+
 * Others
 
   * Customize admonition colors by options like ``admonition_**_color``\ .
@@ -194,7 +199,7 @@ All dictionary keys used in ``html_theme_options`` should be designed in the Sim
 Full references of theme options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here is a parameter list for Simrofy's theme options:
+Here is a parameter list for Simrofy's theme options. You may refer to the appendix :ref:`conf-py-file` section to see how these options are used in this website.
 
 .. glossary::
     :sorted:
@@ -303,6 +308,37 @@ Here is a parameter list for Simrofy's theme options:
     image_self
         The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your ``html_static_path`` instead of you main folder, see :term:`logo` for details.
 
+    people
+        (Only valid when both :term:`people_pages` and this options are specified)
+        
+        A dictionary variable that contains the information of people in your team. Default is undefined. An useful example output can be found in the :ref:`chapter-people` chapter.
+
+        The dictionary should follow a format like (below is an example of external JSON file):
+
+        .. literalinclude:: _static/people.json
+            :language: json
+            :lines: 1-25
+        
+        Each entry should be the name of group (e.g. "Leader") and it will be rendered as a ``<h3>`` tag in the output webpage (but not included in the toctree). Items under each group are people, where keys are their names (displayed in bold) and values are a dictionary of corresponding personal information. 
+
+        Personal information includes following fields:
+
+        * ``title``\ : The title of the person. Professor, graduate student, visiting scholar, etc. 
+        * ``address``\ : The office address or something similar. 
+        * ``email``\ : The email address of the person. Symbol ``@`` is replaced by text ``:at:``\ .
+        * ``phone``\ : The phone number of the person. Since there is no format check, you can use hyphens and brackets or input several phone numbers if needed.
+        * ``photo``\ : The photo path of the person under the :term:`photo_subpath` of the static path. 
+
+    people_pages
+        (Only valid when both :term:`people` and this options are specified)
+
+        A list of webpage filenames (without extension) that appends photos of people in your team. Default is undefined. Only webpages listed here will display those team member photos. 
+
+    photo_subpath
+        The subpath for photos of team  under the ``html_static_path`` folder. For example, ``'photos/'`` means photos are under ``_static/photos/`` if we have ``html_static_path = ['_static']``\ . You may read the :term:`logo` option for details of static path.
+        
+        Default is undefined, in which case Sphinx will only search the static path and not dive into deeper subfolders. The tailing forward slash ``/`` of the subpath string can be omitted.
+
     sidebar_home_text
         A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.
 
@@ -343,3 +379,18 @@ Here is a parameter list for Simrofy's theme options:
         .. raw:: html
 
             </details>
+
+
+Appendices
+---------------
+
+.. _conf-py-file:
+
+conf.py file
+^^^^^^^^^^^^^^^
+
+The example ``conf.py`` file taken from this documentation website:
+
+.. literalinclude:: conf.py
+    :language: python
+    :linenos:

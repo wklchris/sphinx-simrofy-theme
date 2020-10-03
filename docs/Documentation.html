@@ -3,9 +3,6 @@
 
 
 
-
-
-
 <head>
 
     <meta charset="utf-8">
@@ -60,7 +57,12 @@
                      <div class="sidetoc_lower">
                         <a href="#theme-options">Theme Options</a>
                     </div>
+                     <div class="sidetoc_lower">
+                        <a href="#appendices">Appendices</a>
+                    </div>
                 </div>
+        
+                <div class="sidetoc_collapse"><a href="People.html">People</a></div>
         
                 <div class="sidetoc_collapse"><a href="Examples.html">Examples</a></div>
         
@@ -85,15 +87,17 @@
             <a href="Development.html">Development</a>
         
         
+        
             <a href="Examples.html">Examples</a>
         </div>
     </div>
 </div>
 <div class="document">
     <div class="documentwrapper">
-    
     <div class="body container" role="main">
         <div class="bodywrapper">
+            
+            
   <div class="section" id="documentation">
 <span id="chapter-simrofy-doc"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
 <p>This is the documentation of Sphinx theme Simrofy.</p>
@@ -105,7 +109,7 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-10-02.</p>
+<p>Last updated was on 2020-10-03.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -122,6 +126,12 @@
 <li><p>Sidebar generates a toctree with maxdepth 2 (i.e. only including <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code> headings).</p></li>
 <li><p>The logo image is enabled by <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-logo_width"><span class="xref std std-term">logo_width</span></a>. You can use a circle-cropped style logo by given <a class="reference internal" href="#term-logo_radius"><span class="xref std std-term">logo_radius</span></a>.</p></li>
 <li><p>The background color of sidebar is given by <a class="reference internal" href="#term-sidebar_color"><span class="xref std std-term">sidebar_color</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Page components:</p>
+<ul>
+<li><p>Bibliography: Print a bibliography by parsing a <code class="docutils literal notranslate"><span class="pre">*.bib</span></code> file. See <a class="reference internal" href="Examples.html#sec-bib-example"><span class="std std-ref">Bibliography</span></a> section for details.</p></li>
+<li><p>Team photos: Show photos of team members with their contact information using <a class="reference internal" href="#term-people"><span class="xref std std-term">people</span></a> and <a class="reference internal" href="#term-people_pages"><span class="xref std std-term">people_pages</span></a>.</p></li>
 </ul>
 </li>
 <li><p>Others</p>
@@ -257,13 +267,17 @@ setup.py
 <span class="na">logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
 <span class="na">logo_radius</span> <span class="o">=</span> 
 
-<span class="na">image_self</span> <span class="o">=</span>
 <span class="na">github_user</span> <span class="o">=</span>
 <span class="na">github_repo</span> <span class="o">=</span>
 <span class="na">social_accounts</span> <span class="o">=</span> 
 
 <span class="na">headbar_height</span> <span class="o">=</span> <span class="s">30</span>
 <span class="na">headbar_links</span> <span class="o">=</span> 
+
+<span class="na">image_self</span> <span class="o">=</span> 
+<span class="na">people</span> <span class="o">=</span> 
+<span class="na">people_pages</span> <span class="o">=</span> 
+<span class="na">photo_subpath</span> <span class="o">=</span> 
 
 <span class="na">sidebar_home_text</span> <span class="o">=</span> 
 <span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
@@ -285,7 +299,7 @@ setup.py
 </div>
 <div class="section" id="full-references-of-theme-options">
 <h3>Full references of theme options<a class="headerlink" href="#full-references-of-theme-options" title="Permalink to this headline">¶</a></h3>
-<p>Here is a parameter list for Simrofy's theme options:</p>
+<p>Here is a parameter list for Simrofy's theme options. You may refer to the appendix <a class="reference internal" href="#conf-py-file"><span class="std std-ref">conf.py file</span></a> section to see how these options are used in this website.</p>
 <dl class="glossary">
 <dt id="term-admonition_-_color">admonition_**_color</dt><dd><p>Passing a CSS color strings to override the default admonition background color, where ** is the admonition name (attention, caution, etc.).</p>
 <p>For example, user can change the color of these admonitions by passing values to the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary:</p>
@@ -370,6 +384,52 @@ setup.py
 </dd>
 <dt id="term-logo_width">logo_width</dt><dd><p>(Only valid when <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> is specified)</p>
 <p>The logo width in percentage (for a value &lt;= 1.0 ) or unit of px (for a value &gt; 1.0). Default is <code class="docutils literal notranslate"><span class="pre">0.8</span></code> , or say 80% sidebar width.</p>
+</dd>
+<dt id="term-people">people</dt><dd><p>(Only valid when both <a class="reference internal" href="#term-people_pages"><span class="xref std std-term">people_pages</span></a> and this options are specified)</p>
+<p>A dictionary variable that contains the information of people in your team. Default is undefined. An useful example output can be found in the <a class="reference internal" href="People.html#chapter-people"><span class="std std-ref">People</span></a> chapter.</p>
+<p>The dictionary should follow a format like (below is an example of external JSON file):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;Leader&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Leader name&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Team leader&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234 in Building A&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;leader@eg.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;123-456-7890&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;Postdoc&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Postdoc 1&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Postdoc&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;one@postdoc.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;111-222-3333&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;Postdoc 2&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Postdoc&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;two@postdoc.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;444-555-6666&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
+        <span class="p">},</span>
+</pre></div>
+</div>
+<p>Each entry should be the name of group (e.g. &quot;Leader&quot;) and it will be rendered as a <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag in the output webpage (but not included in the toctree). Items under each group are people, where keys are their names (displayed in bold) and values are a dictionary of corresponding personal information.</p>
+<p>Personal information includes following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the person. Professor, graduate student, visiting scholar, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code>: The office address or something similar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code>: The email address of the person. Symbol <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is replaced by text <code class="docutils literal notranslate"><span class="pre">:at:</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phone</span></code>: The phone number of the person. Since there is no format check, you can use hyphens and brackets or input several phone numbers if needed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">photo</span></code>: The photo path of the person under the <a class="reference internal" href="#term-photo_subpath"><span class="xref std std-term">photo_subpath</span></a> of the static path.</p></li>
+</ul>
+</dd>
+<dt id="term-people_pages">people_pages</dt><dd><p>(Only valid when both <a class="reference internal" href="#term-people"><span class="xref std std-term">people</span></a> and this options are specified)</p>
+<p>A list of webpage filenames (without extension) that appends photos of people in your team. Default is undefined. Only webpages listed here will display those team member photos.</p>
+</dd>
+<dt id="term-photo_subpath">photo_subpath</dt><dd><p>The subpath for photos of team  under the <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> folder. For example, <code class="docutils literal notranslate"><span class="pre">'photos/'</span></code> means photos are under <code class="docutils literal notranslate"><span class="pre">_static/photos/</span></code> if we have <code class="docutils literal notranslate"><span class="pre">html_static_path</span> <span class="pre">=</span> <span class="pre">['_static']</span></code>. You may read the <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> option for details of static path.</p>
+<p>Default is undefined, in which case Sphinx will only search the static path and not dive into deeper subfolders. The tailing forward slash <code class="docutils literal notranslate"><span class="pre">/</span></code> of the subpath string can be omitted.</p>
 </dd>
 <dt id="term-sidebar_color">sidebar_color</dt><dd><p>The background color of sidebar. Default is color code <code class="docutils literal notranslate"><span class="pre">'#23A97F'</span></code> (a medium dark green).</p>
 </dd>
@@ -493,9 +553,145 @@ setup.py
 </dl>
 </div>
 </div>
+<div class="section" id="appendices">
+<h2>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conf-py-file">
+<span id="id3"></span><h3>conf.py file<a class="headerlink" href="#conf-py-file" title="Permalink to this headline">¶</a></h3>
+<p>The example <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file taken from this documentation website:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Project metadata</span>
+<span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;Simrofy&#39;</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2020, wklchris&#39;</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;wklchris&#39;</span>
+<span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;0.2.0&#39;</span>
+
+
+<span class="c1"># Sphinx configurations</span>
+<span class="n">smartquotes</span> <span class="o">=</span> <span class="kc">False</span>          <span class="c1"># Show double-dashes clearly</span>
+<span class="n">today_fmt</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span>       <span class="c1"># Date format when using |today| replacement syntax</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>    <span class="c1"># Math equation support</span>
+    <span class="s1">&#39;recommonmark&#39;</span><span class="p">,</span>          <span class="c1"># Markdown support if you don&#39;t like reStructuredText</span>
+    <span class="s1">&#39;sphinxcontrib.bibtex&#39;</span>   <span class="c1"># Bibliography support</span>
+<span class="p">]</span>
+
+
+<span class="c1"># For debug only. If installed via pip, using:</span>
+<span class="c1">#    html_theme = &#39;sphinx-simrofy-theme&#39;</span>
+<span class="c1">#    (and remove the html_theme_path line)</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_simrofy_theme&#39;</span>
+<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
+
+<span class="c1"># Static paths. Folder for images, CSS, etc.</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_static&quot;</span><span class="p">]</span>
+
+<span class="c1"># html_additional_pages = {</span>
+<span class="c1">#     &quot;People&quot;: &quot;people.html&quot;</span>
+<span class="c1"># }</span>
+<span class="c1"># Load external data, if needed</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;_static/people.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">people_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+
+<span class="c1"># Theme options.</span>
+<span class="c1"># - Read sphinx_simrofy_theme/theme.conf for default values.</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;headbar_links&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Development&#39;</span><span class="p">,</span> <span class="s1">&#39;Documentation&#39;</span><span class="p">,</span> <span class="s1">&#39;Examples&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;sidebar_position&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;github_user&#39;</span><span class="p">:</span> <span class="s1">&#39;wklchris&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;github_repo&#39;</span><span class="p">:</span> <span class="s1">&#39;sphinx-simrofy-theme&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;logo&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;logo_width&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+    <span class="s1">&#39;logo_radius&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;sidebar_home_text&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Simrofy v</span><span class="si">{</span><span class="n">release</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;social_accounts&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;facebook&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;people&#39;</span><span class="p">:</span> <span class="n">people_json</span><span class="p">,</span>
+    <span class="s1">&#39;people_pages&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;People&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;photo_subpath&#39;</span><span class="p">:</span> <span class="s1">&#39;photos/&#39;</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Others</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+<span class="n">rst_epilog</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">.. _Sphinx: https://www.sphinx-doc.org/</span>
+<span class="s2">.. _sphinxcontrib-bibtex: https://sphinxcontrib-bibtex.readthedocs.io/</span>
+<span class="s2">.. _recommonmark: https://recommonmark.readthedocs.io/en/latest/</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
 </div>
 
-</div>
+
+            
+        </div>
     </div>
 
     

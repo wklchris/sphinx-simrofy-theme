@@ -12,7 +12,7 @@ Simrofy was intendedly developed to build personal neat website to share around 
 
 Table of contents:
 1. [Installation \& Usage](#installation--usage)
-2. [Projects contributes to Simrofy](#projects-contributes-to-simrofy)
+2. [Projects contributing to Simrofy](#projects-contributing-to-simrofy)
 3. [Anecdotes](#anecdotes)
    1. [What does "simrofy" mean?](#what-does-simrofy-mean)
    2. [Who created this confusing logo?](#who-created-this-confusing-logo)
@@ -47,7 +47,7 @@ html_theme = 'sphinx-simrofy-theme'
 Please visit the Simrofy documentation website for full details.
 
 
-## Projects contributes to Simrofy
+## Projects contributing to Simrofy
 
 Simrofy was developed with the help of following existing projects:
 

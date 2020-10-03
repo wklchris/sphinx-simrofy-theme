@@ -58,10 +58,28 @@
     {%- endfor %}
 {%- endmacro %}
 
-{%- macro pathto_static(filepath, static_build_path='_static/') -%}
+
+{%- macro print_unicode_icon(key) %}
+    {%- set icons = {
+        'email': '&#x2709;',
+        'address': '&#x1F5EA;',
+        'phone': '&#x260E;'
+    } -%}
+    {%- if key in icons.keys() %}
+        <span class="unicode_icon">{{ icons.get(key) }}</span>&nbsp;
+    {%- endif %}
+{%- endmacro %}
+
+
+{%- macro pathto_static(filepath, subpath=none, static_build_path='_static/') -%}
     {# static_build_path is the static file path AFTER sphinx build.
        Usually it is '_static/' (attention the tailing slash). #}
-    {{ pathto(static_build_path + filepath|e, 1) }}
+    {%- if subpath %}
+        {%- set fpath = static_build_path + subpath|trim('/') + '/' + filepath -%}
+    {%- else %}
+        {%- set fpath = static_build_path + filepath -%}
+    {%- endif %}
+    {{ pathto(fpath|e, 1) }}
 {%- endmacro %}
 
 {%- macro pathto_source(filepath, source_path='_sources/') -%}
@@ -144,6 +162,37 @@
 {% endmacro %}
 
 
+{%- macro simrofy_photos() -%}
+{% for group, people in theme_people.items() %}
+    <h3>{{ group }}</h3>
+    <div class="people_photos">
+        <table class="people_photos">
+        <tbody>
+        {% for person, personinfo in people.items() %}
+            {%- if loop.index is not divisibleby(2) %}<tr>{% endif %}
+            {%- set photolink = personinfo.get('photo') -%}
+            <td class="person_photo">
+                <img class="personphoto align-center" alt="Photo of {{ person }}"
+                    src="{{ pathto_static(photolink, theme_photo_subpath)|e }}">
+            </td>
+            <td class="person_info">
+                <p class="personname">{{ person|e }}</p>
+                {% for key, val in personinfo.items() if key != 'photo' %}
+                    <p class="person{{ key }}">
+                        {{- print_unicode_icon(key) }}
+                        {{- val|e if key != 'email' else val|replace('@', ':at:')|e }}
+                    </p>
+                {% endfor %}
+            </td>
+            {%- if loop.index is divisibleby(2) or loop.last %}</tr>{% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+{% endfor %}
+{%- endmacro -%}
+
+
 {# --- HEAD --- #}
 
 <head>
@@ -203,10 +252,18 @@
 {%- block content %}
 <div class="document">
     <div class="documentwrapper">
-    {# MAIN DOCUMENT PROCESSED BY BUILDER #}
     {%- block document %}
     <div class="body container" role="main">
-        <div class="bodywrapper">{% block body %}{% endblock %}</div>
+        <div class="bodywrapper">
+            {# MAIN DOCUMENT PROCESSED BY BUILDER #}
+            {% block body %}{% endblock %}
+            {# Print person photos #}
+            {%- block person %}
+                {%- if theme_people and pagename in theme_people_pages %}
+                    {{- simrofy_photos() }}
+                {%- endif %}
+            {%- endblock person %}
+        </div>
     </div>
     {%- endblock document %}
 

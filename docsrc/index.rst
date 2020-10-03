@@ -8,6 +8,7 @@ Welcome to sphinx-simrofy-theme's documentation!
    
    Development.rst
    Documentation.rst
+   People.rst
    Examples.rst
 
 .. warning::

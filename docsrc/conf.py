@@ -24,9 +24,19 @@ html_theme_path = [".."]
 # Static paths. Folder for images, CSS, etc.
 html_static_path = ["_static"]
 
+# html_additional_pages = {
+#     "People": "people.html"
+# }
+# Load external data, if needed
+import json
+with open('_static/people.json', 'r') as f:
+    people_json = json.load(f)
+
+
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
+    'headbar_links': ['Development', 'Documentation', 'Examples'],
     'sidebar_position': 'left',
     'github_user': 'wklchris',
     'github_repo': 'sphinx-simrofy-theme',
@@ -37,7 +47,10 @@ html_theme_options = {
     'social_accounts': {
         'facebook': {'user': 'eg-facebook', 'url': 'linkhere'},
         'linkedin': {'user': 'eg-linkedin', 'url': 'linkhere'}
-    }
+    },
+    'people': people_json,
+    'people_pages': ['People'],
+    'photo_subpath': 'photos/'
 }
 
 

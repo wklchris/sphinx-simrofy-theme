@@ -13,6 +13,7 @@ Here are the features on the schedule:
 
   * Feature for excluding docs from sidebar doctree
   * Previous/next button if no sidebar
+  * Canonical URL; website favicon
   * Known issues:
     
     * The dummy top height introduced by the ``:target::before`` CSS style

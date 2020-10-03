@@ -8,8 +8,12 @@ body {
     width: 100%;
     max-width: 2560px;
     font-size: 20px;
-    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-family: Geneva, Arial, Helvetica, "Lucida Sans Unicode", sans-serif;
     color: black;
+}
+span.unicode_icon {
+    display:inline-block;
+    width: calc(1em + 2px);
 }
 
 div.container {
@@ -293,6 +297,17 @@ ul.footersociallist li { display: inline; }
 ul.footersociallist li:not(:last-child) {
     margin-right: 5px;
 }
+
+
+/* person info photos */
+table.people_photos { border-spacing: 5px; }
+table.people_photos p { margin: 5px 0; }
+td.person_info { padding-left: 10px; padding-right: 20px; }
+img.personphoto { width: 128px; }
+
+p.personname { font-weight: bold; }
+p.persontitle { font-style: italic; }
+
 
 /* others */
 details > summary::after {
