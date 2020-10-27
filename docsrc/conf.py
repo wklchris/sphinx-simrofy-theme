@@ -24,9 +24,6 @@ html_theme_path = [".."]
 # Static paths. Folder for images, CSS, etc.
 html_static_path = ["_static"]
 
-# html_additional_pages = {
-#     "People": "people.html"
-# }
 # Load external data, if needed
 import json
 with open('_static/people.json', 'r') as f:
@@ -36,6 +33,8 @@ with open('_static/people.json', 'r') as f:
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
+    'canonical_prefix': "https://wklchris.github.io/sphinx-simrofy-theme/",
+    'favicon': "favicon.ico",
     'headbar_links': ['Development', 'Documentation', 'Examples'],
     'sidebar_position': 'left',
     'github_user': 'wklchris',

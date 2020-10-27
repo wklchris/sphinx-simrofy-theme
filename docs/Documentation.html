@@ -7,6 +7,9 @@
 
     <meta charset="utf-8">
         <title>Documentation - Simrofy</title>
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/Documentation.html">
+        <link rel="icon" type="image/x-icon" href="
+    _static/favicon.ico">
     <link rel="stylesheet" href="_static/simrofy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -262,6 +265,8 @@ setup.py
 <span class="na">pygments_style</span> <span class="o">=</span> <span class="s">default</span>
 
 <span class="k">[options]</span>
+<span class="na">canonical_prefix</span> <span class="o">=</span> 
+<span class="na">favicon</span> <span class="o">=</span> 
 <span class="na">logo</span> <span class="o">=</span>
 <span class="na">logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
 <span class="na">logo_radius</span> <span class="o">=</span> 
@@ -349,6 +354,10 @@ setup.py
 <p class="admonition-title">Warning</p>
 <p>Warning.</p>
 </div>
+</dd>
+<dt id="term-canonical_prefix">canonical_prefix</dt><dd><p>The canonical prefix for each webpage, which can either ends with a <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol or not. For example, if you set it as <code class="docutils literal notranslate"><span class="pre">https://eg.com/</span></code>, the webpage (generated from <code class="docutils literal notranslate"><span class="pre">page.rst</span></code>) will have a canonical url of <code class="docutils literal notranslate"><span class="pre">https://eg.com/page.html</span></code>.</p>
+</dd>
+<dt id="term-favicon">favicon</dt><dd><p>The file path (under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> path, see <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> for details) to the website icon (favicon).</p>
 </dd>
 <dt id="term-github_repo">github_repo</dt><dd><p>(Only valid when <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> is specified)</p>
 <p>Show a Github repo link of <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER/GITHUB_REPO</span></code> instead of your user profile page.</p>
@@ -622,8 +631,7 @@ setup.py
 60
 61
 62
-63
-64</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Project metadata</span>
+63</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Project metadata</span>
 <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;Simrofy&#39;</span>
 <span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2020, wklchris&#39;</span>
 <span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;wklchris&#39;</span>
@@ -649,9 +657,6 @@ setup.py
 <span class="c1"># Static paths. Folder for images, CSS, etc.</span>
 <span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_static&quot;</span><span class="p">]</span>
 
-<span class="c1"># html_additional_pages = {</span>
-<span class="c1">#     &quot;People&quot;: &quot;people.html&quot;</span>
-<span class="c1"># }</span>
 <span class="c1"># Load external data, if needed</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;_static/people.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -661,6 +666,8 @@ setup.py
 <span class="c1"># Theme options.</span>
 <span class="c1"># - Read sphinx_simrofy_theme/theme.conf for default values.</span>
 <span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;canonical_prefix&#39;</span><span class="p">:</span> <span class="s2">&quot;https://wklchris.github.io/sphinx-simrofy-theme/&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;favicon&#39;</span><span class="p">:</span> <span class="s2">&quot;favicon.ico&quot;</span><span class="p">,</span>
     <span class="s1">&#39;headbar_links&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Development&#39;</span><span class="p">,</span> <span class="s1">&#39;Documentation&#39;</span><span class="p">,</span> <span class="s1">&#39;Examples&#39;</span><span class="p">],</span>
     <span class="s1">&#39;sidebar_position&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
     <span class="s1">&#39;github_user&#39;</span><span class="p">:</span> <span class="s1">&#39;wklchris&#39;</span><span class="p">,</span>

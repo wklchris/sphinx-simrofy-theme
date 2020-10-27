@@ -12,7 +12,6 @@ Here are the features on the schedule:
 - **Urgent**\ :
 
   * Previous/next button if no sidebar
-  * Canonical URL; website favicon
   * Known issues:
     
     * The dummy top height introduced by the ``:target::before`` CSS style

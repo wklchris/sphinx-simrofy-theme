@@ -205,6 +205,19 @@
     {%- block htmltitle %}
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {%- endblock htmltitle %}
+
+    {%- block canonical %}
+    {%- if theme_canonical_prefix %}
+        <link rel="canonical" href="{{ theme_canonical_prefix|trim('/')|e }}/{{ (pagename + file_suffix)|e }}">
+    {%- endif %}
+    {%- endblock canonical %}
+
+    {%- block favicon %}
+    {%- if theme_favicon %}
+        <link rel="icon" type="image/x-icon" href="{{ pathto_static(theme_favicon) }}">
+    {%- endif %}
+    {%- endblock favicon %}
+
     {%- block css %}{{ css() }}{%- endblock css %}
     {%- block scripts %}{{- script() }}{%- endblock scripts %}
     {%- block extrahead %}{# user customize #}{% endblock extrahead %}

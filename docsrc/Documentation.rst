@@ -258,6 +258,12 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
             Warning.
 
+    canonical_prefix
+        The canonical prefix for each webpage, which can either ends with a ``/`` symbol or not. For example, if you set it as ``https://eg.com/``\ , the webpage (generated from ``page.rst``\ ) will have a canonical url of ``https://eg.com/page.html``\ . 
+
+    favicon
+        The file path (under your ``html_static_path`` path, see :term:`logo` for details) to the website icon (favicon).
+
     github_user
         Github username. It will create a icon-weblink to ``https://github.com/GITHUB_USER`` on the headbar that allows others visit your Github profile page.
 
