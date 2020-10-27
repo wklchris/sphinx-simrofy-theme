@@ -136,22 +136,26 @@
                 {%- set subitem = item.split(' "')[0] %}
                 {%- set plink = subitem.split('">')[0] | trim %}
                 {%- set ptitle = subitem.split('">')[1] %}
-                <div class="sidetoc_expand">
-                    <a href="{{ plink|e }}">{{ ptitle }}</a>
-                </div>
-                <div class="sidetocview">
-                {%- for subitem in item.split(' "')[1:] %}
-                    {%- set plink = subitem.split('">')[0] | trim %}
-                    {%- set ptitle = subitem.split('">')[1] %}
-                     <div class="sidetoc_lower">
+                {%- if ptitle not in theme_sidebar_toc_exclude %}
+                    <div class="sidetoc_expand">
                         <a href="{{ plink|e }}">{{ ptitle }}</a>
                     </div>
-                {%- endfor %}
-                </div>
+                    <div class="sidetocview">
+                    {%- for subitem in item.split(' "')[1:] %}
+                        {%- set plink = subitem.split('">')[0] | trim %}
+                        {%- set ptitle = subitem.split('">')[1] %}
+                        <div class="sidetoc_lower">
+                            <a href="{{ plink|e }}">{{ ptitle }}</a>
+                        </div>
+                    {%- endfor %}
+                    </div>
+                {%- endif %}
             {%- else %}
                 {%- set plink = item.split('">')[0] | trim %}
                 {%- set ptitle = item.split('">')[1] %}
-                <div class="sidetoc_collapse"><a href="{{ plink|e }}">{{ ptitle }}</a></div>
+                {%- if ptitle not in theme_sidebar_toc_exclude %}
+                    <div class="sidetoc_collapse"><a href="{{ plink|e }}">{{ ptitle }}</a></div>
+                {%- endif %}
             {%- endif %}
         {% endfor %}
         </div>

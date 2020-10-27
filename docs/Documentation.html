@@ -39,32 +39,31 @@
         </div>
         <div id="sidebar_rel">
         
-                <div class="sidetoc_collapse"><a href="Development.html">Development</a></div>
+                    <div class="sidetoc_collapse"><a href="Development.html">Development</a></div>
         
-                <div class="sidetoc_expand">
-                    <a href="#">Documentation</a>
-                </div>
-                <div class="sidetocview">
-                     <div class="sidetoc_lower">
-                        <a href="#overview">Overview</a>
+                    <div class="sidetoc_expand">
+                        <a href="#">Documentation</a>
                     </div>
-                     <div class="sidetoc_lower">
-                        <a href="#installation">Installation</a>
+                    <div class="sidetocview">
+                        <div class="sidetoc_lower">
+                            <a href="#overview">Overview</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#installation">Installation</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#quick-guide">Quick Guide</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#theme-options">Theme Options</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#appendices">Appendices</a>
+                        </div>
                     </div>
-                     <div class="sidetoc_lower">
-                        <a href="#quick-guide">Quick Guide</a>
-                    </div>
-                     <div class="sidetoc_lower">
-                        <a href="#theme-options">Theme Options</a>
-                    </div>
-                     <div class="sidetoc_lower">
-                        <a href="#appendices">Appendices</a>
-                    </div>
-                </div>
         
-                <div class="sidetoc_collapse"><a href="People.html">People</a></div>
+                    <div class="sidetoc_collapse"><a href="People.html">People</a></div>
         
-                <div class="sidetoc_collapse"><a href="Examples.html">Examples</a></div>
         
         </div>
     </div>
@@ -104,12 +103,12 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> for details. In additional, the <a class="reference internal" href="Examples.html#chapter-examples"><span class="std std-ref">Examples</span></a> chapter of this website also provides a lot of useful information.</p>
-<p>reStructuredText is not mandantor but <strong>highly recommended</strong>. Although you can write Markdown with <a class="reference external" href="https://recommonmark.readthedocs.io/en/latest/">recommonmark</a> extension, many features of Sphinx is only avaliable to reStructuredText syntax.</p>
+<p>reStructuredText is not mandantory but <strong>highly recommended</strong>. Although you can write Markdown with <a class="reference external" href="https://recommonmark.readthedocs.io/en/latest/">recommonmark</a> extension, many features of Sphinx is only avaliable to reStructuredText syntax.</p>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Simrofy is still in beta and its features and options may change very often.</p>
-<p>Last updated was on 2020-10-03.</p>
+<p>Last updated was on 2020-10-27.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -280,6 +279,7 @@ setup.py
 <span class="na">photo_subpath</span> <span class="o">=</span> 
 
 <span class="na">sidebar_home_text</span> <span class="o">=</span> 
+<span class="na">sidebar_toc_exclude</span> <span class="o">=</span> 
 <span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
 <span class="na">sidebar_width</span> <span class="o">=</span> <span class="s">240</span>
 <span class="na">sidebar_color</span> <span class="o">=</span> <span class="s">#23A97F</span>
@@ -401,7 +401,7 @@ setup.py
     <span class="nt">&quot;Postdoc&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;Postdoc 1&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Postdoc&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234, Building A, Department of Foo and Bar Science, University of Very Long Name that Needs Line Break&quot;</span><span class="p">,</span>
             <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;one@postdoc.com&quot;</span><span class="p">,</span>
             <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;111-222-3333&quot;</span><span class="p">,</span>
             <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
@@ -420,7 +420,7 @@ setup.py
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the person. Professor, graduate student, visiting scholar, etc.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">address</span></code>: The office address or something similar.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code>: The email address of the person. Symbol <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is replaced by text <code class="docutils literal notranslate"><span class="pre">:at:</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code>: The email address of the person. Symbol <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is replaced by text <code class="docutils literal notranslate"><span class="pre">:at:</span></code> when displayed on the webpage.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">phone</span></code>: The phone number of the person. Since there is no format check, you can use hyphens and brackets or input several phone numbers if needed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">photo</span></code>: The photo path of the person under the <a class="reference internal" href="#term-photo_subpath"><span class="xref std std-term">photo_subpath</span></a> of the static path.</p></li>
 </ul>
@@ -441,6 +441,8 @@ setup.py
 <li><p><code class="docutils literal notranslate"><span class="pre">'right'</span></code>: Display the sidebar on the right.</p></li>
 <li><p>Any other value will disable the sidebar.</p></li>
 </ul>
+</dd>
+<dt id="term-sidebar_toc_exclude">sidebar_toc_exclude</dt><dd><p>A list of rst files that would be excluded from the sidebar tabloe of contents. Each item of the list should be the title of the file. Default is undefined.</p>
 </dd>
 <dt id="term-sidebar_width">sidebar_width</dt><dd><p>The width of the sidebar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">240</span></code></p>
 </dd>
@@ -620,7 +622,8 @@ setup.py
 60
 61
 62
-63</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Project metadata</span>
+63
+64</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Project metadata</span>
 <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;Simrofy&#39;</span>
 <span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2020, wklchris&#39;</span>
 <span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;wklchris&#39;</span>
@@ -666,6 +669,7 @@ setup.py
     <span class="s1">&#39;logo_width&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
     <span class="s1">&#39;logo_radius&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
     <span class="s1">&#39;sidebar_home_text&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Simrofy v</span><span class="si">{</span><span class="n">release</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidebar_toc_exclude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Examples&#39;</span><span class="p">],</span>
     <span class="s1">&#39;social_accounts&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;facebook&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">},</span>
         <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">}</span>

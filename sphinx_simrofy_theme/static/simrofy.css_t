@@ -301,9 +301,15 @@ ul.footersociallist li:not(:last-child) {
 
 /* person info photos */
 table.people_photos { border-spacing: 5px; }
-table.people_photos p { margin: 5px 0; }
-td.person_info { padding-left: 10px; padding-right: 20px; }
+table.people_photos p { margin: 3px 0; }
+td.person_info {
+    padding-left: 10px;
+    padding-right: 20px;
+    min-width: 250px;
+    max-width: 550px;
+}
 img.personphoto { width: 128px; }
+p.personemail, p.personphone { word-break: break-all; }
 
 p.personname { font-weight: bold; }
 p.persontitle { font-style: italic; }

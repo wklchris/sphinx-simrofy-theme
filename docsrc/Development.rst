@@ -11,7 +11,6 @@ Here are the features on the schedule:
 
 - **Urgent**\ :
 
-  * Feature for excluding docs from sidebar doctree
   * Previous/next button if no sidebar
   * Canonical URL; website favicon
   * Known issues:

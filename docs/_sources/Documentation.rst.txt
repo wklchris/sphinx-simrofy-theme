@@ -9,7 +9,7 @@ This is the documentation of Sphinx theme Simrofy.
 
     This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website Sphinx_ for details. In additional, the :ref:`chapter-examples` chapter of this website also provides a lot of useful information.
 
-    reStructuredText is not mandantor but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax.
+    reStructuredText is not mandantory but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax.
 
 .. caution::
 
@@ -325,7 +325,7 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
         * ``title``\ : The title of the person. Professor, graduate student, visiting scholar, etc. 
         * ``address``\ : The office address or something similar. 
-        * ``email``\ : The email address of the person. Symbol ``@`` is replaced by text ``:at:``\ .
+        * ``email``\ : The email address of the person. Symbol ``@`` is replaced by text ``:at:`` when displayed on the webpage.
         * ``phone``\ : The phone number of the person. Since there is no format check, you can use hyphens and brackets or input several phone numbers if needed.
         * ``photo``\ : The photo path of the person under the :term:`photo_subpath` of the static path. 
 
@@ -348,6 +348,9 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
         * ``'left'``\ : Display the sidebar on the left. This is the default value.
         * ``'right'``\ : Display the sidebar on the right.
         * Any other value will disable the sidebar.
+    
+    sidebar_toc_exclude
+        A list of rst files that would be excluded from the sidebar tabloe of contents. Each item of the list should be the title of the file. Default is undefined.
 
     sidebar_width
         The width of the sidebar in unit of px. Default is ``240``
