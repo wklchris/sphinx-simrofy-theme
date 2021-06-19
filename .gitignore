@@ -4,6 +4,8 @@
 # Sphinx build
 docs/doctrees
 **/_build
+## Sphinx translation (i18n)
+*.mo
 
 # Setuptools build
 build/

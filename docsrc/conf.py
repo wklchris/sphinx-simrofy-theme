@@ -29,6 +29,10 @@ import json
 with open('_static/people.json', 'r') as f:
     people_json = json.load(f)
 
+# Set internationalization (i18n) for multi-language support
+language = 'en'
+locale_dirs = ['locale/']
+gettext_compact = False
 
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
@@ -39,6 +43,7 @@ html_theme_options = {
     'sidebar_position': 'left',
     'github_user': 'wklchris',
     'github_repo': 'sphinx-simrofy-theme',
+    'languages': ['zh_CN'],
     'logo': 'logo.png',
     'logo_width': 0.75,
     'logo_radius': 0.5,

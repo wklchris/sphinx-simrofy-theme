@@ -284,6 +284,20 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
     headbar_height
         The height of headbar in unit of px. Default is ``30``
 
+    languages
+        A list of display languages for your website. Default is none. You may need to install ``sphinx-intl`` and prepare translation ``.po`` files to build a multi-language website.  
+        
+        For example, if you write your website in English and would like to also provide a Simplified Chinese translation, you need to add a key-value pair:
+        
+        .. code-block:: python
+            
+            # Code in your conf.py
+            html_theme_options = {
+                'languages': ['en', 'zh_CN']
+            }
+        
+        Keep in mind that you always need to put the primary language at the first position. For a list of supported languages and more details about internationalization (i18n), please refer to the Sphinx_ documentation.
+
     logo
         The logo image file path. Default is undefined, which will display a text hyperlink "Homepage" instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).
 

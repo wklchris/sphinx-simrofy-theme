@@ -25,6 +25,7 @@ Simrofy is a theme for Sphinx, so you can't use it without installing Sphinx. Us
 
 - Python (>= 3.6)
 - [Sphinx](https://www.sphinx-doc.org/)
+  - Also need `sphinx-intl` if there is need for internationlization
 
 Then you can install Simrofy using pip (for stable versions):
 

@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, wklchris
+# This file is distributed under the same license as the Simrofy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Simrofy \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-18 23:51-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../Development.rst:2
+msgid "Development"
+msgstr ""
+
+#: ../../Development.rst:4
+msgid ""
+"Simrofy is still under active development. Many features are still on "
+"their way."
+msgstr ""
+
+#: ../../Development.rst:8
+msgid "Future features"
+msgstr ""
+
+#: ../../Development.rst:10
+msgid "Here are the features on the schedule:"
+msgstr ""
+
+#: ../../Development.rst:12
+msgid "**Urgent**\\ :"
+msgstr ""
+
+#: ../../Development.rst:14
+msgid "Previous/next button if no sidebar"
+msgstr ""
+
+#: ../../Development.rst:15
+msgid "Known issues:"
+msgstr ""
+
+#: ../../Development.rst:17
+msgid "The dummy top height introduced by the ``:target::before`` CSS style"
+msgstr ""
+
+#: ../../Development.rst:19
+msgid "**Important but not urgent**\\ :"
+msgstr ""
+
+#: ../../Development.rst:21
+msgid "Mobile device adaptation"
+msgstr ""
+
+#: ../../Development.rst:23
+msgid "Minor:"
+msgstr ""
+
+#: ../../Development.rst:25
+msgid "Dark theme"
+msgstr ""
+
+#: ../../Development.rst:29
+msgid "Update log"
+msgstr ""
+
+#: ../../Development.rst:31
+msgid "This log shows what features have been implemented:"
+msgstr ""
+
+#: ../../Development.rst:33
+msgid "Version <= 0.2.0"
+msgstr ""
+
+#: ../../Development.rst:35
+msgid "Sidebar: basic style; homepage (text & logo) link; toctree"
+msgstr ""
+
+#: ../../Development.rst:36
+msgid "Headbar: basic style; source file link; github link; customized doc links"
+msgstr ""
+
+#: ../../Development.rst:37
+msgid "Head: meta charset; title."
+msgstr ""
+
+#: ../../Development.rst:38
+msgid "Style:"
+msgstr ""
+
+#: ../../Development.rst:40
+msgid "Admonition style: A crude style mimicking the Read the Docs admonitions."
+msgstr ""
+
+#: ../../Development.rst:41
+msgid "Code highlighting style: Default Pygments highlighting style."
+msgstr ""
+
+#: ../../Development.rst:43
+msgid "Footer: Simrofy information; Theme and top border."
+msgstr ""
+
+#: ../../Development.rst:44
+msgid "Others: Scrollbar beautification for webkit browsers."
+msgstr ""
+
