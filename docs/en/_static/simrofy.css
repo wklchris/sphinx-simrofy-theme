@@ -23,13 +23,9 @@ div.container {
 
 div.bodywrapper, div.footerwrapper, div.headbarwrapper {
     margin-top: 0;
-    {%- if theme_sidebar_position == 'right' %}
-        margin-right: calc({{ theme_sidebar_width|todim }} + 10px);
-    {%- elif theme_sidebar_position == 'left' %}
-        margin-left: calc({{ theme_sidebar_width|todim }} + 10px);
-    {%- endif %}
+        margin-left: calc(240px + 10px);
 }
-div.bodywrapper { padding-top: calc({{ theme_headbar_height|todim }} + 10px); }
+div.bodywrapper { padding-top: calc(30px + 10px); }
 div.footerwrapper { 
     border-top: 1px double gray;
     padding-top: 0.5ex;
@@ -90,7 +86,7 @@ div.headbar {
     max-width: inherit;
     top: 0;
     left: 0;
-    height: {{ theme_headbar_height|todim }};
+    height: 30px;
     clear: both;
     z-index: 2;
 }
@@ -107,7 +103,7 @@ div.headbarwrapper {
 div.headbarwrapper div { display: inline-block; }
 
 #headbar_logo {
-    height: {{ (theme_headbar_height|int * 0.8)|int|todim }};
+    height: 24px;
     clip-path: circle();
     background-color: white;
     margin-right: 10px;
@@ -124,30 +120,24 @@ div.sourcelink { margin-right: 10px; }
 :target::before {  /* headbar anchor offset */
     display: block; 
     content: " "; 
-    margin-top: -calc({{ theme_headbar_height|todim }} + 25px); 
-    height: calc({{ theme_headbar_height|todim }} + 25px); 
+    margin-top: -calc(30px + 25px); 
+    height: calc(30px + 25px); 
     visibility: hidden; 
     pointer-events: none;
 }
 
-/* sidebar */
-{%- if theme_sidebar_position in ['right', 'left'] -%}
-div.sidebar {
+/* sidebar */div.sidebar {
     z-index: 10;
     position: fixed;
     height: 100%;
     padding: 10px 0; 
     overflow-y: auto;
-    width: {{ theme_sidebar_width|todim }};
-    max-width: {{ theme_sidebar_width|todim }};
-    background-color: {{ theme_sidebar_color }};
-    {%- if theme_sidebar_position == 'right' %}
-        right: 0;
-    {%- elif theme_sidebar_position == 'left' %}
+    width: 240px;
+    max-width: 240px;
+    background-color: #23A97F;
         left: 0;
-    {%- endif %}
 }
-div.sidebar * { background-color: {{ theme_sidebar_color }}; }
+div.sidebar * { background-color: #23A97F; }
 div.sidebar::-webkit-scrollbar { width: 5px; }
 div.sidebarwrapper > * { width: inherit; max-width: inherit; }
 
@@ -158,17 +148,7 @@ div.sidebarwrapper > * { width: inherit; max-width: inherit; }
 }
 #sidebar_logo {
     background-color: white;
-    /* logo width */
-    {%- if theme_logo_width|float <= 1 -%}
-        width: {{ (theme_sidebar_width|int * theme_logo_width|float)|int }}px;
-    {%- else -%}
-        width: {{ theme_logo_width|int }}px;
-    {%- endif -%}
-    /* logo clip to circle, max radius limited to 50% */
-    {%- if theme_logo_radius -%}
-        clip-path: circle({{ '{:.0%}'.format(theme_logo_radius|float) }});
-    {%- endif -%}
-}
+    /* logo width */width: 180px;/* logo clip to circle, max radius limited to 50% */clip-path: circle(50%);}
 p.home_text { margin: 0; padding: 15px 5px 0; color:white; font-weight: bold; }
 
 #sidebar_rel {
@@ -177,54 +157,64 @@ p.home_text { margin: 0; padding: 15px 5px 0; color:white; font-weight: bold; }
 }
 
 div[class^="sidetoc_"] {
-    {%- if theme_sidebar_position == 'left' %}
         padding-left: 10px; padding-right: 5px;
-    {%- elif theme_sidebar_position == 'right' %}
-        padding-left: 5px; padding-right: 10px;
-    {%- endif %}
 }
 div[class^="sidetoc_"] > a { color: white; text-decoration-line: none; }
 div[class^="sidetoc_"]:hover { filter: brightness(1.2); }
 
 div.sidetoc_lower {
     padding-top: 1px;
-    padding-bottom: 1px; 
-    {%- if theme_sidebar_position == 'left' %}
+    padding-bottom: 1px;
         padding-left: 20px;
-    {%- elif theme_sidebar_position == 'right' %}
-        padding-right: 20px;
-    {%- endif %}
     filter: brightness(0.85);
 }
 
 div.sidetocview > div:first-child {  padding-top: 5px; }
-div.sidetocview > div:last-child { padding-bottom: 5px; }
-{%- endif -%}
+div.sidetocview > div:last-child { padding-bottom: 5px; }/* admonitions */
 
-/* admonitions */
 
-{% macro admn_style(admn_color) %}
-    background-color: {{ admn_color }};
+
+div.admonition.attention { 
+    background-color: lightsalmon;
     padding-bottom: 5px;
-{% endmacro %}
-
-div.admonition.attention { {{ admn_style(theme_admonition_attention_color) }} }
-div.admonition.caution { {{ admn_style(theme_admonition_caution_color) }} }
-div.admonition.danger { {{ admn_style(theme_admonition_danger_color) }} }
-div.admonition.error { {{ admn_style(theme_admonition_error_color) }} }
-div.admonition.hint { {{ admn_style(theme_admonition_hint_color) }} }
-div.admonition.important { {{ admn_style(theme_admonition_important_color) }} }
-div.admonition.note { {{ admn_style(theme_admonition_note_color) }} }
-div.admonition.tip { {{ admn_style(theme_admonition_tip_color) }} }
-div.admonition.warning { {{ admn_style(theme_admonition_warning_color) }} }
+ }
+div.admonition.caution { 
+    background-color: lightsalmon;
+    padding-bottom: 5px;
+ }
+div.admonition.danger { 
+    background-color: lightpink;
+    padding-bottom: 5px;
+ }
+div.admonition.error { 
+    background-color: lightpink;
+    padding-bottom: 5px;
+ }
+div.admonition.hint { 
+    background-color: lightgreen;
+    padding-bottom: 5px;
+ }
+div.admonition.important { 
+    background-color: lightgreen;
+    padding-bottom: 5px;
+ }
+div.admonition.note { 
+    background-color: lightskyblue;
+    padding-bottom: 5px;
+ }
+div.admonition.tip { 
+    background-color: lightgreen;
+    padding-bottom: 5px;
+ }
+div.admonition.warning { 
+    background-color: lightsalmon;
+    padding-bottom: 5px;
+ }
 
 
 /* admonition titles */
 
-{% macro admn_title_style(admn_color) %}
-    {{ admn_style(admn_color) }}
-    filter: brightness(0.85);
-{% endmacro %}
+
 
 div.admonition { margin-bottom: 1em; }
 div.admonition > * {  /* select all children */
@@ -233,15 +223,69 @@ div.admonition > * {  /* select all children */
 }
 p.admonition-title { font-weight: bold; margin: 0; }
 
-div.admonition.attention > .admonition-title { {{ admn_title_style(theme_admonition_attention_color) }} }
-div.admonition.caution > .admonition-title { {{ admn_title_style(theme_admonition_caution_color) }} }
-div.admonition.danger > .admonition-title { {{ admn_title_style(theme_admonition_danger_color) }} }
-div.admonition.error > .admonition-title { {{ admn_title_style(theme_admonition_error_color) }} }
-div.admonition.hint > .admonition-title { {{ admn_title_style(theme_admonition_hint_color) }} }
-div.admonition.important > .admonition-title { {{ admn_title_style(theme_admonition_important_color) }} }
-div.admonition.note > .admonition-title { {{ admn_title_style(theme_admonition_note_color) }} }
-div.admonition.tip > .admonition-title { {{ admn_title_style(theme_admonition_tip_color) }} }
-div.admonition.warning > .admonition-title { {{ admn_title_style(theme_admonition_warning_color) }} }
+div.admonition.attention > .admonition-title { 
+    
+    background-color: lightsalmon;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.caution > .admonition-title { 
+    
+    background-color: lightsalmon;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.danger > .admonition-title { 
+    
+    background-color: lightpink;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.error > .admonition-title { 
+    
+    background-color: lightpink;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.hint > .admonition-title { 
+    
+    background-color: lightgreen;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.important > .admonition-title { 
+    
+    background-color: lightgreen;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.note > .admonition-title { 
+    
+    background-color: lightskyblue;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.tip > .admonition-title { 
+    
+    background-color: lightgreen;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
+div.admonition.warning > .admonition-title { 
+    
+    background-color: lightsalmon;
+    padding-bottom: 5px;
+
+    filter: brightness(0.85);
+ }
 
 /* code highlight */
 

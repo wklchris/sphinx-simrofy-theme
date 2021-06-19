@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+    
+
+
+
+<head>
+
+    <meta charset="utf-8">
+        <title>Documentation - Simrofy</title>
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/Documentation.html">
+        <link rel="icon" type="image/x-icon" href="
+    _static/favicon.ico">
+    <link rel="stylesheet" href="_static/simrofy.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+
+
+
+<body>
+
+
+<div class="sidebar container" role="navigation" aria-label="main navigation">
+    <div class="sidebarwrapper">
+        <div id="sidebar_home">
+            
+            <a class="logo" href=index.html>
+            
+                <img class="align-center" id="sidebar_logo" alt="Website logo"
+                    src="
+    _static/logo.png" />
+            
+            </a>
+                    <p class="home_text">Simrofy v0.2.0</p>
+        </div>
+        <div id="sidebar_rel">
+        
+                    <div class="sidetoc_collapse"><a href="Development.html">Development</a></div>
+        
+                    <div class="sidetoc_expand">
+                        <a href="#">Documentation</a>
+                    </div>
+                    <div class="sidetocview">
+                        <div class="sidetoc_lower">
+                            <a href="#overview">Overview</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#installation">Installation</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#quick-guide">Quick Guide</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#theme-options">Theme Options</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#appendices">Appendices</a>
+                        </div>
+                    </div>
+        
+                    <div class="sidetoc_collapse"><a href="People.html">People</a></div>
+        
+        
+        </div>
+    </div>
+</div>
+
+
+
+<div class="headbar container" role="contenthead">
+    <div class="headbarwrapper">
+        <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
+    _static/logo.png" /><a href=index.html>Homepage</a>&nbsp;|&nbsp;
+        </div>
+        <div id="headbar_lang"><details class="headbar_langmenu">
+            <summary>Languages</summary>
+            <details-menu class="dropdown"><a class="dropdown-item" href="../en/Documentation.html">English</a><a class="dropdown-item" href="../zh_CN/Documentation.html">简体中文</a></details-menu>
+        </details></div>
+        <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Documentation.rst.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
+                <img src="
+    _static/icon/github.png" alt="Github Icon"
+                    style="height: 24px;" />
+            </a></div>
+        <div class="headbarlinks">
+        
+            <a href="Development.html">Development</a>
+        
+        
+        
+            <a href="Examples.html">Examples</a>
+        </div>
+    </div>
+</div>
+<div class="document">
+    <div class="documentwrapper">
+    <div class="body container" role="main">
+        <div class="bodywrapper">
+            
+            
+  <div class="section" id="documentation">
+<span id="chapter-simrofy-doc"></span><h1>Documentation<a class="headerlink" href="#documentation" title="永久链接至标题">¶</a></h1>
+<p>This is the documentation of Sphinx theme Simrofy.</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> for details. In additional, the <a class="reference internal" href="Examples.html#chapter-examples"><span class="std std-ref">Examples</span></a> chapter of this website also provides a lot of useful information.</p>
+<p>reStructuredText is not mandantory but <strong>highly recommended</strong>. Although you can write Markdown with <a class="reference external" href="https://recommonmark.readthedocs.io/en/latest/">recommonmark</a> extension, many features of Sphinx is only avaliable to reStructuredText syntax.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">警告</p>
+<p>Simrofy is still in beta and its features and options may change very often.</p>
+<p>Last updated was on 2021-06-19.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="永久链接至标题">¶</a></h2>
+<p>The Simrofy theme provides following features (for a full theme options list, see <a class="reference internal" href="#theme-options"><span class="std std-ref">Theme Options</span></a> section below):</p>
+<ul class="simple">
+<li><p>Headbar: It can't be hidden. Users can decide what link to display (<a class="reference internal" href="#term-headbar_links"><span class="xref std std-term">headbar_links</span></a>), adjust its height (<a class="reference internal" href="#term-headbar_height"><span class="xref std std-term">headbar_height</span></a>).</p>
+<ul>
+<li><p>The &quot;Raw&quot; button can be disabled in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> (see <a class="reference internal" href="#section-quick-guide"><span class="std std-ref">Quick Guide</span></a> section).</p></li>
+<li><p>The Github button is disabled by default, unless user use options <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> and <a class="reference internal" href="#term-github_repo"><span class="xref std std-term">github_repo</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Sidebar: Users can enable/disable it, adjust its width and position. See options <a class="reference internal" href="#term-sidebar_position"><span class="xref std std-term">sidebar_position</span></a> and <a class="reference internal" href="#term-sidebar_width"><span class="xref std std-term">sidebar_width</span></a>.</p>
+<ul>
+<li><p>Sidebar generates a toctree with maxdepth 2 (i.e. only including <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code> headings).</p></li>
+<li><p>The logo image is enabled by <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> and its width can be adjusted by <a class="reference internal" href="#term-logo_width"><span class="xref std std-term">logo_width</span></a>. You can use a circle-cropped style logo by given <a class="reference internal" href="#term-logo_radius"><span class="xref std std-term">logo_radius</span></a>.</p></li>
+<li><p>The background color of sidebar is given by <a class="reference internal" href="#term-sidebar_color"><span class="xref std std-term">sidebar_color</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Page components:</p>
+<ul>
+<li><p>Bibliography: Print a bibliography by parsing a <code class="docutils literal notranslate"><span class="pre">*.bib</span></code> file. See <a class="reference internal" href="Examples.html#sec-bib-example"><span class="std std-ref">Bibliography</span></a> section for details.</p></li>
+<li><p>Team photos: Show photos of team members with their contact information using <a class="reference internal" href="#term-people"><span class="xref std std-term">people</span></a> and <a class="reference internal" href="#term-people_pages"><span class="xref std std-term">people_pages</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Others</p>
+<ul>
+<li><p>Customize admonition colors by options like <code class="docutils literal notranslate"><span class="pre">admonition_**_color</span></code>.</p></li>
+<li><p>Add social media icons and weblinks by <a class="reference internal" href="#term-social_accounts"><span class="xref std std-term">social_accounts</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Other customization can be achieved through adding/editing template, CSS or JavaScript files. Please view the source code of Simrofy and/or <a class="reference external" href="https://www.sphinx-doc.org/en/master/templating.html">Sphinx' templating guide</a>.</p>
+</div>
+<div class="section" id="installation">
+<span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="永久链接至标题">¶</a></h2>
+<p>Simrofy relies on few Dependencies and is easily to fetch using pip, the command line package manager that goes with Python.</p>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="永久链接至标题">¶</a></h3>
+<p>Simrofy is a Sphinx theme, so I assume that you don't need it if you haven't installed <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a>.</p>
+<p>Dependencies:</p>
+<ul>
+<li><p><strong>Python (&gt;=3.6 recommended)</strong></p>
+<p>Version &gt;= 3.6 is rcommended because f-string syntax is added in this version and I used that a lot. Lower version may be OK but I didn't test.</p>
+<p>Visit <a class="reference external" href="https://www.python.org/downloads/">Python Official Website</a> to install Python.</p>
+</li>
+<li><p><strong>Sphinx</strong></p>
+<p>Always better to choose a newer Sphinx version. You can scroll down to read the footer of current webpage and find under which Sphinx version this document was built; all versions no earlier than it should be good.</p>
+<p>After installing Python, you can follow the download instruction of <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> to install it via <code class="docutils literal notranslate"><span class="pre">pip</span></code> command.</p>
+</li>
+</ul>
+<p>Optional dependencies:</p>
+<ul>
+<li><p><strong>sphinxcontrib-bibtex</strong></p>
+<p>This extension if for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (<code class="docutils literal notranslate"><span class="pre">*.bib</span></code>) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at <a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a>, or read <a class="reference internal" href="Examples.html#sec-bib-example"><span class="std std-ref">Bibliography</span></a> section of Simrofy documentation.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="installation-via-pip">
+<h3>Installation via Pip<a class="headerlink" href="#installation-via-pip" title="永久链接至标题">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>The early version of Simrofy won't be avaliable on Pypi (but on TestPypi instead) since I think it is not good enough to be post there. However, if you still want to install it and play around, you can get it via TestPypi:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --index-url https://test.pypi.org/simple/ -U sphinx-simrofy-theme
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<p>This is the recommended way to install Simrofy theme. Open your command line terminal and run following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U sphinx-simrofy-theme
+</pre></div>
+</div>
+<p>The arg <code class="docutils literal notranslate"><span class="pre">-U</span></code> ensures upgrading to the newest version.</p>
+</div>
+<div class="section" id="building-simrofy-by-yourself">
+<h3>Building Simrofy by yourself<a class="headerlink" href="#building-simrofy-by-yourself" title="永久链接至标题">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>Skip this section if you've successfully installed Simrofy through pip command.</p>
+</div>
+<p>If you can't install it via pip, an alternative is to consider downloading the source code of Simrofy and compile it by yourself.</p>
+<ol class="arabic">
+<li><p>Download the source code of Simrofy from the Github repository. You can click on the Github link on the webpage sidebar.</p></li>
+<li><p>Enter the folder and focus on following files:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dist/
+sphinx_simrofy_theme/
+    static/
+    ...
+setup.py
+...
+</pre></div>
+</div>
+<p>Then launch your command line terminal with current folder as the working directory.</p>
+</li>
+<li><p>In your terminal, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py sdist bdist_wheel
+</pre></div>
+</div>
+<p>If you encounter an error, probably because you haven't installed the <code class="docutils literal notranslate"><span class="pre">wheel</span></code> package. Install it and try above building again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install wheel
+</pre></div>
+</div>
+</li>
+<li><p>You will find compiled packages under the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder. Then you can directly install it by pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install dist/sphinx_simrofy_theme-VERSION.EXTENSION
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> with version string of your build (like <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> ) and <code class="docutils literal notranslate"><span class="pre">EXTENSION</span></code> with package extension (either <code class="docutils literal notranslate"><span class="pre">whl</span></code> or <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> ). For example, &quot;sphinx_simrofy_theme-0.2.0.whl&quot; is a common choice for Windows users who are installing version 0.2.0.</p>
+</li>
+<li><p>You have finished building Simrofy and it has been installed on your machine.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="quick-guide">
+<span id="section-quick-guide"></span><h2>Quick Guide<a class="headerlink" href="#quick-guide" title="永久链接至标题">¶</a></h2>
+<p>To apply Simrofy theme to your Sphinx project, put following line inside your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx-simrofy-theme&#39;</span>  <span class="c1"># These symbols are hyphens, not underlines!</span>
+</pre></div>
+</div>
+<p>Then you can follow the general Sphinx writing process. To customize Simrofy theme, use <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file. See <a class="reference internal" href="#theme-options"><span class="std std-ref">Theme Options</span></a> section below.</p>
+<p>Other notes:</p>
+<ul>
+<li><p>The 'Raw' button on the headbar can be removed by disabling copy source files into <code class="docutils literal notranslate"><span class="pre">_sources</span></code> path of the output folder. Use <code class="docutils literal notranslate"><span class="pre">html_copy_source</span> <span class="pre">=</span> <span class="pre">False</span></code> in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to disable it.</p></li>
+<li><p>The mechanism behind the default headbar links (or user-defined <code class="docutils literal notranslate"><span class="pre">headbar_links</span></code> ) is pretty unclear since Sphinx doesn't provide a simple way to read the doctree list. User needs to avoid using any of following substrings in document filenames:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">href=</span></code> , or</p></li>
+<li><p>double semicolons <code class="docutils literal notranslate"><span class="pre">;;</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<p>These strings are used for processing the output of <code class="docutils literal notranslate"><span class="pre">toctree</span></code> call of the Sphinx builder. Embedding them in filenames may cause building error or unexpected HTTML outputs.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="theme-options">
+<span id="id2"></span><h2>Theme Options<a class="headerlink" href="#theme-options" title="永久链接至标题">¶</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file, we can specify theme options through the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary variable. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;sidebar_position&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidebar_width&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="default-values-of-theme-options">
+<h3>Default values of theme options<a class="headerlink" href="#default-values-of-theme-options" title="永久链接至标题">¶</a></h3>
+<p>All dictionary keys used in <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> should be designed in the Simrofy theme. Please check the <code class="docutils literal notranslate"><span class="pre">theme.conf</span></code> file's <code class="docutils literal notranslate"><span class="pre">[options]</span></code> sections for details. For convinience, I also put the whole file here:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[theme]</span>
+<span class="na">inherit</span> <span class="o">=</span> <span class="s">basic</span>
+<span class="na">stylesheet</span> <span class="o">=</span> <span class="s">simrofy.css</span>
+<span class="na">pygments_style</span> <span class="o">=</span> <span class="s">default</span>
+
+<span class="k">[options]</span>
+<span class="na">canonical_prefix</span> <span class="o">=</span> 
+<span class="na">favicon</span> <span class="o">=</span> 
+<span class="na">logo</span> <span class="o">=</span>
+<span class="na">logo_width</span> <span class="o">=</span> <span class="s">0.8</span>
+<span class="na">logo_radius</span> <span class="o">=</span> 
+
+<span class="na">github_user</span> <span class="o">=</span>
+<span class="na">github_repo</span> <span class="o">=</span>
+<span class="na">social_accounts</span> <span class="o">=</span> 
+
+<span class="na">headbar_height</span> <span class="o">=</span> <span class="s">30</span>
+<span class="na">headbar_links</span> <span class="o">=</span> 
+<span class="na">languages</span> <span class="o">=</span> 
+
+<span class="na">image_self</span> <span class="o">=</span> 
+<span class="na">people</span> <span class="o">=</span> 
+<span class="na">people_pages</span> <span class="o">=</span> 
+<span class="na">photo_subpath</span> <span class="o">=</span> 
+
+<span class="na">sidebar_home_text</span> <span class="o">=</span> 
+<span class="na">sidebar_toc_exclude</span> <span class="o">=</span> 
+<span class="na">sidebar_position</span> <span class="o">=</span> <span class="s">left</span>
+<span class="na">sidebar_width</span> <span class="o">=</span> <span class="s">240</span>
+<span class="na">sidebar_color</span> <span class="o">=</span> <span class="s">#23A97F</span>
+<span class="na">toc_depth</span> <span class="o">=</span> <span class="s">2</span>
+
+<span class="na">admonition_attention_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
+<span class="na">admonition_caution_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
+<span class="na">admonition_danger_color</span> <span class="o">=</span> <span class="s">lightpink</span>
+<span class="na">admonition_error_color</span> <span class="o">=</span> <span class="s">lightpink</span>
+<span class="na">admonition_hint_color</span> <span class="o">=</span> <span class="s">lightgreen</span>
+<span class="na">admonition_important_color</span> <span class="o">=</span> <span class="s">lightgreen</span>
+<span class="na">admonition_note_color</span> <span class="o">=</span> <span class="s">lightskyblue</span>
+<span class="na">admonition_tip_color</span> <span class="o">=</span> <span class="s">lightgreen</span>
+<span class="na">admonition_warning_color</span> <span class="o">=</span> <span class="s">lightsalmon</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-references-of-theme-options">
+<h3>Full references of theme options<a class="headerlink" href="#full-references-of-theme-options" title="永久链接至标题">¶</a></h3>
+<p>Here is a parameter list for Simrofy's theme options. You may refer to the appendix <a class="reference internal" href="#conf-py-file"><span class="std std-ref">conf.py file</span></a> section to see how these options are used in this website.</p>
+<dl class="glossary">
+<dt id="term-admonition_-_color">admonition_**_color</dt><dd><p>Passing a CSS color strings to override the default admonition background color, where ** is the admonition name (attention, caution, etc.).</p>
+<p>For example, user can change the color of these admonitions by passing values to the <code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code> dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;admonition_attention_color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;admonition_note_color&quot;</span><span class="p">:</span> <span class="s2">&quot;#C8EBFA&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Default admonition colors are similar to (yet not exactly the same with) the default settings of Read the Docs theme's admonitions (see <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/demo.html#admonitions">their documentation</a> ). Although users can assign any color to admonitions, <em>light colors</em> are highly recommended since the title color of an admonition is an auto &quot;darker&quot; version of the body color using CSS' <code class="docutils literal notranslate"><span class="pre">brightness</span></code> filter.</p>
+<p>All supported admonition name with default colors are showing below:</p>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>Attention.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">警告</p>
+<p>Caution.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">危险</p>
+<p>Danger.</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">错误</p>
+<p>Error.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>Hint.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>Important.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Note.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>Tip.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>Warning.</p>
+</div>
+</dd>
+<dt id="term-canonical_prefix">canonical_prefix</dt><dd><p>The canonical prefix for each webpage, which can either ends with a <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol or not. For example, if you set it as <code class="docutils literal notranslate"><span class="pre">https://eg.com/</span></code>, the webpage (generated from <code class="docutils literal notranslate"><span class="pre">page.rst</span></code>) will have a canonical url of <code class="docutils literal notranslate"><span class="pre">https://eg.com/page.html</span></code>.</p>
+</dd>
+<dt id="term-favicon">favicon</dt><dd><p>The file path (under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> path, see <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> for details) to the website icon (favicon).</p>
+</dd>
+<dt id="term-github_repo">github_repo</dt><dd><p>(Only valid when <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a> is specified)</p>
+<p>Show a Github repo link of <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER/GITHUB_REPO</span></code> instead of your user profile page.</p>
+</dd>
+<dt id="term-github_user">github_user</dt><dd><p>Github username. It will create a icon-weblink to <code class="docutils literal notranslate"><span class="pre">https://github.com/GITHUB_USER</span></code> on the headbar that allows others visit your Github profile page.</p>
+</dd>
+<dt id="term-headbar_height">headbar_height</dt><dd><p>The height of headbar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">30</span></code></p>
+</dd>
+<dt id="term-headbar_links">headbar_links</dt><dd><p>Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> and the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">'headbar_links':</span> <span class="pre">['Development',</span> <span class="pre">'Documentation']</span></code> will show:</p>
+<ul class="simple">
+<li><p>'Development' link only if the user is browsing the 'Documentation' webpage</p></li>
+<li><p>'Documentation' link only if the user is browsing the 'Development' webpage</p></li>
+<li><p>Both 'Development' and 'Documentation' links if the user is browsing other webpages.</p></li>
+</ul>
+</dd>
+<dt id="term-image_self">image_self</dt><dd><p>The photograph of the site owner, which is often seen on portfolio-style websites. Default is undefined . Keep in mind that it is a path under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> instead of you main folder, see <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> for details.</p>
+</dd>
+<dt id="term-languages">languages</dt><dd><p>A dictionary of display languages for your website. Default is none. You may need to install <code class="docutils literal notranslate"><span class="pre">sphinx-intl</span></code> and prepare translation <code class="docutils literal notranslate"><span class="pre">.po</span></code> files to build a multi-language website.</p>
+<p>For example, assume that you write your website in English and would like to also provide a Simplified Chinese translation. To build this bilingual website, you need to add a dict of two key-value pairs to your theme option:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code in your conf.py</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;languages&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;zh_CN&#39;</span><span class="p">:</span> <span class="s1">&#39;简体中文&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Keys of the dictionary are the abbreviation ('en', 'zh_CN') for languages, and values are the desired displayed text in your website's language menu. For a list of supported languages, please refer to the <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> documentation's internationalization (i18n) webpage.</p>
+</dd>
+<dt id="term-logo">logo</dt><dd><p>The logo image file path. Default is undefined, which will display a text hyperlink &quot;Homepage&quot; instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar &amp; topbar, if they are enabled).</p>
+<p>Note that the file path is the subpath under your <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> defined in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. For example, if you have following lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code in your conf.py</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_my_static&quot;</span><span class="p">]</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;logo&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then you should put your logo file at <code class="docutils literal notranslate"><span class="pre">_my_static/logo.png</span></code>.</p>
+</dd>
+<dt id="term-logo_radius">logo_radius</dt><dd><p>(Only valid when <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> is specified)</p>
+<p>The radius of the clipping circle to logo. The user input wil be converted into a percentage value and then passed to the <code class="docutils literal notranslate"><span class="pre">circle(...)</span></code> function of CSS style <code class="docutils literal notranslate"><span class="pre">clip-path</span></code>. When the value is exact 0.5, it will draw a inscribed-circle viewbox (with respect to the height, if the image is not squared).</p>
+<p>Default is undefined, which means the logo will be displayed in normal rectangle shape.</p>
+</dd>
+<dt id="term-logo_width">logo_width</dt><dd><p>(Only valid when <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> is specified)</p>
+<p>The logo width in percentage (for a value &lt;= 1.0 ) or unit of px (for a value &gt; 1.0). Default is <code class="docutils literal notranslate"><span class="pre">0.8</span></code> , or say 80% sidebar width.</p>
+</dd>
+<dt id="term-people">people</dt><dd><p>(Only valid when both <a class="reference internal" href="#term-people_pages"><span class="xref std std-term">people_pages</span></a> and this options are specified)</p>
+<p>A dictionary variable that contains the information of people in your team. Default is undefined. An useful example output can be found in the <a class="reference internal" href="People.html#chapter-people"><span class="std std-ref">People</span></a> chapter.</p>
+<p>The dictionary should follow a format like (below is an example of external JSON file):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;Leader&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Leader name&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Team leader&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234 in Building A&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;leader@eg.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;123-456-7890&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;Postdoc&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Postdoc 1&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Postdoc&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234, Building A, Department of Foo and Bar Science, University of Very Long Name that Needs Line Break&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;one@postdoc.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;111-222-3333&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;Postdoc 2&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Postdoc&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;Office 1234&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;two@postdoc.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;444-555-6666&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;photo&quot;</span><span class="p">:</span> <span class="s2">&quot;self.jpg&quot;</span>
+        <span class="p">},</span>
+</pre></div>
+</div>
+<p>Each entry should be the name of group (e.g. &quot;Leader&quot;) and it will be rendered as a <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code> tag in the output webpage (but not included in the toctree). Items under each group are people, where keys are their names (displayed in bold) and values are a dictionary of corresponding personal information.</p>
+<p>Personal information includes following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the person. Professor, graduate student, visiting scholar, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code>: The office address or something similar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code>: The email address of the person. Symbol <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is replaced by text <code class="docutils literal notranslate"><span class="pre">:at:</span></code> when displayed on the webpage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phone</span></code>: The phone number of the person. Since there is no format check, you can use hyphens and brackets or input several phone numbers if needed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">photo</span></code>: The photo path of the person under the <a class="reference internal" href="#term-photo_subpath"><span class="xref std std-term">photo_subpath</span></a> of the static path.</p></li>
+</ul>
+</dd>
+<dt id="term-people_pages">people_pages</dt><dd><p>(Only valid when both <a class="reference internal" href="#term-people"><span class="xref std std-term">people</span></a> and this options are specified)</p>
+<p>A list of webpage filenames (without extension) that appends photos of people in your team. Default is undefined. Only webpages listed here will display those team member photos.</p>
+</dd>
+<dt id="term-photo_subpath">photo_subpath</dt><dd><p>The subpath for photos of team  under the <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> folder. For example, <code class="docutils literal notranslate"><span class="pre">'photos/'</span></code> means photos are under <code class="docutils literal notranslate"><span class="pre">_static/photos/</span></code> if we have <code class="docutils literal notranslate"><span class="pre">html_static_path</span> <span class="pre">=</span> <span class="pre">['_static']</span></code>. You may read the <a class="reference internal" href="#term-logo"><span class="xref std std-term">logo</span></a> option for details of static path.</p>
+<p>Default is undefined, in which case Sphinx will only search the static path and not dive into deeper subfolders. The tailing forward slash <code class="docutils literal notranslate"><span class="pre">/</span></code> of the subpath string can be omitted.</p>
+</dd>
+<dt id="term-sidebar_color">sidebar_color</dt><dd><p>The background color of sidebar. Default is color code <code class="docutils literal notranslate"><span class="pre">'#23A97F'</span></code> (a medium dark green).</p>
+</dd>
+<dt id="term-sidebar_home_text">sidebar_home_text</dt><dd><p>A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.</p>
+</dd>
+<dt id="term-sidebar_position">sidebar_position</dt><dd><p>The position of the sidebar. Users can also select:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'left'</span></code>: Display the sidebar on the left. This is the default value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'right'</span></code>: Display the sidebar on the right.</p></li>
+<li><p>Any other value will disable the sidebar.</p></li>
+</ul>
+</dd>
+<dt id="term-sidebar_toc_exclude">sidebar_toc_exclude</dt><dd><p>A list of rst files that would be excluded from the sidebar tabloe of contents. Each item of the list should be the title of the file. Default is undefined.</p>
+</dd>
+<dt id="term-sidebar_width">sidebar_width</dt><dd><p>The width of the sidebar in unit of px. Default is <code class="docutils literal notranslate"><span class="pre">240</span></code></p>
+</dd>
+<dt id="term-social_accounts">social_accounts</dt><dd><p>Social accounts information. User can pass a dictionary with a similar structure as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;social_accounts&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;facebook&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Keys of the dictionary should be social media website names. A full list of supported social media names are shown in <code class="docutils literal notranslate"><span class="pre">socialmedia.html</span></code>, or you can also view it inside the collapsible container below.</p></li>
+<li><p>Each entry should contain a sub-dictionary that at least has <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">url</span></code> keys. The <code class="docutils literal notranslate"><span class="pre">user</span></code> string will be displayed as the link text and the <code class="docutils literal notranslate"><span class="pre">url</span></code> is the link to your social media account webpage.</p></li>
+<li><p>You need to specify Github user again even if you have done it in <a class="reference internal" href="#term-github_user"><span class="xref std std-term">github_user</span></a>.</p></li>
+</ul>
+<details><summary>A full list of supported social media names</summary><div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="c">{# </span>
+<span class="c">    This is the social media template of Simrofy theme. Simrofy supports social media icons from the Github:</span>
+
+<span class="c">    Original: https://github.com/konsav/social-icons</span>
+<span class="c">    Forked &amp; Split: https://github.com/wklchris/social-icons</span>
+
+<span class="c">    Simrofy also allows users to use social media icons not listed here by specifying an icon file path for the website they like.</span>
+<span class="c">#}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">set</span> <span class="nv">socials</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="s2">&quot;500px&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;aboutme&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;amazon&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;android&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;angellist&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;apple&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;behance&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;bookmate&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;buffer&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;codepen&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;coub&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;delicious&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;devianart&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;digg&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;dribble&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;dropbox&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;ello&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;envato&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;etsy&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;etsy-short&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;evernote&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;facebook&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;favorite&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;flikr&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;foursquare&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;github&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;google+&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;googledrive&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;googleplay&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;habrahabr&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;instagram&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;jsfiddle&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;kickstarter&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;like&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;line&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;line-icon&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;linkedin&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;livejournal&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;mail&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;map&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;medium&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;messenger&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;ok&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;periscope&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;photobucket&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;pinterest&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;pinterest-light&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;pocket&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;producthunt&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;quora&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;reddit&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;reddit-light&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;rss&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;send&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;send-light&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;shopify&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;sketch&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;skype&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;slack&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;slideshare&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;snapchat&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;stackoverflow&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;stumbleupon&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;swarm&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;tripadvisor&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;tumblr&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;twitter&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;upwork&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;viadeo&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;vimeo&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;vk&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;vscogrid&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;web&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;windows&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;wordpress&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;xing&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;yelp&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;youtube&quot;</span><span class="o">,</span>
+    <span class="s2">&quot;youtube-play&quot;</span>
+<span class="o">]</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+</details></dd>
+</dl>
+</div>
+</div>
+<div class="section" id="appendices">
+<h2>Appendices<a class="headerlink" href="#appendices" title="永久链接至标题">¶</a></h2>
+<div class="section" id="conf-py-file">
+<span id="id3"></span><h3>conf.py file<a class="headerlink" href="#conf-py-file" title="永久链接至标题">¶</a></h3>
+<p>The example <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file taken from this documentation website:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Project metadata</span>
+<span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;Simrofy&#39;</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2020, wklchris&#39;</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;wklchris&#39;</span>
+<span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;0.2.0&#39;</span>
+
+
+<span class="c1"># Sphinx configurations</span>
+<span class="n">smartquotes</span> <span class="o">=</span> <span class="kc">False</span>          <span class="c1"># Show double-dashes clearly</span>
+<span class="n">today_fmt</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span>       <span class="c1"># Date format when using |today| replacement syntax</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>    <span class="c1"># Math equation support</span>
+    <span class="s1">&#39;recommonmark&#39;</span><span class="p">,</span>          <span class="c1"># Markdown support if you don&#39;t like reStructuredText</span>
+    <span class="s1">&#39;sphinxcontrib.bibtex&#39;</span>   <span class="c1"># Bibliography support</span>
+<span class="p">]</span>
+
+
+<span class="c1"># For debug only. If installed via pip, using:</span>
+<span class="c1">#    html_theme = &#39;sphinx-simrofy-theme&#39;</span>
+<span class="c1">#    (and remove the html_theme_path line)</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_simrofy_theme&#39;</span>
+<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
+
+<span class="c1"># Static paths. Folder for images, CSS, etc.</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_static&quot;</span><span class="p">]</span>
+
+<span class="c1"># Load external data, if needed</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;_static/people.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">people_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Set internationalization (i18n) for multi-language support</span>
+<span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+<span class="n">locale_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;locale/&#39;</span><span class="p">]</span>
+<span class="n">gettext_compact</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Theme options.</span>
+<span class="c1"># - Read sphinx_simrofy_theme/theme.conf for default values.</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;canonical_prefix&#39;</span><span class="p">:</span> <span class="s2">&quot;https://wklchris.github.io/sphinx-simrofy-theme/&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;favicon&#39;</span><span class="p">:</span> <span class="s2">&quot;favicon.ico&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;headbar_links&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Development&#39;</span><span class="p">,</span> <span class="s1">&#39;Documentation&#39;</span><span class="p">,</span> <span class="s1">&#39;Examples&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;sidebar_position&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;github_user&#39;</span><span class="p">:</span> <span class="s1">&#39;wklchris&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;github_repo&#39;</span><span class="p">:</span> <span class="s1">&#39;sphinx-simrofy-theme&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;languages&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;zh_CN&#39;</span><span class="p">:</span> <span class="s1">&#39;简体中文&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;logo&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;logo_width&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+    <span class="s1">&#39;logo_radius&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;sidebar_home_text&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Simrofy v</span><span class="si">{</span><span class="n">release</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sidebar_toc_exclude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Examples&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;social_accounts&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;facebook&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-facebook&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;linkedin&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;eg-linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;linkhere&#39;</span><span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;people&#39;</span><span class="p">:</span> <span class="n">people_json</span><span class="p">,</span>
+    <span class="s1">&#39;people_pages&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;People&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;photo_subpath&#39;</span><span class="p">:</span> <span class="s1">&#39;photos/&#39;</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Others</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+<span class="n">rst_epilog</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">.. _Sphinx: https://www.sphinx-doc.org/</span>
+<span class="s2">.. _sphinxcontrib-bibtex: https://sphinxcontrib-bibtex.readthedocs.io/</span>
+<span class="s2">.. _recommonmark: https://recommonmark.readthedocs.io/en/latest/</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+            
+        </div>
+    </div>
+
+    
+    <div class="footer container" role="contentinfo">
+        <div class="footerwrapper">
+        <div class="footersocial">
+            <ul class="footersociallist">
+            
+                <li><a class="socialicon" href=None>
+                    <span class="socialicon">
+                        <img class="social" src="
+    _static/icon/social-facebook.png"
+                            alt="facebook icon">
+                    </span>
+                    <span class="socialuser">eg-facebook</span>
+                </a></li>
+            
+                <li><a class="socialicon" href=None>
+                    <span class="socialicon">
+                        <img class="social" src="
+    _static/icon/social-linkedin.png"
+                            alt="linkedin icon">
+                    </span>
+                    <span class="socialuser">eg-linkedin</span>
+                </a></li>
+            
+            </ul>
+        </div>
+            &#169; 版权所有 2020, wklchris.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+            <br>
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.2.0, a Sphinx theme for building portfolio/CV websites.
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>

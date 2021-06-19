@@ -1,0 +1,35 @@
+{
+    "Leader": {
+        "Leader name": {
+            "title": "Team leader",
+            "address": "Office 1234 in Building A",
+            "email": "leader@eg.com",
+            "phone": "123-456-7890",
+            "photo": "self.jpg"
+        }
+    },
+    "Postdoc": {
+        "Postdoc 1": {
+            "title": "Postdoc",
+            "address": "Office 1234, Building A, Department of Foo and Bar Science, University of Very Long Name that Needs Line Break",
+            "email": "one@postdoc.com",
+            "phone": "111-222-3333",
+            "photo": "self.jpg"
+        },
+        "Postdoc 2": {
+            "title": "Postdoc",
+            "address": "Office 1234",
+            "email": "two@postdoc.com",
+            "phone": "444-555-6666",
+            "photo": "self.jpg"
+        },
+        "Postdoc 3": {
+            "title": "Postdoc",
+            "notes": "Some other notes.",
+            "address": "Office 1234",
+            "email": "three@postdoc.com",
+            "phone": "777-888-9999",
+            "photo": "self.jpg"
+        }
+    }
+}

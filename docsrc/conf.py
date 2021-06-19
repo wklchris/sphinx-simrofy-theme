@@ -43,7 +43,7 @@ html_theme_options = {
     'sidebar_position': 'left',
     'github_user': 'wklchris',
     'github_repo': 'sphinx-simrofy-theme',
-    'languages': ['zh_CN'],
+    'languages': {'en': 'English', 'zh_CN': '简体中文'},
     'logo': 'logo.png',
     'logo_width': 0.75,
     'logo_radius': 0.5,

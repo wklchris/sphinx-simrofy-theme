@@ -86,6 +86,10 @@
     {{ pathto(source_path + filepath|e, 1) }}
 {%- endmacro %}
 
+{%- macro switch_lang(lang, webfile) -%}
+    {{ '../' + lang + '/' + webfile }}
+{%- endmacro %}
+
 
 {%- macro simrofy_headlinks() -%}
     {%- set tocstr = toctree(titles_only=true, includehidden=true)
@@ -241,6 +245,19 @@
             <img id="headbar_logo" alt="Website logo" src="{{ pathto_static(theme_logo)|e }}" />
         {%- endif -%}
         <a href={{ url_mainsite|e }}>{{ _('Homepage') }}</a>&nbsp;|&nbsp;
+        </div>
+        <div id="headbar_lang">
+        {%- if theme_languages -%}
+        <details class="headbar_langmenu">
+            <summary>Languages</summary>
+            <details-menu class="dropdown">
+            {%- set webfile = pagename + file_suffix %}
+            {%- for lang, text in theme_languages.items() -%}
+                <a class="dropdown-item" href="{{ switch_lang(lang, webfile)|e }}">{{ text }}</a>
+            {%- endfor -%}
+            </details-menu>
+        </details>
+        {%- endif -%}
         </div>
         <div class="headbarsources">
         {%- if show_source and has_source and sourcename -%}|&nbsp;{#- delim -#}

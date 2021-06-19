@@ -17,17 +17,18 @@ def copy_dir(dir_src, dir_des, delete_src=False):
     if delete_src:
         shutil.rmtree(dir_src)
 
-def main(preview=True, trans_lang=None, update_po=False):
+def main(preview=True, main_lang='zh_CN', trans_lang=None, update_po=False):
     """
     Args:
     - preview: Whether open the built HTML in the webbrowser.
+    - main_lang: The primary language for website display/writing.
     - trans_lang: Whether use the i18n for translation. 
     - update_po: [!Danger!] Whether overwrite .po translation files.
         Only enable this when a new formal release is provided, 
           or when we need to totally rewrite the translation.
     """
     # Internationalization
-    if trans_lang:
+    if trans_lang and update_po:
         gettext_dir = os.path.join(build_tmp_dir, "gettext")
         out_languages = f"-l {trans_lang}"
         intl_cmds = [
@@ -52,10 +53,10 @@ def main(preview=True, trans_lang=None, update_po=False):
     ## Main language build
     build_cmd = f'sphinx-build -M html {docsrc} {build_tmp_dir}'
     external_run(build_cmd)
-
     # Copy (Overwrite if exists!) build_tmp_dir to docs
     build_html_dir = os.path.join(build_tmp_dir, "html")
-    copy_dir(build_html_dir, docs)
+    output_dir = os.path.join(docs, main_lang)
+    copy_dir(build_html_dir, output_dir)
     
     # i18n Translation build (if configured)
     if trans_lang:
@@ -65,11 +66,18 @@ def main(preview=True, trans_lang=None, update_po=False):
         docs_translate_dir = os.path.join(docs, trans_lang)
         copy_dir(build_html_dir, docs_translate_dir)
 
-    # Create a .nojekyll for Github Pages
+    # Github Pages will be hosted at /docs
+    ## Create a .nojekyll for Github Pages
     nojekyll = os.path.join(docs, ".nojekyll")
     if not os.path.exists(nojekyll):
         with open(nojekyll, 'w'):
             pass
+    ## Create a /docs/index.html for redirecting
+    redirect_html = ("<!DOCTYPE html><head>"
+        f"<meta http-equiv='refresh' content='0; URL={main_lang}/index.html'>"
+        "</head><body></body>")
+    with open(os.path.join(docs, 'index.html'), 'w', encoding='utf8') as f:
+        f.write(redirect_html)
 
     # Automatically open the HTML file in the browser
     if preview:
@@ -77,4 +85,9 @@ def main(preview=True, trans_lang=None, update_po=False):
         webbrowser.open(html_url)
 
 # --- Enable 'trans_lang' only on new releases 
-main(preview=True, trans_lang='zh_CN')
+main(
+    preview=True,
+    main_lang='en',
+    trans_lang='zh_CN',
+    update_po=False
+)
