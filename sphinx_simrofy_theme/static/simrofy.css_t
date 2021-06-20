@@ -16,7 +16,7 @@ span.unicode_icon {
     width: calc(1em + 2px);
 }
 
-div.container {
+div.simrofybox {
     margin: 0;
     padding: 0.5em 20px;
 }

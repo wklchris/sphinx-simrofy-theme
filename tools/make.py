@@ -62,8 +62,8 @@ def main(preview=True, main_lang='zh_CN', trans_lang=None, update_po=False):
     build_html_dir = os.path.join(build_tmp_dir, "html")
     copy_dir(build_html_dir, docs)
     
-    # i18n Translation build (if configured)
-    if trans_lang:
+    # i18n Translation build (if configured & needed)
+    if trans_lang and update_po:
         sphinx_opts = f"-Dlanguage={trans_lang}" # on Windows
         external_run(f"{build_cmd} {sphinx_opts}")
         

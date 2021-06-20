@@ -15,8 +15,9 @@ extensions = [
     'nbsphinx'               # Jupyter notebook (.ipynb) file support
 ]
 
-mathjax_config = {
-    'TeX': {'equationNumbers': {'autoNumber': 'AMS', 'useLabelIds': True}},
+bibtex_bibfiles = ['refs.bib']
+mathjax3_config = {
+    'tex': {'tags': 'ams', 'useLabelIds': True},
 }
 
 # For debug only. If installed via pip, using:

@@ -108,7 +108,7 @@
 
 {%- macro simrofy_sidebar() %}
 {%- if theme_sidebar_position in ['right', 'left'] %}
-<div class="sidebar container" role="navigation" aria-label="main navigation">
+<div class="sidebar simrofybox" role="navigation" aria-label="main navigation">
     <div class="sidebarwrapper">
         <div id="sidebar_home">
             {# Logo in sidebar #}
@@ -238,7 +238,7 @@
 
 {# CONTENT HEADBAR #}
 {%- block headbar %}
-<div class="headbar container" role="contenthead">
+<div class="headbar simrofybox" role="contenthead">
     <div class="headbarwrapper">
         <div id="headbar_home">
         {%- if theme_logo -%}
@@ -287,7 +287,7 @@
 <div class="document">
     <div class="documentwrapper">
     {%- block document %}
-    <div class="body container" role="main">
+    <div class="body simrofybox" role="main">
         <div class="bodywrapper">
             {# MAIN DOCUMENT PROCESSED BY BUILDER #}
             {% block body %}{% endblock %}
@@ -303,7 +303,7 @@
 
     {# FOOTER #}
     {%- block footer %}
-    <div class="footer container" role="contentinfo">
+    <div class="footer simrofybox" role="contentinfo">
         <div class="footerwrapper">
 
         {%- block footersocial %}
