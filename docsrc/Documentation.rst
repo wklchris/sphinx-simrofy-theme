@@ -275,6 +275,9 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
         Show a Github repo link of ``https://github.com/GITHUB_USER/GITHUB_REPO`` instead of your user profile page.
 
+    headbar_color
+        Background color of the headbar. Default is royalblue.
+    
     headbar_links
         Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the ``index.rst`` and the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.
 

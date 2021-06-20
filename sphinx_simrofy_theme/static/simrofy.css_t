@@ -81,7 +81,7 @@ img.align-right {
 div.headbar {
     padding: 5px 0;
     color: white;
-    background-color: royalblue;
+    background-color: {{ theme_headbar_color }};
     border-top: 3px solid darkblue;
     /* fixed */
     display: block;
@@ -104,7 +104,10 @@ div.headbarwrapper {
     padding-left: 10px;
     padding-right: 10px;
 }
-div.headbarwrapper div { display: inline-block; }
+div.headbarwrapper div {
+    display: inline-block;
+    background-color: {{ theme_headbar_color }};
+}
 
 #headbar_logo {
     height: {{ (theme_headbar_height|int * 0.8)|int|todim }};
@@ -320,7 +323,7 @@ details > summary::after {
 }
 details > summary {
     cursor: pointer;
-    color: royalblue;
+    color: {{ theme_headbar_color }};
 }
 
 details.headbar_langmenu > summary::after { content: none; }
@@ -331,5 +334,5 @@ details.headbar_langmenu > summary {
 a.dropdown-item {
     display: block;
     padding: 2px 10px;
-    background-color: royalblue;
+    background-color: {{ theme_headbar_color }};
 }
