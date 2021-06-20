@@ -1,0 +1,4 @@
+figure.dpi: 96
+figure.figsize: 8, 6
+font.size: 14.0
+svg.hashsalt: mplsalt

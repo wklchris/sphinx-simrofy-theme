@@ -11,9 +11,13 @@ today_fmt = "%Y-%m-%d"       # Date format when using |today| replacement syntax
 extensions = [
     'sphinx.ext.mathjax',    # Math equation support
     'recommonmark',          # Markdown support if you don't like reStructuredText
-    'sphinxcontrib.bibtex'   # Bibliography support
+    'sphinxcontrib.bibtex',  # Bibliography support
+    'nbsphinx'               # Jupyter notebook (.ipynb) file support
 ]
 
+mathjax_config = {
+    'TeX': {'equationNumbers': {'autoNumber': 'AMS', 'useLabelIds': True}},
+}
 
 # For debug only. If installed via pip, using:
 #    html_theme = 'sphinx-simrofy-theme'
@@ -25,9 +29,14 @@ html_theme_path = [".."]
 html_static_path = ["_static"]
 
 # Load external data, if needed
-import json
-with open('_static/people.json', 'r') as f:
-    people_json = json.load(f)
+try:
+    import json
+    with open('_static/people.json', 'r') as f:
+        people_json = json.load(f)
+except Exception as e:
+    print(f"!Exception!: {e}")
+    people_json = None
+    
 
 # Set internationalization (i18n) for multi-language support
 language = 'en'
@@ -37,7 +46,7 @@ gettext_compact = False
 # Theme options.
 # - Read sphinx_simrofy_theme/theme.conf for default values.
 html_theme_options = {
-    'canonical_prefix': "https://wklchris.github.io/sphinx-simrofy-theme/",
+    'canonical_prefix': "https://wklchris.github.io/sphinx-simrofy-theme/en/",
     'favicon': "favicon.ico",
     'headbar_links': ['Development', 'Documentation', 'Examples'],
     'sidebar_position': 'left',

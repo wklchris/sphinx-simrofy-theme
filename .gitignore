@@ -6,6 +6,9 @@ docs/doctrees
 **/_build
 ## Sphinx translation (i18n)
 *.mo
+## Jupyter auxiliary files
+.ipynb_checkpoints
+docs/**/*.ipynb
 
 # Setuptools build
 build/
@@ -18,4 +21,4 @@ __pycache__
 *.pyo
 
 # Customization
-docsrc/__init__.py
+docsrc/**/__init__.py

@@ -1,8 +1,7 @@
 import os, shutil
 import webbrowser
 
-docsrc, docs = "docsrc", "docs"
-build_tmp_dir = os.path.join(docsrc, "_build")
+DOCSRC, DOCS = "docsrc", "docs"
 
 def external_run(os_cmd):
     errcode = os.system(os_cmd)
@@ -27,6 +26,12 @@ def main(preview=True, main_lang='zh_CN', trans_lang=None, update_po=False):
         Only enable this when a new formal release is provided, 
           or when we need to totally rewrite the translation.
     """
+    docsrc = os.path.join(DOCSRC)
+    docs = os.path.join(DOCS, main_lang)
+    build_tmp_dir = os.path.join(docsrc, "_build")
+    if os.path.isdir(build_tmp_dir):
+        shutil.rmtree(build_tmp_dir)
+
     # Internationalization
     if trans_lang and update_po:
         gettext_dir = os.path.join(build_tmp_dir, "gettext")
@@ -36,7 +41,7 @@ def main(preview=True, main_lang='zh_CN', trans_lang=None, update_po=False):
             f'sphinx-intl update -p {gettext_dir} {out_languages}'
         ]
         for c in intl_cmds:
-            print(f"--- i18n: {c}")
+            print(f"\n--- i18n: {c}")
             external_run(c)
         ## Move the /locales folder to /docsrc/locale before translation build.
         #      Totally overwrite it.
@@ -55,36 +60,40 @@ def main(preview=True, main_lang='zh_CN', trans_lang=None, update_po=False):
     external_run(build_cmd)
     # Copy (Overwrite if exists!) build_tmp_dir to docs
     build_html_dir = os.path.join(build_tmp_dir, "html")
-    output_dir = os.path.join(docs, main_lang)
-    copy_dir(build_html_dir, output_dir)
+    copy_dir(build_html_dir, docs)
     
     # i18n Translation build (if configured)
     if trans_lang:
         sphinx_opts = f"-Dlanguage={trans_lang}" # on Windows
         external_run(f"{build_cmd} {sphinx_opts}")
         
-        docs_translate_dir = os.path.join(docs, trans_lang)
-        copy_dir(build_html_dir, docs_translate_dir)
+        docs_trans = os.path.join(DOCS, trans_lang)
+        copy_dir(build_html_dir, docs_trans)
 
     # Github Pages will be hosted at /docs
     ## Create a .nojekyll for Github Pages
-    nojekyll = os.path.join(docs, ".nojekyll")
+    nojekyll = os.path.join(DOCS, ".nojekyll")
     if not os.path.exists(nojekyll):
         with open(nojekyll, 'w'):
             pass
     ## Create a /docs/index.html for redirecting
-    redirect_html = ("<!DOCTYPE html><head>"
-        f"<meta http-equiv='refresh' content='0; URL={main_lang}/index.html'>"
-        "</head><body></body>")
-    with open(os.path.join(docs, 'index.html'), 'w', encoding='utf8') as f:
-        f.write(redirect_html)
+    redirect_file = os.path.join(DOCS, 'index.html')
+    if not os.path.isfile(redirect_file):
+        redirect_html = ("<!DOCTYPE html><head>"
+            f"<meta http-equiv='refresh' content='0; URL={main_lang}/index.html'>"
+            "</head><body></body>")
+        with open(redirect_file, 'w', encoding='utf8') as f:
+            f.write(redirect_html)
 
     # Automatically open the HTML file in the browser
     if preview:
-        html_url = os.path.join(docs, trans_lang, "index.html")
+        html_url = os.path.join(docs, "index.html")
         webbrowser.open(html_url)
 
-# --- Enable 'trans_lang' only on new releases 
+
+# --- Main ---
+
+# Enable 'update_po' only on new translations
 main(
     preview=True,
     main_lang='en',
