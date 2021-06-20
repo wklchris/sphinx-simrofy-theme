@@ -9,7 +9,7 @@ This is the documentation of Sphinx theme Simrofy.
 
     This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website Sphinx_ for details. In additional, the :ref:`chapter-examples` chapter of this website also provides a lot of useful information.
 
-    reStructuredText is not mandantory but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax.
+    reStructuredText (reST) is not mandantory but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax. To learn its syntax, you can view a quick guide on `Docutils <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_\ , or visit the `reST guidance page on Sphinx <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_\ .
 
 .. caution::
 
@@ -27,6 +27,7 @@ The Simrofy theme provides following features (for a full theme options list, se
 
   * The "Raw" button can be disabled in ``conf.py`` (see :ref:`section-quick-guide` section).
   * The Github button is disabled by default, unless user use options :term:`github_user` and :term:`github_repo`\ .
+  * The language switching menu on the left of the headbar is supported by the i18n feature of Sphinx. See :term:`languages` for details. 
 
 * Sidebar: Users can enable/disable it, adjust its width and position. See options :term:`sidebar_position` and :term:`sidebar_width`\ . 
 
@@ -260,6 +261,8 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
     canonical_prefix
         The canonical prefix for each webpage, which can either ends with a ``/`` symbol or not. For example, if you set it as ``https://eg.com/``\ , the webpage (generated from ``page.rst``\ ) will have a canonical url of ``https://eg.com/page.html``\ . 
+
+        Note that if you have multiple languages on your website, you may need to include your primary language in the canonical prefix. For example, if your primary language is English (``en``\ ) and you also have Simplified Chinese (``zh_CN``\ ) translation, you can use ``https://eg.com/en/`` instead. Simrofy will map all language versions into this primary language canonical url.
 
     favicon
         The file path (under your ``html_static_path`` path, see :term:`logo` for details) to the website icon (favicon).

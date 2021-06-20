@@ -93,4 +93,4 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
 
 
 release_new = "0.3.0"
-main(release_new, ignore_tag_conflict=True, repo='pypi')
+main(release_new, ignore_tag_conflict=True, repo='testpypi')
