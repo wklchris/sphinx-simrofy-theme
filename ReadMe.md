@@ -2,7 +2,7 @@
 
 <img src="./logo.png" alt="Simrofy logo" width="100" style="display: block; margin-left: auto; mergin-right: auto">
 
-Simrofy has NOT been prepared for wide distribution. *Now it is only avaliable on TestPypi* and you can install \& upgrade it via pip (see dependency):
+Simrofy has NOT been prepared for wide distribution. *Now it is still in beta*.
 
 -----
 
@@ -24,19 +24,15 @@ Table of contents:
 Simrofy is a theme for Sphinx, so you can't use it without installing Sphinx. Users are required to install:
 
 - Python (>= 3.6)
-- [Sphinx](https://www.sphinx-doc.org/)
-  - Also need `sphinx-intl` if there is need for internationlization
+- [Sphinx >= 4.0](https://www.sphinx-doc.org/), and following extensions:
+  - `nbsphinx>=0.8.4` for MathJax v3 support
+  - `sphinxcontrib-bibtex>=2.0.0` for its newly added `bibtex-files` option
+  - `sphinx-intl` if there is need for internationlization (i18n)
 
 Then you can install Simrofy using pip (for stable versions):
 
 ```
 pip install sphinx-simrofy-theme
-```
-
-You can also download early Simrofy versions from Test Pypi, by adding `--index-url` option to the above pip install command:
-
-```
-pip install --index-url https://test.pypi.org/simple/ --upgrade sphinx-simrofy-theme
 ```
 
 To apply the theme, assign its fullname to the `html_theme` variable in your `conf.py` file:
@@ -57,7 +53,7 @@ Simrofy was developed with the help of following existing projects:
 Simrofy also learned a lot from many Sphinx themes, especially:
 
 * Sphinx' builtin [basic](https://github.com/sphinx-doc/sphinx/tree/3.x/sphinx/themes/basic) theme
-* Sphinx official website's [sphinx-doc (3.x)](https://github.com/sphinx-doc/sphinx/tree/3.x/doc) theme
+* Sphinx official website's [sphinx-doc (4.x)](https://github.com/sphinx-doc/sphinx/tree/4.x/doc) theme
 * Python official website's [python-docs-theme](https://github.com/python/python-docs-theme) theme
 * Read the Docs' Sphinx theme [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme)
 
