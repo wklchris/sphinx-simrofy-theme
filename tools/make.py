@@ -8,7 +8,7 @@ def external_run(os_cmd):
     errcode = os.system(os_cmd)
     if errcode > 0:
         exit()
-    print(f"--- End of {os_cmd}")
+    print(f"--- Complete: {os_cmd}")
 
 def copy_dir(dir_src, dir_des, delete_src=False):
     """Overwrite/create the dir_des from the dir_src."""
@@ -75,13 +75,14 @@ def main(main_lang='zh_CN', trans_lang=None, update_po=False):
         with open(nojekyll, 'w'):
             pass
     ## Create a /docs/index.html for redirecting
-    redirect_file = os.path.join(DOCS, 'index.html')
-    if not os.path.isfile(redirect_file):
-        redirect_html = ("<!DOCTYPE html><head>"
-            f"<meta http-equiv='refresh' content='0; URL={main_lang}/index.html'>"
-            "</head><body></body>")
-        with open(redirect_file, 'w', encoding='utf8') as f:
-            f.write(redirect_html)
+    for shared_page in ['index', '404']:
+        redirect_file = os.path.join(DOCS, f'{shared_page}.html')
+        if not os.path.isfile(redirect_file):
+            redirect_html = ("<!DOCTYPE html><head>"
+                f"<meta http-equiv='refresh' content='0; URL={main_lang}/{shared_page}.html'>"
+                "</head><body></body>")
+            with open(redirect_file, 'w', encoding='utf8') as f:
+                f.write(redirect_html)
 
 # --- Main ---
 
