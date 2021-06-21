@@ -115,6 +115,17 @@ div.headbarwrapper div {
     background-color: white;
     margin-right: 10px;
 }
+details.headbar_langmenu > summary::after { content: none; }
+details.headbar_langmenu > summary {
+    color: white;
+    margin-bottom: 4px;
+}
+a.dropdown-item {
+    display: block;
+    padding: 2px 10px;
+    background-color: {{ theme_headbar_color }};
+}
+
 div.headbarsources, div.headbarlinks { float: right; }
 div.headbarlinks { margin-right: 10px; }
 div.headbarlinks a {
@@ -186,8 +197,8 @@ div[class^="sidetoc_"] {
         padding-left: 5px; padding-right: 10px;
     {%- endif %}
 }
-div[class^="sidetoc_"] > a { color: white; text-decoration-line: none; }
-div[class^="sidetoc_"]:hover { filter: brightness(1.2); }
+div[class^="sidetoc_"] a, div.localtoc a { color: white; text-decoration-line: none; }
+div[class^="sidetoc_"]:hover, div.localtoc a:hover { filter: brightness(1.2); }
 
 div.sidetoc_lower {
     padding-top: 1px;
@@ -202,6 +213,28 @@ div.sidetoc_lower {
 
 div.sidetocview > div:first-child {  padding-top: 5px; }
 div.sidetocview > div:last-child { padding-bottom: 5px; }
+
+/* sidebar local toc */
+details#sidebar_localtoc {
+    border-top: 1px solid white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+details#sidebar_localtoc > summary {
+    color: white;
+    font-weight: bold;
+    margin: 5px 0;
+}
+details#sidebar_localtoc > summary::after { content: none; }
+div.localtoc > ul { padding-left: 0px; }
+div.localtoc > ul ul {
+    padding-left: 1em;
+    list-style-type: disc;
+}
+div.localtoc > ul li { padding-left: 0px; }
+div.localtoc li::marker { color: white; }
+
 {%- endif -%}
 
 /* admonitions */
@@ -300,6 +333,11 @@ ul.footersociallist li:not(:last-child) {
     margin-right: 5px;
 }
 
+/* Sphinx technical config */
+div.versionadded {
+    font-style: italic;
+    font-size: smaller;
+}
 
 /* person info photos */
 table.people_photos { border-spacing: 5px; }
@@ -318,21 +356,10 @@ p.persontitle { font-style: italic; }
 
 
 /* others: <details> */
-details > summary::after {
+summary { cursor: pointer; }
+div#documentation details > summary::after {
     content: " (Click to expand/collapse)";
 }
-details > summary {
-    cursor: pointer;
+div#documentation details > summary {
     color: {{ theme_headbar_color }};
-}
-
-details.headbar_langmenu > summary::after { content: none; }
-details.headbar_langmenu > summary {
-    color: white;
-    margin-bottom: 4px;
-}
-a.dropdown-item {
-    display: block;
-    padding: 2px 10px;
-    background-color: {{ theme_headbar_color }};
 }

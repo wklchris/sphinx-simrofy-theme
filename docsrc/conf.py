@@ -58,6 +58,7 @@ html_theme_options = {
     'logo_width': 0.75,
     'logo_radius': 0.5,
     'sidebar_home_text': f'Simrofy v{release}',
+    'sidebar_localtoc': 'collapse',
     'sidebar_toc_exclude': ['Examples'],
     'social_accounts': {
         'facebook': {'user': 'eg-facebook', 'url': 'linkhere'},

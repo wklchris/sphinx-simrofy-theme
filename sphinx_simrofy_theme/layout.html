@@ -167,6 +167,17 @@
             {%- endif %}
         {% endfor %}
         </div>
+        {%- if theme_sidebar_localtoc in ['collapse', 'expand'] %}
+            {%- if theme_sidebar_localtoc == 'expand' %}
+                {%- set init_localtoc = 'open' %}
+            {%- else %}
+                {%- set init_localtoc = '' %}
+            {%- endif %}
+            <details id="sidebar_localtoc" {{ init_localtoc }}>
+                <summary>{{ _('Local ToC') }}</summary>
+                <div class="localtoc">{{ toc }}</div>
+            </details>
+        {%- endif %}
     </div>
     {%- block extrasidebar %}{# user customize #}{%- endblock extrasidebar %}
 </div>

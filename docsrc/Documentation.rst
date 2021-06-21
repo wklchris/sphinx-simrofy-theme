@@ -379,6 +379,15 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
     sidebar_home_text
         A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.
 
+    sidebar_localtoc
+        The behavior of Table of Contents for current doc page. Note this is different from the whole website file structure (which always shows in the sidebar).
+        
+        Default is None (hidden). It accepts either ``'collapse'`` or ``'expand'``\ , which indicates the initial status of the local ToC when opening the webpage.
+
+        .. versionadded:: 0.4.0
+           
+           A useful feature to show ToC for subfolder docs.
+
     sidebar_position
         The position of the sidebar. Users can also select:
         

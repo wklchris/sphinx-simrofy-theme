@@ -34,6 +34,7 @@ This log shows what features have been implemented:
 
   * Now upgrade the **Sphinx support from 3.x to 4.x**\ .
   * Add headbar background color theme option. This somehow makes the headbar text readable when the browser width is too small.
+  * Add local table of contents support in the sidebar (:term:`sidebar_localtoc`\ ).
   * Add subfolder support. Now users can switch languages on subfolder docs.
   * Improve the package, including requirements.txt and reduce size.
 
