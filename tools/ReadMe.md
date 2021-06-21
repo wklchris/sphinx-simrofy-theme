@@ -1,6 +1,8 @@
 # ReadMe: Tools <!-- omit in toc -->
 
-This ReadMe is for developers. If you are interested in customizing Simrofy or creating a Sphinx theme by yourself, this ReadMe may help.
+This ReadMe is for developers. If you are interested in customizing Simrofy or creating a Sphinx theme by yourself, this ReadMe may help. 
+
+All scripts under this folder **must be run under the root of the project**, not under this 'tools' folder.
 
 In the documentation of Simrofy, I will give some examples on how to customize it.
 
@@ -8,7 +10,9 @@ Table of contents:
 1. [Documentation-related doctree](#documentation-related-doctree)
 2. [make.py](#makepy)
 3. [release.py](#releasepy)
-4. [Useful links:](#useful-links)
+4. [server.ps1](#serverps1)
+5. [Useful links:](#useful-links)
+
 
 ## Documentation-related doctree
 
@@ -16,7 +20,13 @@ After you clone this repository, you will see a doctree like (foldrs unrelated t
 
 ```
 docs/
-    index.html
+    en/
+        index.html
+        ...
+    zh_CN/
+        index.html
+        ...
+    index.html  # Pseudo-homepage: Redirecting
     ...
 docsrc/
     conf.py
@@ -24,6 +34,8 @@ docsrc/
     ...
 tools/
     make.py
+    release.py
+    server.ps1
 ...
 ```
 
@@ -46,7 +58,7 @@ It will do following tasks:
 
 1. Sphinx build the documentation in `docsrc/`. The HTML output will be (temporarily) put inside `docsrc/_build`.
 2. If there is a `docs/` folder, remove it.
-3. Copy the core HTML files (in `docsrc/_build/html`) into `docs/`.
+3. Copy the core HTML files (in `docsrc/_build/html`) into `docs/<lang>`, where `<lang>` is your desired language when you compile.
 4. Remove the `docsrc/_build` folder.
 5. Open `docs/index.html` in your browser.
 
@@ -79,7 +91,7 @@ It will do following tasks:
 And a list of **optional** tasks:
 
 3. Build the distribution files (sdist \& wheel)
-4. Upload the distribution files to [TestPypi](https://test.pypi.org/). You need to register a TestPypi account and set your API key in `~/.pypirc`:
+4. Upload the distribution files to [TestPypi](https://test.pypi.org/) or the formal Pypi. You need to register a TestPypi account and set your API key in `~/.pypirc`:
    
    ```
    [testpypi]
@@ -87,6 +99,10 @@ And a list of **optional** tasks:
    password = pypi-...
    ```
    where the `username` is **literally** this weird string (i.e. `__token__`, not your username), but your need to replace the `password` value with your TestPypi API key.
+
+## server.ps1
+
+A PowerShell script to locally serve the website and open the url in the browser. Use keyboard interrupt (Ctrl + C) to terminate the server.
 
 ## Useful links:
 

@@ -10,5 +10,5 @@ Here we test the subpage feature of Simrofy. Sphinx build would build all doc fi
     :maxdepth: 1
     :caption: List of Subpages:
     
-    subpage/MarkdownSupport.md
-    subpage/JupterSupport.ipynb
+    MarkdownSupport.md
+    JupterSupport.ipynb

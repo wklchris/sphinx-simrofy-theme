@@ -10,7 +10,7 @@ Welcome to sphinx-simrofy-theme's documentation!
    Documentation.rst
    People.rst
    Examples.rst
-   Subpage.rst
+   subpage/index.rst
 
 .. warning::
 
