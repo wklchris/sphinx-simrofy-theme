@@ -86,8 +86,12 @@
     {{ pathto(source_path + filepath|e, 1) }}
 {%- endmacro %}
 
-{%- macro switch_lang(lang, webfile) -%}
-    {{ '../' + lang + '/' + webfile }}
+{%- macro switch_lang(lang, builtfile) -%}
+    {#
+        The 'pagename' variable = [subfolder]/filename-without-ext.
+        URL starts with '/' is relative to the website root.
+    #}
+    {{ pathto('/' + lang + '/' + builtfile) }}
 {%- endmacro %}
 
 
@@ -251,9 +255,8 @@
         <details class="headbar_langmenu">
             <summary>Languages</summary>
             <details-menu class="dropdown">
-            {%- set webfile = pagename + file_suffix %}
             {%- for lang, text in theme_languages.items() -%}
-                <a class="dropdown-item" href="{{ switch_lang(lang, webfile)|e }}">{{ text }}</a>
+                <a class="dropdown-item" href="{{ switch_lang(lang, pagename)|e }}">{{ text }}</a>
             {%- endfor -%}
             </details-menu>
         </details>

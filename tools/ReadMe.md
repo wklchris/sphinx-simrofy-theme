@@ -2,9 +2,11 @@
 
 This ReadMe is for developers. If you are interested in customizing Simrofy or creating a Sphinx theme by yourself, this ReadMe may help. 
 
-All scripts under this folder **must be run under the root of the project**, not under this 'tools' folder.
+Highlights:
 
-In the documentation of Simrofy, I will give some examples on how to customize it.
+1. This folder is *NOT* part of the released Simrofy package. However, you may take adventage of using these useful tools along with building your website under Simrofy.
+2. All scripts under this folder *must be run under the root of the project*, not under this 'tools' folder.
+
 
 Table of contents:
 1. [Documentation-related doctree](#documentation-related-doctree)
@@ -58,9 +60,8 @@ It will do following tasks:
 
 1. Sphinx build the documentation in `docsrc/`. The HTML output will be (temporarily) put inside `docsrc/_build`.
 2. If there is a `docs/` folder, remove it.
-3. Copy the core HTML files (in `docsrc/_build/html`) into `docs/<lang>`, where `<lang>` is your desired language when you compile.
-4. Remove the `docsrc/_build` folder.
-5. Open `docs/index.html` in your browser.
+3. Copy the core HTML files (in `docsrc/_build/html`) into `docs/<lang>`, where `<lang>` is your desired language when you compile. It will **remove** the old `docs/<lang>` folder before copy.
+4. The translation feature can be enabled by setting a `trans_lang` string and the `update_po` arg to `True`. See the docstring inside the script for details.
 
 If your docsrc/docs folder are using different names, you may edit variables in the `make.py` accordingly.
 
