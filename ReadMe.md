@@ -52,7 +52,7 @@ Simrofy was developed with the help of following existing projects:
 
 Simrofy also learned a lot from many Sphinx themes, especially:
 
-* Sphinx' builtin [basic](https://github.com/sphinx-doc/sphinx/tree/3.x/sphinx/themes/basic) theme
+* Sphinx' builtin [basic](https://github.com/sphinx-doc/sphinx/tree/4.x/sphinx/themes/basic) theme
 * Sphinx official website's [sphinx-doc (4.x)](https://github.com/sphinx-doc/sphinx/tree/4.x/doc) theme
 * Python official website's [python-docs-theme](https://github.com/python/python-docs-theme) theme
 * Read the Docs' Sphinx theme [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme)

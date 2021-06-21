@@ -70,7 +70,7 @@ Dependencies:
 
   Visit `Python Official Website <https://www.python.org/downloads/>`_ to install Python.
 
-- **Sphinx**
+- **Sphinx (>= 4.0.0)**
   
   Always better to choose a newer Sphinx version. You can scroll down to read the footer of current webpage and find under which Sphinx version this document was built; all versions no earlier than it should be good.
 
@@ -78,9 +78,13 @@ Dependencies:
 
 Optional dependencies:
 
+- **nbsphinx**
+  
+  This extension lets users include Jupyter Notebook (.ipynb) files. The output style of the notebook is highly inherited in the HTML builds, which is an easy and clear way to present code-and-text documents.
+
 - **sphinxcontrib-bibtex**
 
-  This extension if for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (\ ``*.bib``\ ) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at sphinxcontrib-bibtex_, or read :ref:`sec-bib-example` section of Simrofy documentation.
+  This extension is for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (\ ``*.bib``\ ) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at sphinxcontrib-bibtex_, or read :ref:`sec-bib-example` section of Simrofy documentation.
 
 
 Installation via Pip
@@ -277,6 +281,8 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
     headbar_color
         Background color of the headbar. Default is royalblue.
+
+        .. versionadded:: 0.4.0
     
     headbar_links
         Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the ``index.rst`` and the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.
@@ -306,6 +312,8 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
             }
         
         Keys of the dictionary are the abbreviation ('en', 'zh_CN') for languages, and values are the desired displayed text in your website's language menu. For a list of supported languages, please refer to the Sphinx_ documentation's internationalization (i18n) webpage.
+
+        .. versionadded:: 0.3.0
 
     logo
         The logo image file path. Default is undefined, which will display a text hyperlink "Homepage" instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).

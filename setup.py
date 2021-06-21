@@ -9,7 +9,12 @@ setup(
     version = '0.3.0',
     packages = ['sphinx_simrofy_theme'],
     include_package_data = True,
-    install_requires = ["sphinx"],
+    install_requires = [
+        "Sphinx>=4.0.0;",
+        "nbsphinx>=0.8.4;",
+        "sphinxcontrib-bibtex>=2.0.0",
+        "sphinx-intl"
+    ],
     # Meta
     author = "wklchris",
     author_email="wklchris@hotmail.com",

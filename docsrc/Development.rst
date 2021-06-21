@@ -30,8 +30,15 @@ Update log
 
 This log shows what features have been implemented:
 
-* Version 0.3.0
-  
+* Version 0.4.0:
+
+  * Now upgrade the **Sphinx support from 3.x to 4.x**\ .
+  * Add headbar background color theme option. This somehow makes the headbar text readable when the browser width is too small.
+  * Add subfolder support. Now users can switch languages on subfolder docs.
+  * Improve the package, including requirements.txt and reduce size.
+
+* Version 0.3.0:
+
   * Add multi-language support. This doc also involves two languages: English and Chinese, though I haven't started translation for the latter yet. 
 
 * Version <= 0.2.0
