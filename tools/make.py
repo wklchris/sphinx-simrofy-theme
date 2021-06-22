@@ -76,13 +76,20 @@ def main(main_lang='zh_CN', trans_lang=None, update_po=False):
             pass
     ## Create a /docs/index.html for redirecting
     for shared_page in ['index', '404']:
+        redirect_html = f"""<!DOCTYPE html><head>
+        <script>
+            var language = navigator.language || navigator.browserLanguage || "en";
+            if (language.slice(0, 2) === "{main_lang[:2]}") {{
+                window.location.replace("{main_lang}/{shared_page}.html");
+            }} else {{
+                window.location.replace("{trans_lang}/{shared_page}.html");
+            }}
+        </script></head>
+        <body></body>"""
+        
         redirect_file = os.path.join(DOCS, f'{shared_page}.html')
-        if not os.path.isfile(redirect_file):
-            redirect_html = ("<!DOCTYPE html><head>"
-                f"<meta http-equiv='refresh' content='0; URL={main_lang}/{shared_page}.html'>"
-                "</head><body></body>")
-            with open(redirect_file, 'w', encoding='utf8') as f:
-                f.write(redirect_html)
+        with open(redirect_file, 'w', encoding='utf8') as f:
+            f.write(redirect_html)
 
 # --- Main ---
 
