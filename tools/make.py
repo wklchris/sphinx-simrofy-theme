@@ -18,14 +18,15 @@ def copy_dir(dir_src, dir_des, delete_src=False):
     if delete_src:
         shutil.rmtree(dir_src)
 
-def main(main_lang='zh_CN', trans_lang=None, update_po=False):
+def main(main_lang='zh_CN', trans_lang=None, update_po=False, update_gettext=False):
     """
     Args:
     - main_lang: The primary language for website display/writing.
     - trans_lang: Whether use the i18n for translation. 
+    - update_gettext: [!Danger!] Whether re-generate the gettext .pot files.
+        Only enable this when we have updated the docs.
     - update_po: [!Danger!] Whether overwrite .po translation files.
-        Only enable this when a new formal release is provided, 
-          or when we need to totally rewrite the translation.
+        Only enable this when we need to update the translation.
     """
     docsrc = os.path.join(DOCSRC)
     docs = os.path.join(DOCS, main_lang)
@@ -42,25 +43,18 @@ def main(main_lang='zh_CN', trans_lang=None, update_po=False):
     copy_dir(build_html_dir, docs)
 
     # Internationalization (i18n)
-    if trans_lang and update_po:
+    if trans_lang:
         gettext_dir = os.path.join(build_tmp_dir, "gettext")
+        locale_dir = os.path.join(docsrc, "locale")  # Overwrite the conf.py
         out_languages = f"-l {trans_lang}"
-        intl_cmds = [
-            f'sphinx-build -M gettext {docsrc} {build_tmp_dir}',
-            f'sphinx-intl update -p {gettext_dir} {out_languages}'
-        ]
-        for c in intl_cmds:
-            external_run(c)
-        ## Move the /locales folder to /docsrc/locale before translation build.
-        #      Totally overwrite it.
-        build_trans_dir = os.path.join(docsrc, 'locale', trans_lang)
-        if os.path.isdir(build_trans_dir):
-            shutil.rmtree(build_trans_dir)
-        copy_dir(
-            os.path.join('./locales', trans_lang),
-            build_trans_dir,  # the same as: locale_dirs from conf.py
-            delete_src=True
-        )
+
+        if update_gettext:
+            cmd_gettext = f'sphinx-build -M gettext {docsrc} {build_tmp_dir}'
+            external_run(cmd_gettext)
+        if update_po:
+            cmd_intl = f'sphinx-intl update -p {gettext_dir} -d {locale_dir} {out_languages}'
+            external_run(cmd_intl)
+        
         ## Translation build
         sphinx_opts = f"-Dlanguage={trans_lang}" # on Windows
         external_run(f"{build_cmd} {sphinx_opts}")
@@ -93,9 +87,9 @@ def main(main_lang='zh_CN', trans_lang=None, update_po=False):
 
 # --- Main ---
 
-# Enable 'update_po' only on new translations
 main(
+    update_gettext=False,  # Enable this when docs are changed.
     main_lang='en',
     trans_lang='zh_CN',
-    update_po=False
+    update_po=False  # Enable this when translations are updated.
 )

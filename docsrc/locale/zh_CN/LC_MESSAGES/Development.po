@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simrofy \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-18 23:51-0700\n"
+"POT-Creation-Date: 2021-06-25 04:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,38 +76,76 @@ msgid "This log shows what features have been implemented:"
 msgstr ""
 
 #: ../../Development.rst:33
-msgid "Version <= 0.2.0"
+msgid "Version 0.4.0:"
 msgstr ""
 
 #: ../../Development.rst:35
-msgid "Sidebar: basic style; homepage (text & logo) link; toctree"
+msgid "Now upgrade the **Sphinx support from 3.x to 4.x**\\ ."
 msgstr ""
 
 #: ../../Development.rst:36
-msgid "Headbar: basic style; source file link; github link; customized doc links"
+msgid ""
+"Add headbar background color theme option. This somehow makes the headbar"
+" text readable when the browser width is too small."
 msgstr ""
 
 #: ../../Development.rst:37
-msgid "Head: meta charset; title."
+msgid ""
+"Add local table of contents support in the sidebar "
+"(:term:`sidebar_localtoc`\\ )."
 msgstr ""
 
 #: ../../Development.rst:38
-msgid "Style:"
+msgid "Add subfolder support. Now users can switch languages on subfolder docs."
 msgstr ""
 
-#: ../../Development.rst:40
-msgid "Admonition style: A crude style mimicking the Read the Docs admonitions."
+#: ../../Development.rst:39
+msgid "Improve the package, including requirements.txt and reduce size."
 msgstr ""
 
 #: ../../Development.rst:41
-msgid "Code highlighting style: Default Pygments highlighting style."
+msgid "Version 0.3.0:"
 msgstr ""
 
 #: ../../Development.rst:43
+msgid ""
+"Add multi-language support. This doc also involves two languages: English"
+" and Chinese, though I haven't started translation for the latter yet."
+msgstr ""
+
+#: ../../Development.rst:45
+msgid "Version <= 0.2.0"
+msgstr ""
+
+#: ../../Development.rst:47
+msgid "Sidebar: basic style; homepage (text & logo) link; toctree"
+msgstr ""
+
+#: ../../Development.rst:48
+msgid "Headbar: basic style; source file link; github link; customized doc links"
+msgstr ""
+
+#: ../../Development.rst:49
+msgid "Head: meta charset; title."
+msgstr ""
+
+#: ../../Development.rst:50
+msgid "Style:"
+msgstr ""
+
+#: ../../Development.rst:52
+msgid "Admonition style: A crude style mimicking the Read the Docs admonitions."
+msgstr ""
+
+#: ../../Development.rst:53
+msgid "Code highlighting style: Default Pygments highlighting style."
+msgstr ""
+
+#: ../../Development.rst:55
 msgid "Footer: Simrofy information; Theme and top border."
 msgstr ""
 
-#: ../../Development.rst:44
+#: ../../Development.rst:56
 msgid "Others: Scrollbar beautification for webkit browsers."
 msgstr ""
 

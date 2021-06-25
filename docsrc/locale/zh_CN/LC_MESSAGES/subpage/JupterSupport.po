@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, wklchris
+# This file is distributed under the same license as the Simrofy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Simrofy \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-25 04:37-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../subpage/JupterSupport.ipynb:9
+msgid "Jupyter Support"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:20
+msgid ""
+"This page is built by the Sphinx’s ``nbsphinx`` extension. The raw file "
+"is a Python-kernel Jupyter Notebook file ``JupyterSupport.ipynb`` under "
+"the ``subpage`` folder of the Simrofy project."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:22
+msgid ""
+"For more details about Jupyter Notebook & Jupyter Lab, you can visit "
+"`Jupyter’s official website <https://jupyter.org/>`__."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:45
+msgid ""
+"Jupyter Notebook is famous for its plotting & data visualization along "
+"its Markdown-syntax typesetting. Let us have a quick look on these "
+"features."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:57
+msgid "Plotting"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:68
+msgid ""
+"There are some configurations for plotting, which are mentioned by "
+"``nbsphinx``."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:70
+msgid ""
+"**Figure format**: Since Sphinx will builds all Jupyter notebook into "
+"HTML, we probably prefer SVG over PNG figures."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:71
+msgid ""
+"**Figure dpi**: May increase the dpi (default is 72) for high resolution "
+"screen, especially when the format is PNG."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:72
+msgid ""
+"**Random SVG**: Note that the figure output would be stored for the "
+"website, so we also need to avoid randomness in SVG generating – both its"
+" content and its filename. Jupyter notebook has a ``svg.hashsalt`` option"
+" to control the “random seed”."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:83
+msgid ""
+"We can create a ``matplotrc`` file in the same folder with our Jupyter "
+"notebook file, and write:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:101
+msgid ""
+"The figure format is an option of IPython, so we can’t configure it "
+"through matplotlib. We need to run it inside our Jupyter notebook:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:123
+msgid ""
+"Now we are pleased to draw a simple plot after finishing all these "
+"configurations."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:168
+msgid "Data frame visualization"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:315
+msgid "We can control its display format by:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:440
+msgid "Markdown syntax"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:451
+msgid ""
+"All paragraphs in this Jupyter Notebook are written in Markdown syntax. "
+"For example, you can make:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:453
+msgid "Italic *italic*,"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:454
+msgid "Bold **bold**, and"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:455
+msgid "Literal ``literal`` font styles."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:466
+msgid ""
+"Also, it’s worthnoting that ``nbsphinx`` provides support for some "
+"admonitions."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:472
+msgid "Warning"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:474
+msgid "This is an *experimental feature*!"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:476
+msgid ""
+"Its usage will probably change in the future or it might be removed "
+"completely!"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:491
+msgid ""
+"Please **strictly follow this format** (including blank lines around div "
+"labels and the title “Warning”) when you use this admonition feature."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:504
+msgid ""
+"Up to current ``nbsphinx`` version (see below), it only supports "
+"“warning” and “info” (i.e. alert-info) admonitions."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:546
+msgid "LaTeX equations and cross-references"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:557
+msgid ""
+"The LaTeX equation is natively supported by Jupyter. When the Sphinx "
+"builds the Jupyter file into a HTML webpage, it uses the MathJax to "
+"render equations. For more details of equation usage in ``nbsphinx``, you"
+" can visit `nbsphinx: Equations <https://nbsphinx.readthedocs.io/en/0.8.6"
+"/markdown-cells.html#Equations>`__."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:559
+msgid ""
+"Please remember to **avoid indentation inside the equation**, otherwise "
+"the HTML builds may fail."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:561
+msgid "Here is an example equation:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:563
+msgid ""
+":nbsphinx-math:`\\begin{equation} \\int_0^\\pi \\sin^2 x \\,dx = "
+"\\frac{\\pi}{2} \\label{eq:example} \\end{equation}`"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:568
+msgid "The text behind it is:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:577
+msgid ""
+"You can also use the asterisk-variant environment to produce equations "
+"without auto-numbering on the right."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:589
+msgid "Auto-numbering"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:591
+msgid ""
+"You can enable auto-numbering for the HTML output by adding following "
+"options to your ``conf.py``:"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:624
+msgid "Cross-reference"
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:635
+msgid "You can refer the equation if you have given it a ``\\label{...}`` field."
+msgstr ""
+
+#: ../../subpage/JupterSupport.ipynb:637
+msgid ""
+"For the equation above, we can refer it by ``\\eqref{eq:example}`` (which"
+" gives :nbsphinx-math:`\\eqref{eq:example}`, a number in brackets) or "
+"``\\ref{eq:example}`` (:nbsphinx-math:`\\ref{eq:example}`, a number "
+"without brackets)."
+msgstr ""
+

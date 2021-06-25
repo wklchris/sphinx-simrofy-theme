@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simrofy \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-19 04:43-0700\n"
+"POT-Creation-Date: 2021-06-25 04:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,9 +35,13 @@ msgstr ""
 
 #: ../../Documentation.rst:12
 msgid ""
-"reStructuredText is not mandantory but **highly recommended**\\ . "
+"reStructuredText (reST) is not mandantory but **highly recommended**\\ . "
 "Although you can write Markdown with recommonmark_ extension, many "
-"features of Sphinx is only avaliable to reStructuredText syntax."
+"features of Sphinx is only avaliable to reStructuredText syntax. To learn"
+" its syntax, you can view a quick guide on `Docutils "
+"<https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_\\ , or "
+"visit the `reST guidance page on Sphinx "
+"<https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_\\ ."
 msgstr ""
 
 #: ../../Documentation.rst:16
@@ -79,58 +83,64 @@ msgid ""
 ":term:`github_user` and :term:`github_repo`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:31
+#: ../../Documentation.rst:30
+msgid ""
+"The language switching menu on the left of the headbar is supported by "
+"the i18n feature of Sphinx. See :term:`languages` for details."
+msgstr ""
+
+#: ../../Documentation.rst:32
 msgid ""
 "Sidebar: Users can enable/disable it, adjust its width and position. See "
 "options :term:`sidebar_position` and :term:`sidebar_width`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:33
+#: ../../Documentation.rst:34
 msgid ""
 "Sidebar generates a toctree with maxdepth 2 (i.e. only including ``<h1>``"
 " and ``<h2>`` headings)."
 msgstr ""
 
-#: ../../Documentation.rst:34
+#: ../../Documentation.rst:35
 msgid ""
 "The logo image is enabled by :term:`logo` and its width can be adjusted "
 "by :term:`logo_width`\\ . You can use a circle-cropped style logo by "
 "given :term:`logo_radius`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:35
+#: ../../Documentation.rst:36
 msgid "The background color of sidebar is given by :term:`sidebar_color`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:37
+#: ../../Documentation.rst:38
 msgid "Page components:"
 msgstr ""
 
-#: ../../Documentation.rst:39
+#: ../../Documentation.rst:40
 msgid ""
 "Bibliography: Print a bibliography by parsing a ``*.bib`` file. See :ref"
 ":`sec-bib-example` section for details."
 msgstr ""
 
-#: ../../Documentation.rst:40
+#: ../../Documentation.rst:41
 msgid ""
 "Team photos: Show photos of team members with their contact information "
 "using :term:`people` and :term:`people_pages`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:42
+#: ../../Documentation.rst:43
 msgid "Others"
 msgstr ""
 
-#: ../../Documentation.rst:44
+#: ../../Documentation.rst:45
 msgid "Customize admonition colors by options like ``admonition_**_color``\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:45
+#: ../../Documentation.rst:46
 msgid "Add social media icons and weblinks by :term:`social_accounts`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:48
+#: ../../Documentation.rst:49
 msgid ""
 "Other customization can be achieved through adding/editing template, CSS "
 "or JavaScript files. Please view the source code of Simrofy and/or "
@@ -138,74 +148,85 @@ msgid ""
 "doc.org/en/master/templating.html>`_."
 msgstr ""
 
-#: ../../Documentation.rst:54
+#: ../../Documentation.rst:55
 msgid "Installation"
 msgstr ""
 
-#: ../../Documentation.rst:56
+#: ../../Documentation.rst:57
 msgid ""
 "Simrofy relies on few Dependencies and is easily to fetch using pip, the "
 "command line package manager that goes with Python."
 msgstr ""
 
-#: ../../Documentation.rst:60
+#: ../../Documentation.rst:61
 msgid "Dependencies"
 msgstr ""
 
-#: ../../Documentation.rst:62
+#: ../../Documentation.rst:63
 msgid ""
 "Simrofy is a Sphinx theme, so I assume that you don't need it if you "
 "haven't installed Sphinx_."
 msgstr ""
 
-#: ../../Documentation.rst:64
+#: ../../Documentation.rst:65
 msgid "Dependencies:"
 msgstr ""
 
-#: ../../Documentation.rst:66
+#: ../../Documentation.rst:67
 msgid "**Python (>=3.6 recommended)**"
 msgstr ""
 
-#: ../../Documentation.rst:68
+#: ../../Documentation.rst:69
 msgid ""
 "Version >= 3.6 is rcommended because f-string syntax is added in this "
 "version and I used that a lot. Lower version may be OK but I didn't test."
 msgstr ""
 
-#: ../../Documentation.rst:70
+#: ../../Documentation.rst:71
 msgid ""
 "Visit `Python Official Website <https://www.python.org/downloads/>`_ to "
 "install Python."
 msgstr ""
 
-#: ../../Documentation.rst:72
-msgid "**Sphinx**"
+#: ../../Documentation.rst:73
+msgid "**Sphinx (>= 4.0.0)**"
 msgstr ""
 
-#: ../../Documentation.rst:74
+#: ../../Documentation.rst:75
 msgid ""
 "Always better to choose a newer Sphinx version. You can scroll down to "
 "read the footer of current webpage and find under which Sphinx version "
 "this document was built; all versions no earlier than it should be good."
 msgstr ""
 
-#: ../../Documentation.rst:76
+#: ../../Documentation.rst:77
 msgid ""
 "After installing Python, you can follow the download instruction of "
 "Sphinx_ to install it via ``pip`` command."
 msgstr ""
 
-#: ../../Documentation.rst:78
+#: ../../Documentation.rst:79
 msgid "Optional dependencies:"
 msgstr ""
 
-#: ../../Documentation.rst:80
+#: ../../Documentation.rst:81
+msgid "**nbsphinx**"
+msgstr ""
+
+#: ../../Documentation.rst:83
+msgid ""
+"This extension lets users include Jupyter Notebook (.ipynb) files. The "
+"output style of the notebook is highly inherited in the HTML builds, "
+"which is an easy and clear way to present code-and-text documents."
+msgstr ""
+
+#: ../../Documentation.rst:85
 msgid "**sphinxcontrib-bibtex**"
 msgstr ""
 
-#: ../../Documentation.rst:82
+#: ../../Documentation.rst:87
 msgid ""
-"This extension if for users who would like to print bibliography list and"
+"This extension is for users who would like to print bibliography list and"
 " use citations on their website. It allows loading BibTeX file (\\ "
 "``*.bib``\\ ) for external. Users can also customize filters, sorting and"
 " citation style with its advanced features. See its offical guide at "
@@ -213,11 +234,11 @@ msgid ""
 "documentation."
 msgstr ""
 
-#: ../../Documentation.rst:86
+#: ../../Documentation.rst:91
 msgid "Installation via Pip"
 msgstr ""
 
-#: ../../Documentation.rst:90
+#: ../../Documentation.rst:95
 msgid ""
 "The early version of Simrofy won't be avaliable on Pypi (but on TestPypi "
 "instead) since I think it is not good enough to be post there. However, "
@@ -225,65 +246,65 @@ msgid ""
 "TestPypi:"
 msgstr ""
 
-#: ../../Documentation.rst:97
+#: ../../Documentation.rst:102
 msgid ""
 "This is the recommended way to install Simrofy theme. Open your command "
 "line terminal and run following command:"
 msgstr ""
 
-#: ../../Documentation.rst:103
+#: ../../Documentation.rst:108
 msgid "The arg ``-U`` ensures upgrading to the newest version."
 msgstr ""
 
-#: ../../Documentation.rst:107
+#: ../../Documentation.rst:112
 msgid "Building Simrofy by yourself"
 msgstr ""
 
-#: ../../Documentation.rst:111
+#: ../../Documentation.rst:116
 msgid ""
 "Skip this section if you've successfully installed Simrofy through pip "
 "command."
 msgstr ""
 
-#: ../../Documentation.rst:113
+#: ../../Documentation.rst:118
 msgid ""
 "If you can't install it via pip, an alternative is to consider "
 "downloading the source code of Simrofy and compile it by yourself."
 msgstr ""
 
-#: ../../Documentation.rst:115
+#: ../../Documentation.rst:120
 msgid ""
 "Download the source code of Simrofy from the Github repository. You can "
 "click on the Github link on the webpage sidebar."
 msgstr ""
 
-#: ../../Documentation.rst:116
+#: ../../Documentation.rst:121
 msgid "Enter the folder and focus on following files:"
 msgstr ""
 
-#: ../../Documentation.rst:127
+#: ../../Documentation.rst:132
 msgid ""
 "Then launch your command line terminal with current folder as the working"
 " directory."
 msgstr ""
 
-#: ../../Documentation.rst:128
+#: ../../Documentation.rst:133
 msgid "In your terminal, run:"
 msgstr ""
 
-#: ../../Documentation.rst:134
+#: ../../Documentation.rst:139
 msgid ""
 "If you encounter an error, probably because you haven't installed the "
 "``wheel`` package. Install it and try above building again:"
 msgstr ""
 
-#: ../../Documentation.rst:140
+#: ../../Documentation.rst:145
 msgid ""
 "You will find compiled packages under the ``dist/`` folder. Then you can "
 "directly install it by pip:"
 msgstr ""
 
-#: ../../Documentation.rst:146
+#: ../../Documentation.rst:151
 msgid ""
 "Replace ``VERSION`` with version string of your build (like ``1.0.0`` ) "
 "and ``EXTENSION`` with package extension (either ``whl`` or ``tar.gz`` )."
@@ -291,41 +312,41 @@ msgid ""
 "for Windows users who are installing version |release|."
 msgstr ""
 
-#: ../../Documentation.rst:148
+#: ../../Documentation.rst:153
 msgid ""
 "You have finished building Simrofy and it has been installed on your "
 "machine."
 msgstr ""
 
-#: ../../Documentation.rst:154
+#: ../../Documentation.rst:159
 msgid "Quick Guide"
 msgstr ""
 
-#: ../../Documentation.rst:156
+#: ../../Documentation.rst:161
 msgid ""
 "To apply Simrofy theme to your Sphinx project, put following line inside "
 "your ``conf.py``\\ :"
 msgstr ""
 
-#: ../../Documentation.rst:162
+#: ../../Documentation.rst:167
 msgid ""
 "Then you can follow the general Sphinx writing process. To customize "
 "Simrofy theme, use ``html_theme_options`` variable in the ``conf.py`` "
 "file. See :ref:`theme-options` section below."
 msgstr ""
 
-#: ../../Documentation.rst:165
+#: ../../Documentation.rst:170
 msgid "Other notes:"
 msgstr ""
 
-#: ../../Documentation.rst:167
+#: ../../Documentation.rst:172
 msgid ""
 "The 'Raw' button on the headbar can be removed by disabling copy source "
 "files into ``_sources`` path of the output folder. Use ``html_copy_source"
 " = False`` in ``conf.py`` to disable it."
 msgstr ""
 
-#: ../../Documentation.rst:168
+#: ../../Documentation.rst:173
 msgid ""
 "The mechanism behind the default headbar links (or user-defined "
 "``headbar_links`` ) is pretty unclear since Sphinx doesn't provide a "
@@ -333,70 +354,70 @@ msgid ""
 "following substrings in document filenames:"
 msgstr ""
 
-#: ../../Documentation.rst:170
+#: ../../Documentation.rst:175
 msgid "``href=`` , or"
 msgstr ""
 
-#: ../../Documentation.rst:171
+#: ../../Documentation.rst:176
 msgid "double semicolons ``;;``\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:173
+#: ../../Documentation.rst:178
 msgid ""
 "These strings are used for processing the output of ``toctree`` call of "
 "the Sphinx builder. Embedding them in filenames may cause building error "
 "or unexpected HTTML outputs."
 msgstr ""
 
-#: ../../Documentation.rst:178
+#: ../../Documentation.rst:183
 msgid "Theme Options"
 msgstr ""
 
-#: ../../Documentation.rst:180
+#: ../../Documentation.rst:185
 msgid ""
 "In the ``conf.py`` file, we can specify theme options through the "
 "``html_theme_options`` dictionary variable. For example:"
 msgstr ""
 
-#: ../../Documentation.rst:191
+#: ../../Documentation.rst:196
 msgid "Default values of theme options"
 msgstr ""
 
-#: ../../Documentation.rst:193
+#: ../../Documentation.rst:198
 msgid ""
 "All dictionary keys used in ``html_theme_options`` should be designed in "
 "the Simrofy theme. Please check the ``theme.conf`` file's ``[options]`` "
 "sections for details. For convinience, I also put the whole file here:"
 msgstr ""
 
-#: ../../Documentation.rst:200
+#: ../../Documentation.rst:205
 msgid "Full references of theme options"
 msgstr ""
 
-#: ../../Documentation.rst:202
+#: ../../Documentation.rst:207
 msgid ""
 "Here is a parameter list for Simrofy's theme options. You may refer to "
 "the appendix :ref:`conf-py-file` section to see how these options are "
 "used in this website."
 msgstr ""
 
-#: ../../Documentation.rst:206
+#: ../../Documentation.rst:211
 msgid "admonition\\_\\*\\*_color"
 msgstr ""
 
-#: ../../Documentation.rst:208
+#: ../../Documentation.rst:213
 msgid ""
 "Passing a CSS color strings to override the default admonition background"
 " color, where \\*\\* is the admonition name (attention, caution, etc.)."
 msgstr ""
 
-#: ../../Documentation.rst:210
+#: ../../Documentation.rst:215
 msgid ""
 "For example, user can change the color of these admonitions by passing "
 "values to the ``html_theme_options`` dictionary:"
 msgstr ""
 
-#: ../../Documentation.rst:221
+#: ../../Documentation.rst:226
 msgid ""
 "Default admonition colors are similar to (yet not exactly the same with) "
 "the default settings of Read the Docs theme's admonitions (see `their "
@@ -407,51 +428,51 @@ msgid ""
 "version of the body color using CSS' ``brightness`` filter."
 msgstr ""
 
-#: ../../Documentation.rst:223
+#: ../../Documentation.rst:228
 msgid "All supported admonition name with default colors are showing below:"
 msgstr ""
 
-#: ../../Documentation.rst:227
+#: ../../Documentation.rst:232
 msgid "Attention."
 msgstr ""
 
-#: ../../Documentation.rst:231
+#: ../../Documentation.rst:236
 msgid "Caution."
 msgstr ""
 
-#: ../../Documentation.rst:235
+#: ../../Documentation.rst:240
 msgid "Danger."
 msgstr ""
 
-#: ../../Documentation.rst:239
+#: ../../Documentation.rst:244
 msgid "Error."
 msgstr ""
 
-#: ../../Documentation.rst:243
+#: ../../Documentation.rst:248
 msgid "Hint."
 msgstr ""
 
-#: ../../Documentation.rst:247
+#: ../../Documentation.rst:252
 msgid "Important."
 msgstr ""
 
-#: ../../Documentation.rst:251
+#: ../../Documentation.rst:256
 msgid "Note."
 msgstr ""
 
-#: ../../Documentation.rst:255
+#: ../../Documentation.rst:260
 msgid "Tip."
 msgstr ""
 
-#: ../../Documentation.rst:259
+#: ../../Documentation.rst:264
 msgid "Warning."
 msgstr ""
 
-#: ../../Documentation.rst:260
+#: ../../Documentation.rst:265
 msgid "canonical_prefix"
 msgstr ""
 
-#: ../../Documentation.rst:262
+#: ../../Documentation.rst:267
 msgid ""
 "The canonical prefix for each webpage, which can either ends with a ``/``"
 " symbol or not. For example, if you set it as ``https://eg.com/``\\ , the"
@@ -459,54 +480,72 @@ msgid ""
 "``https://eg.com/page.html``\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:263
+#: ../../Documentation.rst:269
+msgid ""
+"Note that if you have multiple languages on your website, you may need to"
+" include your primary language in the canonical prefix. For example, if "
+"your primary language is English (``en``\\ ) and you also have Simplified"
+" Chinese (``zh_CN``\\ ) translation, you can use ``https://eg.com/en/`` "
+"instead. Simrofy will map all language versions into this primary "
+"language canonical url."
+msgstr ""
+
+#: ../../Documentation.rst:270
 msgid "favicon"
 msgstr ""
 
-#: ../../Documentation.rst:265
+#: ../../Documentation.rst:272
 msgid ""
 "The file path (under your ``html_static_path`` path, see :term:`logo` for"
 " details) to the website icon (favicon)."
 msgstr ""
 
-#: ../../Documentation.rst:269
+#: ../../Documentation.rst:276
 msgid "github_repo"
 msgstr ""
 
-#: ../../Documentation.rst:271
+#: ../../Documentation.rst:278
 msgid "(Only valid when :term:`github_user` is specified)"
 msgstr ""
 
-#: ../../Documentation.rst:273
+#: ../../Documentation.rst:280
 msgid ""
 "Show a Github repo link of ``https://github.com/GITHUB_USER/GITHUB_REPO``"
 " instead of your user profile page."
 msgstr ""
 
-#: ../../Documentation.rst:266
+#: ../../Documentation.rst:273
 msgid "github_user"
 msgstr ""
 
-#: ../../Documentation.rst:268
+#: ../../Documentation.rst:275
 msgid ""
 "Github username. It will create a icon-weblink to "
 "``https://github.com/GITHUB_USER`` on the headbar that allows others "
 "visit your Github profile page."
 msgstr ""
 
+#: ../../Documentation.rst:281
+msgid "headbar_color"
+msgstr ""
+
 #: ../../Documentation.rst:283
+msgid "Background color of the headbar. Default is royalblue."
+msgstr ""
+
+#: ../../Documentation.rst:295
 msgid "headbar_height"
 msgstr ""
 
-#: ../../Documentation.rst:285
+#: ../../Documentation.rst:297
 msgid "The height of headbar in unit of px. Default is ``30``"
 msgstr ""
 
-#: ../../Documentation.rst:274
+#: ../../Documentation.rst:286
 msgid "headbar_links"
 msgstr ""
 
-#: ../../Documentation.rst:276
+#: ../../Documentation.rst:288
 msgid ""
 "Links to be displayed on the headbar. Default is undefined, which "
 "displays all webpages (excluding the ``index.rst`` and the current one) "
@@ -514,35 +553,35 @@ msgid ""
 "extension) to handle the output."
 msgstr ""
 
-#: ../../Documentation.rst:278
+#: ../../Documentation.rst:290
 msgid ""
 "For example: ``'headbar_links': ['Development', 'Documentation']`` will "
 "show:"
 msgstr ""
 
-#: ../../Documentation.rst:280
+#: ../../Documentation.rst:292
 msgid ""
 "'Development' link only if the user is browsing the 'Documentation' "
 "webpage"
 msgstr ""
 
-#: ../../Documentation.rst:281
+#: ../../Documentation.rst:293
 msgid ""
 "'Documentation' link only if the user is browsing the 'Development' "
 "webpage"
 msgstr ""
 
-#: ../../Documentation.rst:282
+#: ../../Documentation.rst:294
 msgid ""
 "Both 'Development' and 'Documentation' links if the user is browsing "
 "other webpages."
 msgstr ""
 
-#: ../../Documentation.rst:316
+#: ../../Documentation.rst:344
 msgid "image_self"
 msgstr ""
 
-#: ../../Documentation.rst:318
+#: ../../Documentation.rst:346
 msgid ""
 "The photograph of the site owner, which is often seen on portfolio-style "
 "websites. Default is undefined . Keep in mind that it is a path under "
@@ -550,23 +589,38 @@ msgid ""
 "for details."
 msgstr ""
 
-#: ../../Documentation.rst:286
+#: ../../Documentation.rst:298
 msgid "languages"
 msgstr ""
 
-#: ../../Documentation.rst:288
+#: ../../Documentation.rst:300
 msgid ""
-"A list of display languages for your website. Default is none. You may "
-"need to install ``sphinx-intl`` and prepare translation ``.po`` files to "
-"build a multi-language website. For more details about "
-"internationalization (i18n), please refer to the Sphinx documentation."
+"A dictionary of display languages for your website. Default is none. You "
+"may need to install ``sphinx-intl`` and prepare translation ``.po`` files"
+" to build a multi-language website."
 msgstr ""
 
-#: ../../Documentation.rst:289
+#: ../../Documentation.rst:302
+msgid ""
+"For example, assume that you write your website in English and would like"
+" to also provide a Simplified Chinese translation. To build this "
+"bilingual website, you need to add a dict of two key-value pairs to your "
+"theme option:"
+msgstr ""
+
+#: ../../Documentation.rst:314
+msgid ""
+"Keys of the dictionary are the abbreviation ('en', 'zh_CN') for "
+"languages, and values are the desired displayed text in your website's "
+"language menu. For a list of supported languages, please refer to the "
+"Sphinx_ documentation's internationalization (i18n) webpage."
+msgstr ""
+
+#: ../../Documentation.rst:317
 msgid "logo"
 msgstr ""
 
-#: ../../Documentation.rst:291
+#: ../../Documentation.rst:319
 msgid ""
 "The logo image file path. Default is undefined, which will display a text"
 " hyperlink \"Homepage\" instead. When a logo path string is assigned, the"
@@ -574,25 +628,25 @@ msgid ""
 "are enabled)."
 msgstr ""
 
-#: ../../Documentation.rst:293
+#: ../../Documentation.rst:321
 msgid ""
 "Note that the file path is the subpath under your ``html_static_path`` "
 "defined in your ``conf.py``\\ . For example, if you have following lines:"
 msgstr ""
 
-#: ../../Documentation.rst:303
+#: ../../Documentation.rst:331
 msgid "Then you should put your logo file at ``_my_static/logo.png``\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:304
+#: ../../Documentation.rst:332
 msgid "logo_radius"
 msgstr ""
 
-#: ../../Documentation.rst:306 ../../Documentation.rst:313
+#: ../../Documentation.rst:334 ../../Documentation.rst:341
 msgid "(Only valid when :term:`logo` is specified)"
 msgstr ""
 
-#: ../../Documentation.rst:308
+#: ../../Documentation.rst:336
 msgid ""
 "The radius of the clipping circle to logo. The user input wil be "
 "converted into a percentage value and then passed to the ``circle(...)`` "
@@ -601,45 +655,45 @@ msgid ""
 "image is not squared)."
 msgstr ""
 
-#: ../../Documentation.rst:310
+#: ../../Documentation.rst:338
 msgid ""
 "Default is undefined, which means the logo will be displayed in normal "
 "rectangle shape."
 msgstr ""
 
-#: ../../Documentation.rst:311
+#: ../../Documentation.rst:339
 msgid "logo_width"
 msgstr ""
 
-#: ../../Documentation.rst:315
+#: ../../Documentation.rst:343
 #, python-format
 msgid ""
 "The logo width in percentage (for a value <= 1.0 ) or unit of px (for a "
 "value > 1.0). Default is ``0.8`` , or say 80% sidebar width."
 msgstr ""
 
-#: ../../Documentation.rst:319
+#: ../../Documentation.rst:347
 msgid "people"
 msgstr ""
 
-#: ../../Documentation.rst:321
+#: ../../Documentation.rst:349
 msgid "(Only valid when both :term:`people_pages` and this options are specified)"
 msgstr ""
 
-#: ../../Documentation.rst:323
+#: ../../Documentation.rst:351
 msgid ""
 "A dictionary variable that contains the information of people in your "
 "team. Default is undefined. An useful example output can be found in the "
 ":ref:`chapter-people` chapter."
 msgstr ""
 
-#: ../../Documentation.rst:325
+#: ../../Documentation.rst:353
 msgid ""
 "The dictionary should follow a format like (below is an example of "
 "external JSON file):"
 msgstr ""
 
-#: ../../Documentation.rst:331
+#: ../../Documentation.rst:359
 msgid ""
 "Each entry should be the name of group (e.g. \"Leader\") and it will be "
 "rendered as a ``<h3>`` tag in the output webpage (but not included in the"
@@ -648,59 +702,59 @@ msgid ""
 " information."
 msgstr ""
 
-#: ../../Documentation.rst:333
+#: ../../Documentation.rst:361
 msgid "Personal information includes following fields:"
 msgstr ""
 
-#: ../../Documentation.rst:335
+#: ../../Documentation.rst:363
 msgid ""
 "``title``\\ : The title of the person. Professor, graduate student, "
 "visiting scholar, etc."
 msgstr ""
 
-#: ../../Documentation.rst:336
+#: ../../Documentation.rst:364
 msgid "``address``\\ : The office address or something similar."
 msgstr ""
 
-#: ../../Documentation.rst:337
+#: ../../Documentation.rst:365
 msgid ""
 "``email``\\ : The email address of the person. Symbol ``@`` is replaced "
 "by text ``:at:`` when displayed on the webpage."
 msgstr ""
 
-#: ../../Documentation.rst:338
+#: ../../Documentation.rst:366
 msgid ""
 "``phone``\\ : The phone number of the person. Since there is no format "
 "check, you can use hyphens and brackets or input several phone numbers if"
 " needed."
 msgstr ""
 
-#: ../../Documentation.rst:339
+#: ../../Documentation.rst:367
 msgid ""
 "``photo``\\ : The photo path of the person under the "
 ":term:`photo_subpath` of the static path."
 msgstr ""
 
-#: ../../Documentation.rst:340
+#: ../../Documentation.rst:368
 msgid "people_pages"
 msgstr ""
 
-#: ../../Documentation.rst:342
+#: ../../Documentation.rst:370
 msgid "(Only valid when both :term:`people` and this options are specified)"
 msgstr ""
 
-#: ../../Documentation.rst:344
+#: ../../Documentation.rst:372
 msgid ""
 "A list of webpage filenames (without extension) that appends photos of "
 "people in your team. Default is undefined. Only webpages listed here will"
 " display those team member photos."
 msgstr ""
 
-#: ../../Documentation.rst:345
+#: ../../Documentation.rst:373
 msgid "photo_subpath"
 msgstr ""
 
-#: ../../Documentation.rst:347
+#: ../../Documentation.rst:375
 msgid ""
 "The subpath for photos of team  under the ``html_static_path`` folder. "
 "For example, ``'photos/'`` means photos are under ``_static/photos/`` if "
@@ -708,111 +762,169 @@ msgid ""
 ":term:`logo` option for details of static path."
 msgstr ""
 
-#: ../../Documentation.rst:349
+#: ../../Documentation.rst:377
 msgid ""
 "Default is undefined, in which case Sphinx will only search the static "
 "path and not dive into deeper subfolders. The tailing forward slash ``/``"
 " of the subpath string can be omitted."
 msgstr ""
 
-#: ../../Documentation.rst:366
+#: ../../Documentation.rst:403
 msgid "sidebar_color"
 msgstr ""
 
-#: ../../Documentation.rst:368
+#: ../../Documentation.rst:405
 msgid ""
 "The background color of sidebar. Default is color code ``'#23A97F'`` (a "
 "medium dark green)."
 msgstr ""
 
-#: ../../Documentation.rst:350
+#: ../../Documentation.rst:378
 msgid "sidebar_home_text"
 msgstr ""
 
-#: ../../Documentation.rst:352
+#: ../../Documentation.rst:380
 msgid ""
 "A short text inserted under the sidebar logo (or the alternative homepage"
 " hyperlink if no logo is given). Default is undefined."
 msgstr ""
 
-#: ../../Documentation.rst:353
+#: ../../Documentation.rst:381
+msgid "sidebar_localtoc"
+msgstr ""
+
+#: ../../Documentation.rst:383
+msgid ""
+"The behavior of Table of Contents for current doc page. Note this is "
+"different from the whole website file structure (which always shows in "
+"the sidebar)."
+msgstr ""
+
+#: ../../Documentation.rst:385
+msgid ""
+"Default is None (hidden). It accepts either ``'collapse'`` or "
+"``'expand'``\\ , which indicates the initial status of the local ToC when"
+" opening the webpage."
+msgstr ""
+
+#: ../../Documentation.rst:389
+msgid "A useful feature to show ToC for subfolder docs."
+msgstr ""
+
+#: ../../Documentation.rst:390
 msgid "sidebar_position"
 msgstr ""
 
-#: ../../Documentation.rst:355
+#: ../../Documentation.rst:392
 msgid "The position of the sidebar. Users can also select:"
 msgstr ""
 
-#: ../../Documentation.rst:357
+#: ../../Documentation.rst:394
 msgid "``'left'``\\ : Display the sidebar on the left. This is the default value."
 msgstr ""
 
-#: ../../Documentation.rst:358
+#: ../../Documentation.rst:395
 msgid "``'right'``\\ : Display the sidebar on the right."
 msgstr ""
 
-#: ../../Documentation.rst:359
+#: ../../Documentation.rst:396
 msgid "Any other value will disable the sidebar."
 msgstr ""
 
-#: ../../Documentation.rst:360
+#: ../../Documentation.rst:397
 msgid "sidebar_toc_exclude"
 msgstr ""
 
-#: ../../Documentation.rst:362
+#: ../../Documentation.rst:399
 msgid ""
 "A list of rst files that would be excluded from the sidebar tabloe of "
 "contents. Each item of the list should be the title of the file. Default "
 "is undefined."
 msgstr ""
 
-#: ../../Documentation.rst:363
+#: ../../Documentation.rst:400
 msgid "sidebar_width"
 msgstr ""
 
-#: ../../Documentation.rst:365
+#: ../../Documentation.rst:402
 msgid "The width of the sidebar in unit of px. Default is ``240``"
 msgstr ""
 
-#: ../../Documentation.rst:369
+#: ../../Documentation.rst:406
 msgid "social_accounts"
 msgstr ""
 
-#: ../../Documentation.rst:371
+#: ../../Documentation.rst:408
 msgid ""
 "Social accounts information. User can pass a dictionary with a similar "
 "structure as follows:"
 msgstr ""
 
-#: ../../Documentation.rst:380
+#: ../../Documentation.rst:417
 msgid ""
 "Keys of the dictionary should be social media website names. A full list "
 "of supported social media names are shown in ``socialmedia.html``\\ , or "
 "you can also view it inside the collapsible container below."
 msgstr ""
 
-#: ../../Documentation.rst:381
+#: ../../Documentation.rst:418
 msgid ""
 "Each entry should contain a sub-dictionary that at least has ``user`` and"
 " ``url`` keys. The ``user`` string will be displayed as the link text and"
 " the ``url`` is the link to your social media account webpage."
 msgstr ""
 
-#: ../../Documentation.rst:382
+#: ../../Documentation.rst:419
 msgid ""
 "You need to specify Github user again even if you have done it in "
 ":term:`github_user`\\ ."
 msgstr ""
 
-#: ../../Documentation.rst:397
+#: ../../Documentation.rst:434
 msgid "Appendices"
 msgstr ""
 
-#: ../../Documentation.rst:402
+#: ../../Documentation.rst:439
 msgid "conf.py file"
 msgstr ""
 
-#: ../../Documentation.rst:404
+#: ../../Documentation.rst:441
 msgid "The example ``conf.py`` file taken from this documentation website:"
 msgstr ""
+
+#~ msgid ""
+#~ "reStructuredText is not mandantory but "
+#~ "**highly recommended**\\ . Although you "
+#~ "can write Markdown with recommonmark_ "
+#~ "extension, many features of Sphinx is"
+#~ " only avaliable to reStructuredText syntax."
+#~ msgstr ""
+
+#~ msgid "**Sphinx**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This extension if for users who "
+#~ "would like to print bibliography list"
+#~ " and use citations on their website."
+#~ " It allows loading BibTeX file (\\"
+#~ " ``*.bib``\\ ) for external. Users "
+#~ "can also customize filters, sorting and"
+#~ " citation style with its advanced "
+#~ "features. See its offical guide at "
+#~ "sphinxcontrib-bibtex_, or read :ref:`sec-"
+#~ "bib-example` section of Simrofy "
+#~ "documentation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A list of display languages for "
+#~ "your website. Default is none. You "
+#~ "may need to install ``sphinx-intl`` "
+#~ "and prepare translation ``.po`` files to"
+#~ " build a multi-language website. For"
+#~ " more details about internationalization "
+#~ "(i18n), please refer to the Sphinx "
+#~ "documentation."
+#~ msgstr ""
 

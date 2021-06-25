@@ -5,6 +5,9 @@ Misc Support
 
 Here we test the subpage feature of Simrofy. Sphinx build would build all doc files under the main root folder (including its subfolders), so this subpage (under ``docsrc/subpage``\ ) is also built.
 
+.. note::
+   
+   The translation (``.po`` files) for subfolder docs are still under testing. 
 
 .. toctree::
     :maxdepth: 1

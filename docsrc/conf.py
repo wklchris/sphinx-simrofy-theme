@@ -6,6 +6,9 @@ release = '0.3.0'
 
 
 # Sphinx configurations
+exclude_patterns = [         
+    "_build"                 # Ignore _build/ to avoid recursive builds of nbsphinx
+]
 smartquotes = False          # Show double-dashes clearly
 today_fmt = "%Y-%m-%d"       # Date format when using |today| replacement syntax
 extensions = [
@@ -41,7 +44,7 @@ except Exception as e:
 
 # Set internationalization (i18n) for multi-language support
 language = 'en'
-locale_dirs = ['locale/']
+locale_dirs = ['locale/']  # This can be overwritten by sphinx-intl's "-d" arg.
 gettext_compact = False
 
 # Theme options.
