@@ -90,6 +90,6 @@ def main(main_lang='zh_CN', trans_lang=None, update_po=False, update_gettext=Fal
 main(
     update_gettext=False,  # Enable this when docs are changed.
     main_lang='en',
-    trans_lang='zh_CN',
+    trans_lang='en',
     update_po=False  # Enable this when translations are updated.
 )
