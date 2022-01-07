@@ -9,7 +9,7 @@ This is the documentation of Sphinx theme Simrofy.
 
     This documentation is mainly for the Simrofy theme, not the Sphinx itself. If you are new to Sphinx, please visit the Sphinx main website Sphinx_ for details. In additional, the :ref:`chapter-examples` chapter of this website also provides a lot of useful information.
 
-    reStructuredText is not mandantory but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax.
+    reStructuredText (reST) is not mandantory but **highly recommended**\ . Although you can write Markdown with recommonmark_ extension, many features of Sphinx is only avaliable to reStructuredText syntax. To learn its syntax, you can view a quick guide on `Docutils <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_\ , or visit the `reST guidance page on Sphinx <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_\ .
 
 .. caution::
 
@@ -27,6 +27,7 @@ The Simrofy theme provides following features (for a full theme options list, se
 
   * The "Raw" button can be disabled in ``conf.py`` (see :ref:`section-quick-guide` section).
   * The Github button is disabled by default, unless user use options :term:`github_user` and :term:`github_repo`\ .
+  * The language switching menu on the left of the headbar is supported by the i18n feature of Sphinx. See :term:`languages` for details. 
 
 * Sidebar: Users can enable/disable it, adjust its width and position. See options :term:`sidebar_position` and :term:`sidebar_width`\ . 
 
@@ -69,7 +70,7 @@ Dependencies:
 
   Visit `Python Official Website <https://www.python.org/downloads/>`_ to install Python.
 
-- **Sphinx**
+- **Sphinx (>= 4.0.0)**
   
   Always better to choose a newer Sphinx version. You can scroll down to read the footer of current webpage and find under which Sphinx version this document was built; all versions no earlier than it should be good.
 
@@ -77,10 +78,17 @@ Dependencies:
 
 Optional dependencies:
 
+- **nbsphinx**
+  
+  This extension lets users include Jupyter Notebook (.ipynb) files. The output style of the notebook is highly inherited in the HTML builds, which is an easy and clear way to present code-and-text documents.
+
 - **sphinxcontrib-bibtex**
 
-  This extension if for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (\ ``*.bib``\ ) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at sphinxcontrib-bibtex_, or read :ref:`sec-bib-example` section of Simrofy documentation.
+  This extension is for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (\ ``*.bib``\ ) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at sphinxcontrib-bibtex_, or read :ref:`sec-bib-example` section of Simrofy documentation.
 
+- **sphinx-intl**
+  
+  This extension is for internationalization. If you don't translate your website into multiple languages, you won't use this package.
 
 Installation via Pip
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -90,7 +98,8 @@ Installation via Pip
    The early version of Simrofy won't be avaliable on Pypi (but on TestPypi instead) since I think it is not good enough to be post there. However, if you still want to install it and play around, you can get it via TestPypi:
 
     .. code-block:: bash
-    
+        
+        # For developers only!
         pip install --index-url https://test.pypi.org/simple/ -U sphinx-simrofy-theme
 
 
@@ -161,8 +170,37 @@ To apply Simrofy theme to your Sphinx project, put following line inside your ``
 
 Then you can follow the general Sphinx writing process. To customize Simrofy theme, use ``html_theme_options`` variable in the ``conf.py`` file. See :ref:`theme-options` section below.
 
+Embedding Videos
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Other notes:
+Embedding video is a little tricky in this theme. For most video websites, they allow users to create an embedded video using the share button. The HTML code usually includes an `<iframe>` element.
+
+To include such a `<iframe>`, user may type:
+
+.. code-block:: html
+   
+   .. raw:: html
+   
+      <div class="embedded-video">
+        <iframe src="https://player.bilibili.com/player.html?aid=711068977&bvid=BV1TD4y1Q78b&cid=203195051&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+      </div>
+
+* Note the `<div class="embedded-video">` in the first line. **Don't forget to embedding the 'iframe' element inside such a DIV container.** Its CSS style is predefined to have a maximum of 90% width and always keep a 16:9 ratio.
+* For Bilibili video links, please: 
+  
+  * Change the `//` heading into `https://`.
+  * Disable danmaku: Add `&danmaku=0` to the SRC attribute of the `<iframe>` element.
+
+Above embedded video gives:
+
+.. raw:: html
+   
+   <div class="embedded-video">
+     <iframe src="https://player.bilibili.com/player.html?aid=711068977&bvid=BV1TD4y1Q78b&cid=203195051&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+   </div>
+
+Other notes
+^^^^^^^^^^^^^^^^^
 
 * The 'Raw' button on the headbar can be removed by disabling copy source files into ``_sources`` path of the output folder. Use ``html_copy_source = False`` in ``conf.py`` to disable it.
 * The mechanism behind the default headbar links (or user-defined ``headbar_links`` ) is pretty unclear since Sphinx doesn't provide a simple way to read the doctree list. User needs to avoid using any of following substrings in document filenames:
@@ -261,6 +299,8 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
     canonical_prefix
         The canonical prefix for each webpage, which can either ends with a ``/`` symbol or not. For example, if you set it as ``https://eg.com/``\ , the webpage (generated from ``page.rst``\ ) will have a canonical url of ``https://eg.com/page.html``\ . 
 
+        Note that if you have multiple languages on your website, you may need to include your primary language in the canonical prefix. For example, if your primary language is English (``en``\ ) and you also have Simplified Chinese (``zh_CN``\ ) translation, you can use ``https://eg.com/en/`` instead. Simrofy will map all language versions into this primary language canonical url.
+
     favicon
         The file path (under your ``html_static_path`` path, see :term:`logo` for details) to the website icon (favicon).
 
@@ -272,6 +312,11 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
         Show a Github repo link of ``https://github.com/GITHUB_USER/GITHUB_REPO`` instead of your user profile page.
 
+    headbar_color
+        Background color of the headbar. Default is royalblue.
+
+        .. versionadded:: 0.4.0
+    
     headbar_links
         Links to be displayed on the headbar. Default is undefined, which displays all webpages (excluding the ``index.rst`` and the current one) in alphabetatical order. User may pass a list of filenames (without extension) to handle the output.
 
@@ -300,6 +345,8 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
             }
         
         Keys of the dictionary are the abbreviation ('en', 'zh_CN') for languages, and values are the desired displayed text in your website's language menu. For a list of supported languages, please refer to the Sphinx_ documentation's internationalization (i18n) webpage.
+
+        .. versionadded:: 0.3.0
 
     logo
         The logo image file path. Default is undefined, which will display a text hyperlink "Homepage" instead. When a logo path string is assigned, the website will show logo in the mainpage (and sidebar & topbar, if they are enabled).
@@ -364,6 +411,15 @@ Here is a parameter list for Simrofy's theme options. You may refer to the appen
 
     sidebar_home_text
         A short text inserted under the sidebar logo (or the alternative homepage hyperlink if no logo is given). Default is undefined.
+
+    sidebar_localtoc
+        The behavior of Table of Contents for current doc page. Note this is different from the whole website file structure (which always shows in the sidebar).
+        
+        Default is None (hidden). It accepts either ``'collapse'`` or ``'expand'``\ , which indicates the initial status of the local ToC when opening the webpage.
+
+        .. versionadded:: 0.4.0
+           
+           A useful feature to show ToC for subfolder docs.
 
     sidebar_position
         The position of the sidebar. Users can also select:

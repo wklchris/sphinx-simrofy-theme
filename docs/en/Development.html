@@ -7,17 +7,19 @@
 
     <meta charset="utf-8">
         <title>Development - Simrofy</title>
-        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/Development.html">
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/en/Development.html">
         <link rel="icon" type="image/x-icon" href="
     _static/favicon.ico">
     <link rel="stylesheet" href="_static/simrofy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+            <link rel="stylesheet" type="text/css" href="_static/simrofy.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 
 </head>
 
@@ -27,7 +29,7 @@
 <body>
 
 
-<div class="sidebar container" role="navigation" aria-label="main navigation">
+<div class="sidebar simrofybox" role="navigation" aria-label="main navigation">
     <div class="sidebarwrapper">
         <div id="sidebar_home">
             
@@ -38,7 +40,7 @@
     _static/logo.png" />
             
             </a>
-                    <p class="home_text">Simrofy v0.3.0</p>
+                    <p class="home_text">Simrofy v0.4.0</p>
         </div>
         <div id="sidebar_rel">
         
@@ -59,20 +61,35 @@
                     <div class="sidetoc_collapse"><a href="People.html">People</a></div>
         
         
+                    <div class="sidetoc_collapse"><a href="subpage/index.html">Misc Support</a></div>
+        
         </div>
+            <details id="sidebar_localtoc" >
+                <summary>Local ToC</summary>
+                <div class="localtoc"><ul>
+<li><a class="reference internal" href="#">Development</a><ul>
+<li><a class="reference internal" href="#future-features">Future features</a></li>
+<li><a class="reference internal" href="#update-log">Update log</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            </details>
     </div>
 </div>
 
 
 
-<div class="headbar container" role="contenthead">
+<div class="headbar simrofybox" role="contenthead">
     <div class="headbarwrapper">
         <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
     _static/logo.png" /><a href=index.html>Homepage</a>&nbsp;|&nbsp;
         </div>
         <div id="headbar_lang"><details class="headbar_langmenu">
             <summary>Languages</summary>
-            <details-menu class="dropdown"><a class="dropdown-item" href="../en/Development.html">English</a><a class="dropdown-item" href="../zh_CN/Development.html">简体中文</a></details-menu>
+            <details-menu class="dropdown"><a class="dropdown-item" href="
+    /en/Development.html">English</a><a class="dropdown-item" href="
+    /zh_CN/Development.html">简体中文</a></details-menu>
         </details></div>
         <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Development.rst.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
                 <img src="
@@ -86,19 +103,20 @@
         
         
             <a href="Examples.html">Examples</a>
+        
         </div>
     </div>
 </div>
 <div class="document">
     <div class="documentwrapper">
-    <div class="body container" role="main">
+    <div class="body simrofybox" role="main">
         <div class="bodywrapper">
             
             
-  <div class="section" id="development">
+  <section id="development">
 <h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
 <p>Simrofy is still under active development. Many features are still on their way.</p>
-<div class="section" id="future-features">
+<section id="future-features">
 <h2>Future features<a class="headerlink" href="#future-features" title="Permalink to this headline">¶</a></h2>
 <p>Here are the features on the schedule:</p>
 <ul class="simple">
@@ -123,12 +141,28 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="update-log">
+</section>
+<section id="update-log">
 <h2>Update log<a class="headerlink" href="#update-log" title="Permalink to this headline">¶</a></h2>
 <p>This log shows what features have been implemented:</p>
 <ul class="simple">
-<li><p>Version 0.3.0</p>
+<li><p>Version 0.4.0:</p>
+<ul>
+<li><p>Now upgrade the <strong>Sphinx support from 3.x to 4.x</strong>.</p></li>
+<li><p>Add headbar background color theme option. This somehow makes the headbar text readable when the browser width is too small.</p></li>
+<li><p>Add local table of contents support in the sidebar (<a class="reference internal" href="Documentation.html#term-sidebar_localtoc"><span class="xref std std-term">sidebar_localtoc</span></a>).</p></li>
+<li><p><strong>Add video embedding support</strong> for <cite>&lt;iframe&gt;</cite> HTML videos.</p></li>
+<li><p><strong>Add subfolder support</strong>. Now users can switch languages on subfolder docs.</p></li>
+<li><p>Improve the package, including <cite>requirements.txt</cite> and <cite>setup.py</cite> and reduce size.</p></li>
+<li><p>Social icon improvement:</p>
+<ul>
+<li><p>Add Bilibili icon.</p></li>
+<li><p>Fix the social link parser error.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Version 0.3.0:</p>
 <ul>
 <li><p>Add multi-language support. This doc also involves two languages: English and Chinese, though I haven't started translation for the latter yet.</p></li>
 </ul>
@@ -149,8 +183,8 @@
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
             
@@ -158,12 +192,12 @@
     </div>
 
     
-    <div class="footer container" role="contentinfo">
+    <div class="footer simrofybox" role="contentinfo">
         <div class="footerwrapper">
         <div class="footersocial">
             <ul class="footersociallist">
             
-                <li><a class="socialicon" href=None>
+                <li><a class="socialicon" href=https://linkhere>
                     <span class="socialicon">
                         <img class="social" src="
     _static/icon/social-facebook.png"
@@ -172,7 +206,7 @@
                     <span class="socialuser">eg-facebook</span>
                 </a></li>
             
-                <li><a class="socialicon" href=None>
+                <li><a class="socialicon" href=https://linkhere>
                     <span class="socialicon">
                         <img class="social" src="
     _static/icon/social-linkedin.png"
@@ -184,9 +218,9 @@
             </ul>
         </div>
             &#169; Copyright 2020, wklchris.
-            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
             <br>
-            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.3.0, a Sphinx theme for building portfolio/CV websites.
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.4.0, a Sphinx theme for building portfolio/CV websites.
         </div>
     </div>
     </div>

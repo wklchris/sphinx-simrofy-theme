@@ -6,14 +6,14 @@ with open("ReadMe.md", encoding='utf-8') as f:
 
 setup(
     name = "sphinx-simrofy-theme",
-    version = '0.3.0',
+    version = '0.4.0',
     packages = ['sphinx_simrofy_theme'],
     include_package_data = True,
     install_requires = [
-        "Sphinx>=4.0.0;",
-        "nbsphinx>=0.8.4;",
+        "Sphinx>=4.0.0",
+        "nbsphinx>=0.8.4",
         "sphinxcontrib-bibtex>=2.0.0",
-        "sphinx-intl"
+        "sphinx-intl>=2.0.0"
     ],
     # Meta
     author = "wklchris",

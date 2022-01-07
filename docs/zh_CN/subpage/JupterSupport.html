@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+    
+
+
+
+<head>
+
+    <meta charset="utf-8">
+        <title>Jupyter Support - Simrofy</title>
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/en/subpage/JupterSupport.html">
+        <link rel="icon" type="image/x-icon" href="
+    ../_static/favicon.ico">
+    <link rel="stylesheet" href="../_static/simrofy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+            <link rel="stylesheet" type="text/css" href="../_static/simrofy.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "tags": "ams", "useLabelIds": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+
+</head>
+
+
+
+
+<body>
+
+
+<div class="sidebar simrofybox" role="navigation" aria-label="main navigation">
+    <div class="sidebarwrapper">
+        <div id="sidebar_home">
+            
+            <a class="logo" href=../index.html>
+            
+                <img class="align-center" id="sidebar_logo" alt="Website logo"
+                    src="
+    ../_static/logo.png" />
+            
+            </a>
+                    <p class="home_text">Simrofy v0.4.0</p>
+        </div>
+        <div id="sidebar_rel">
+        
+                    <div class="sidetoc_collapse"><a href="../Development.html">Development</a></div>
+        
+                    <div class="sidetoc_collapse"><a href="../Documentation.html">Documentation</a></div>
+        
+                    <div class="sidetoc_collapse"><a href="../People.html">People</a></div>
+        
+        
+                    <div class="sidetoc_expand">
+                        <a href="index.html">Misc Support</a>
+                    </div>
+                    <div class="sidetocview">
+                        <div class="sidetoc_lower">
+                            <a href="MarkdownSupport.html">Markdown Support</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="#">Jupyter Support</a>
+                        </div>
+                    </div>
+        
+        </div>
+            <details id="sidebar_localtoc" >
+                <summary>Local ToC</summary>
+                <div class="localtoc"><ul>
+<li><a class="reference internal" href="#">Jupyter Support</a><ul>
+<li><a class="reference internal" href="#Plotting">Plotting</a></li>
+<li><a class="reference internal" href="#Data-frame-visualization">Data frame visualization</a></li>
+<li><a class="reference internal" href="#Markdown-syntax">Markdown syntax</a></li>
+<li><a class="reference internal" href="#LaTeX-equations-and-cross-references">LaTeX equations and cross-references</a><ul>
+<li><a class="reference internal" href="#Auto-numbering">Auto-numbering</a></li>
+<li><a class="reference internal" href="#Cross-reference">Cross-reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            </details>
+    </div>
+</div>
+
+
+
+<div class="headbar simrofybox" role="contenthead">
+    <div class="headbarwrapper">
+        <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
+    ../_static/logo.png" /><a href=../index.html>Homepage</a>&nbsp;|&nbsp;
+        </div>
+        <div id="headbar_lang"><details class="headbar_langmenu">
+            <summary>Languages</summary>
+            <details-menu class="dropdown"><a class="dropdown-item" href="
+    /en/subpage/JupterSupport.html">English</a><a class="dropdown-item" href="
+    /zh_CN/subpage/JupterSupport.html">简体中文</a></details-menu>
+        </details></div>
+        <div class="headbarsources">|&nbsp;<a class="sourcelink" href="../_sources/subpage/JupterSupport.ipynb.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
+                <img src="
+    ../_static/icon/github.png" alt="Github Icon"
+                    style="height: 24px;" />
+            </a></div>
+        <div class="headbarlinks">
+        
+        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+</div>
+<div class="document">
+    <div class="documentwrapper">
+    <div class="body simrofybox" role="main">
+        <div class="bodywrapper">
+            
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Jupyter-Support">
+<h1>Jupyter Support<a class="headerlink" href="#Jupyter-Support" title="永久链接至标题">¶</a></h1>
+<p>This page is built by the Sphinx’s <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> extension. The raw file is a Python-kernel Jupyter Notebook file <code class="docutils literal notranslate"><span class="pre">JupyterSupport.ipynb</span></code> under the <code class="docutils literal notranslate"><span class="pre">subpage</span></code> folder of the Simrofy project.</p>
+<p>For more details about Jupyter Notebook &amp; Jupyter Lab, you can visit <a class="reference external" href="https://jupyter.org/">Jupyter’s official website</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+<p>Jupyter Notebook is famous for its plotting &amp; data visualization along its Markdown-syntax typesetting. Let us have a quick look on these features.</p>
+<section id="Plotting">
+<h2>Plotting<a class="headerlink" href="#Plotting" title="永久链接至标题">¶</a></h2>
+<p>There are some configurations for plotting, which are mentioned by <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code>.</p>
+<ol class="arabic simple">
+<li><p><strong>Figure format</strong>: Since Sphinx will builds all Jupyter notebook into HTML, we probably prefer SVG over PNG figures.</p></li>
+<li><p><strong>Figure dpi</strong>: May increase the dpi (default is 72) for high resolution screen, especially when the format is PNG.</p></li>
+<li><p><strong>Random SVG</strong>: Note that the figure output would be stored for the website, so we also need to avoid randomness in SVG generating – both its content and its filename. Jupyter notebook has a <code class="docutils literal notranslate"><span class="pre">svg.hashsalt</span></code> option to control the “random seed”.</p></li>
+</ol>
+<p>We can create a <code class="docutils literal notranslate"><span class="pre">matplotrc</span></code> file in the same folder with our Jupyter notebook file, and write:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>figure.dpi: 96
+figure.figsize: 8, 6
+font.size: 14.0
+svg.hashsalt: mplsalt
+</pre></div>
+</div>
+<p>The figure format is an option of IPython, so we can’t configure it through matplotlib. We need to run it inside our Jupyter notebook:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># The PDF figure format is used when the noteboook is converted by LaTeX</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_formats = {&#39;svg&#39;, &#39;pdf&#39;}
+</pre></div>
+</div>
+</div>
+<p>Now we are pleased to draw a simple plot after finishing all these configurations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Overwrite the rcParam figsize</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/subpage_JupterSupport_10_0.svg" src="../_images/subpage_JupterSupport_10_0.svg" /></div>
+</div>
+</section>
+<section id="Data-frame-visualization">
+<h2>Data frame visualization<a class="headerlink" href="#Data-frame-visualization" title="永久链接至标题">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Generate an array data and show its number of rows and columns</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">mat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(100, 2)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;sin(x)&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>sin(x)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.063467</td>
+      <td>0.063424</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.126933</td>
+      <td>0.126592</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.190400</td>
+      <td>0.189251</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.253866</td>
+      <td>0.251148</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>We can control its display format by:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>sin(x)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0000</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0635</td>
+      <td>0.0634</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1269</td>
+      <td>0.1266</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1904</td>
+      <td>0.1893</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2539</td>
+      <td>0.2511</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Markdown-syntax">
+<h2>Markdown syntax<a class="headerlink" href="#Markdown-syntax" title="永久链接至标题">¶</a></h2>
+<p>All paragraphs in this Jupyter Notebook are written in Markdown syntax. For example, you can make:</p>
+<ul class="simple">
+<li><p>Italic <em>italic</em>,</p></li>
+<li><p>Bold <strong>bold</strong>, and</p></li>
+<li><p>Literal <code class="docutils literal notranslate"><span class="pre">literal</span></code> font styles.</p></li>
+</ul>
+<p>Also, it’s worthnoting that <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> provides support for some admonitions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is an <em>experimental feature</em>!</p>
+<p>Its usage will probably change in the future or it might be removed completely!</p>
+</div>
+<p>Please <strong>strictly follow this format</strong> (including blank lines around div labels and the title “Warning”) when you use this admonition feature.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-warning&quot;</span><span class="p">&gt;</span>
+
+Warning
+
+This is an *experimental feature*!
+Its usage will probably change in the future or it might be removed completely!
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Up to current <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> version (see below), it only supports “warning” and “info” (i.e. alert-info) admonitions.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">nbsphinx</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nbsphinx</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.7.1
+</pre></div></div>
+</div>
+</section>
+<section id="LaTeX-equations-and-cross-references">
+<h2>LaTeX equations and cross-references<a class="headerlink" href="#LaTeX-equations-and-cross-references" title="永久链接至标题">¶</a></h2>
+<p>The LaTeX equation is natively supported by Jupyter. When the Sphinx builds the Jupyter file into a HTML webpage, it uses the MathJax to render equations. For more details of equation usage in <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code>, you can visit <a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.8.6/markdown-cells.html#Equations">nbsphinx: Equations</a>.</p>
+<p>Please remember to <strong>avoid indentation inside the equation</strong>, otherwise the HTML builds may fail.</p>
+<p>Here is an example equation:</p>
+<p><span class="math">\begin{equation}
+\int_0^\pi \sin^2 x \,dx = \frac{\pi}{2}
+\label{eq:example}
+\end{equation}</span></p>
+<p>The text behind it is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{equation}
+\int_0^\pi \sin^2 x \,dx = \frac{\pi}{2}
+\label{eq:example}
+\end{equation}
+</pre></div>
+</div>
+<p>You can also use the asterisk-variant environment to produce equations without auto-numbering on the right.</p>
+<section id="Auto-numbering">
+<h3>Auto-numbering<a class="headerlink" href="#Auto-numbering" title="永久链接至标题">¶</a></h3>
+<p>You can enable auto-numbering for the HTML output by adding following options to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Sphinx &gt;= 4.0</span>
+<span class="n">mathjax3_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;tex&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="s1">&#39;ams&#39;</span><span class="p">,</span> <span class="s1">&#39;useLabelIds&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># For older Sphinx</span>
+<span class="n">mathjax_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;TeX&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;equationNumbers&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;autoNumber&#39;</span><span class="p">:</span> <span class="s1">&#39;AMS&#39;</span><span class="p">,</span> <span class="s1">&#39;useLabelIds&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="Cross-reference">
+<h3>Cross-reference<a class="headerlink" href="#Cross-reference" title="永久链接至标题">¶</a></h3>
+<p>You can refer the equation if you have given it a <code class="docutils literal notranslate"><span class="pre">\label{...}</span></code> field.</p>
+<p>For the equation above, we can refer it by <code class="docutils literal notranslate"><span class="pre">\eqref{eq:example}</span></code> (which gives <span class="math">\eqref{eq:example}</span>, a number in brackets) or <code class="docutils literal notranslate"><span class="pre">\ref{eq:example}</span></code> (<span class="math">\ref{eq:example}</span>, a number without brackets).</p>
+</section>
+</section>
+</section>
+
+
+            
+        </div>
+    </div>
+
+    
+    <div class="footer simrofybox" role="contentinfo">
+        <div class="footerwrapper">
+        <div class="footersocial">
+            <ul class="footersociallist">
+            
+                <li><a class="socialicon" href=https://linkhere>
+                    <span class="socialicon">
+                        <img class="social" src="
+    ../_static/icon/social-facebook.png"
+                            alt="facebook icon">
+                    </span>
+                    <span class="socialuser">eg-facebook</span>
+                </a></li>
+            
+                <li><a class="socialicon" href=https://linkhere>
+                    <span class="socialicon">
+                        <img class="social" src="
+    ../_static/icon/social-linkedin.png"
+                            alt="linkedin icon">
+                    </span>
+                    <span class="socialuser">eg-linkedin</span>
+                </a></li>
+            
+            </ul>
+        </div>
+            &#169; 版权所有 2020, wklchris.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <br>
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.4.0, a Sphinx theme for building portfolio/CV websites.
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>

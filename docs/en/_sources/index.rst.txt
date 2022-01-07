@@ -10,6 +10,7 @@ Welcome to sphinx-simrofy-theme's documentation!
    Documentation.rst
    People.rst
    Examples.rst
+   subpage/index.rst
 
 .. warning::
 
@@ -23,7 +24,7 @@ Simrofy is a theme for the Sphinx_ documentation generator. It is NOT designed f
 
 Simrofy was intendedly developed to build personal neat website to share around academia, so it owns some features merely useful for academic users. However, Simrofy also serves well as an easy-to-use static website choice for non-academic users.
 
-Read the :ref:`chapter-simrofy-doc` chapter for installation and guides.
+Read the :ref:`chapter-simrofy-doc` chapter for features, installation and guides.
 
 -----
 

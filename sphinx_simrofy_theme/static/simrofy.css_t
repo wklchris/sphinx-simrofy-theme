@@ -354,6 +354,21 @@ p.personemail, p.personphone { word-break: break-all; }
 p.personname { font-weight: bold; }
 p.persontitle { font-style: italic; }
 
+/* Embedded iframe Videos */
+div.embedded-video {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+    max-width: 90%;
+    margin: 0 auto;
+}
+.embedded-video iframe, .embedded-video embed, .embedded-video object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 /* others: <details> */
 summary { cursor: pointer; }

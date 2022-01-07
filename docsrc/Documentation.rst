@@ -86,6 +86,9 @@ Optional dependencies:
 
   This extension is for users who would like to print bibliography list and use citations on their website. It allows loading BibTeX file (\ ``*.bib``\ ) for external. Users can also customize filters, sorting and citation style with its advanced features. See its offical guide at sphinxcontrib-bibtex_, or read :ref:`sec-bib-example` section of Simrofy documentation.
 
+- **sphinx-intl**
+  
+  This extension is for internationalization. If you don't translate your website into multiple languages, you won't use this package.
 
 Installation via Pip
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +98,8 @@ Installation via Pip
    The early version of Simrofy won't be avaliable on Pypi (but on TestPypi instead) since I think it is not good enough to be post there. However, if you still want to install it and play around, you can get it via TestPypi:
 
     .. code-block:: bash
-    
+        
+        # For developers only!
         pip install --index-url https://test.pypi.org/simple/ -U sphinx-simrofy-theme
 
 
@@ -166,8 +170,37 @@ To apply Simrofy theme to your Sphinx project, put following line inside your ``
 
 Then you can follow the general Sphinx writing process. To customize Simrofy theme, use ``html_theme_options`` variable in the ``conf.py`` file. See :ref:`theme-options` section below.
 
+Embedding Videos
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Other notes:
+Embedding video is a little tricky in this theme. For most video websites, they allow users to create an embedded video using the share button. The HTML code usually includes an `<iframe>` element.
+
+To include such a `<iframe>`, user may type:
+
+.. code-block:: html
+   
+   .. raw:: html
+   
+      <div class="embedded-video">
+        <iframe src="https://player.bilibili.com/player.html?aid=711068977&bvid=BV1TD4y1Q78b&cid=203195051&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+      </div>
+
+* Note the `<div class="embedded-video">` in the first line. **Don't forget to embedding the 'iframe' element inside such a DIV container.** Its CSS style is predefined to have a maximum of 90% width and always keep a 16:9 ratio.
+* For Bilibili video links, please: 
+  
+  * Change the `//` heading into `https://`.
+  * Disable danmaku: Add `&danmaku=0` to the SRC attribute of the `<iframe>` element.
+
+Above embedded video gives:
+
+.. raw:: html
+   
+   <div class="embedded-video">
+     <iframe src="https://player.bilibili.com/player.html?aid=711068977&bvid=BV1TD4y1Q78b&cid=203195051&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+   </div>
+
+Other notes
+^^^^^^^^^^^^^^^^^
 
 * The 'Raw' button on the headbar can be removed by disabling copy source files into ``_sources`` path of the output folder. Use ``html_copy_source = False`` in ``conf.py`` to disable it.
 * The mechanism behind the default headbar links (or user-defined ``headbar_links`` ) is pretty unclear since Sphinx doesn't provide a simple way to read the doctree list. User needs to avoid using any of following substrings in document filenames:

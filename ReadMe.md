@@ -11,12 +11,12 @@ Simrofy is a theme for the [Sphinx](https://www.sphinx-doc.org/) documentation g
 Simrofy was intendedly developed to build personal neat website to share around academia, so it owns some features merely useful for academic users. However, Simrofy also serves well as an easy-to-use static website choice for non-academic users.
 
 Table of contents:
-1. [Installation \& Usage](#installation--usage)
-2. [Projects contributing to Simrofy](#projects-contributing-to-simrofy)
-3. [Anecdotes](#anecdotes)
-   1. [What does "simrofy" mean?](#what-does-simrofy-mean)
-   2. [Who created this confusing logo?](#who-created-this-confusing-logo)
-4. [LICENSE](#license)
+- [Installation \& Usage](#installation--usage)
+- [Projects contributing to Simrofy](#projects-contributing-to-simrofy)
+- [Anecdotes](#anecdotes)
+  - [What does "simrofy" mean?](#what-does-simrofy-mean)
+  - [Who created this confusing logo?](#who-created-this-confusing-logo)
+- [LICENSE](#license)
 
 
 ## Installation \& Usage
@@ -27,7 +27,7 @@ Simrofy is a theme for Sphinx, so you can't use it without installing Sphinx. Us
 - [Sphinx >= 4.0](https://www.sphinx-doc.org/), and following extensions:
   - `nbsphinx>=0.8.4` for MathJax v3 support
   - `sphinxcontrib-bibtex>=2.0.0` for its newly added `bibtex-files` option
-  - `sphinx-intl` if there is need for internationlization (i18n)
+  - `sphinx-intl>=2.0.0` if there is need for internationlization (i18n)
 
 Then you can install Simrofy using pip (for stable versions):
 

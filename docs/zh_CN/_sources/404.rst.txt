@@ -1,0 +1,11 @@
+:nosearch:
+:orphan:
+
+404 Page
+=============
+
+Oops, looks like you have come to the wrong place!
+
+.. tip::
+   
+   Don't be too sad, I have a useful tip for you: never waste your time reading the tips in a 404 page.

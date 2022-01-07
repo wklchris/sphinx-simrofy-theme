@@ -27,6 +27,8 @@ def replace_regex(regex, repl, file):
         f.write(new_str)
 
 def build_dist():
+    if not os.path.isdir('dist'):
+        os.makedirs('dist')
     os.system(f"{PYTHON} setup.py sdist bdist_wheel")
     return "Build finished"
 
@@ -40,7 +42,7 @@ def pip_install_editable():
 
 def twine_upload(repo):
     os.system(f"{PYTHON} -m twine upload --repository {repo} --skip-existing dist/*")
-    return "Upload to {repo}"
+    return f"Upload to {repo}"
 
 def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=None):
     regex = "version\s*=\s*[\'\"](.+?)[\'\"]"
@@ -92,5 +94,5 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
 #     2.4.1-r1 > 2.4.1 > 2.4.1pre1
 
 
-release_new = "0.3.0"
+release_new = "0.4.0"
 main(release_new, ignore_tag_conflict=True, repo='testpypi')

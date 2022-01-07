@@ -2,7 +2,7 @@
 project = 'Simrofy'
 copyright = '2020, wklchris'
 author = 'wklchris'
-release = '0.3.0'
+release = '0.4.0'
 
 
 # Sphinx configurations
@@ -64,8 +64,8 @@ html_theme_options = {
     'sidebar_localtoc': 'collapse',
     'sidebar_toc_exclude': ['Examples'],
     'social_accounts': {
-        'facebook': {'user': 'eg-facebook', 'url': 'linkhere'},
-        'linkedin': {'user': 'eg-linkedin', 'url': 'linkhere'}
+        'facebook': {'user': 'eg-facebook', 'url': 'https://linkhere'},
+        'linkedin': {'user': 'eg-linkedin', 'url': 'https://linkhere'}
     },
     'people': people_json,
     'people_pages': ['People'],

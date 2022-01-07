@@ -7,18 +7,20 @@
 
     <meta charset="utf-8">
         <title>Examples - Simrofy</title>
-        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/Examples.html">
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/en/Examples.html">
         <link rel="icon" type="image/x-icon" href="
     _static/favicon.ico">
     <link rel="stylesheet" href="_static/simrofy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+            <link rel="stylesheet" type="text/css" href="_static/simrofy.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
 
 </head>
 
@@ -28,7 +30,7 @@
 <body>
 
 
-<div class="sidebar container" role="navigation" aria-label="main navigation">
+<div class="sidebar simrofybox" role="navigation" aria-label="main navigation">
     <div class="sidebarwrapper">
         <div id="sidebar_home">
             
@@ -39,7 +41,7 @@
     _static/logo.png" />
             
             </a>
-                    <p class="home_text">Simrofy v0.3.0</p>
+                    <p class="home_text">Simrofy v0.4.0</p>
         </div>
         <div id="sidebar_rel">
         
@@ -50,20 +52,40 @@
                     <div class="sidetoc_collapse"><a href="People.html">People</a></div>
         
         
+                    <div class="sidetoc_collapse"><a href="subpage/index.html">Misc Support</a></div>
+        
         </div>
+            <details id="sidebar_localtoc" >
+                <summary>Local ToC</summary>
+                <div class="localtoc"><ul>
+<li><a class="reference internal" href="#">Examples</a><ul>
+<li><a class="reference internal" href="#for-users-new-to-sphinx">For users new to Sphinx</a></li>
+<li><a class="reference internal" href="#bibliography">Bibliography</a><ul>
+<li><a class="reference internal" href="#bibliography-of-all-entries">Bibliography of all entries</a></li>
+<li><a class="reference internal" href="#id10">Bibliography of all entries</a></li>
+<li><a class="reference internal" href="#bibliography-of-book-entries">Bibliography of book entries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            </details>
     </div>
 </div>
 
 
 
-<div class="headbar container" role="contenthead">
+<div class="headbar simrofybox" role="contenthead">
     <div class="headbarwrapper">
         <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
     _static/logo.png" /><a href=index.html>Homepage</a>&nbsp;|&nbsp;
         </div>
         <div id="headbar_lang"><details class="headbar_langmenu">
             <summary>Languages</summary>
-            <details-menu class="dropdown"><a class="dropdown-item" href="../en/Examples.html">English</a><a class="dropdown-item" href="../zh_CN/Examples.html">简体中文</a></details-menu>
+            <details-menu class="dropdown"><a class="dropdown-item" href="
+    /en/Examples.html">English</a><a class="dropdown-item" href="
+    /zh_CN/Examples.html">简体中文</a></details-menu>
         </details></div>
         <div class="headbarsources">|&nbsp;<a class="sourcelink" href="_sources/Examples.rst.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
                 <img src="
@@ -77,16 +99,17 @@
             <a href="Documentation.html">Documentation</a>
         
         
+        
         </div>
     </div>
 </div>
 <div class="document">
     <div class="documentwrapper">
-    <div class="body container" role="main">
+    <div class="body simrofybox" role="main">
         <div class="bodywrapper">
             
             
-  <div class="section" id="examples">
+  <section id="examples">
 <span id="chapter-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h1>
 <p>This chapter includes many examples of Simrofy using.</p>
 <p>What this documentation can help you:</p>
@@ -95,11 +118,11 @@
 <li><p>On the upper right corner of every webpages, there is a &quot;Raw&quot; button for browsing the source file of current webpage. This is a good way to learn some basic reStructuredText syntax.</p></li>
 <li><p>Next to the &quot;Raw&quot; button, there is also a Github button that links to the repository of this website. This website is hosted on the repository's <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder, while the source files are in the <code class="docutils literal notranslate"><span class="pre">docsrc/</span></code> folder. You may need to switch to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch (instead of the default branch) to access the latest version.</p></li>
 </ul>
-<div class="section" id="for-users-new-to-sphinx">
+<section id="for-users-new-to-sphinx">
 <h2>For users new to Sphinx<a class="headerlink" href="#for-users-new-to-sphinx" title="永久链接至标题">¶</a></h2>
 <p>&#64;&#64;&#64;</p>
-</div>
-<div class="section" id="bibliography">
+</section>
+<section id="bibliography">
 <span id="sec-bib-example"></span><h2>Bibliography<a class="headerlink" href="#bibliography" title="永久链接至标题">¶</a></h2>
 <p>The bibliography feature is supported by the <code class="docutils literal notranslate"><span class="pre">sphinxcotrib.bibtex</span></code> extension, which allows you to use bibliography and citation like LaTeX. Install this extension with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinxcotrib-bibtex
@@ -147,7 +170,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="bibliography-of-all-entries">
+<section id="bibliography-of-all-entries">
 <h3>Bibliography of all entries<a class="headerlink" href="#bibliography-of-all-entries" title="永久链接至标题">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">:cite:</span></code> inline syntax for citations. The simple bibliography directive will only print entries that are cited.</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Citations like <span class="na">:cite:</span><span class="nv">`egartone,egarttwo`</span> and <span class="na">:cite:</span><span class="nv">`egbookone`</span>\ .
@@ -155,22 +178,22 @@
 <span class="p">..</span> <span class="ow">bibliography</span><span class="p">::</span> refs.bib
 </pre></div>
 </div>
-<p>Citations like <a class="bibtex reference internal" href="#egartone" id="id1">[JJJ00]</a><a class="bibtex reference internal" href="#egarttwo" id="id2">[JJJ50]</a> and <a class="bibtex reference internal" href="#egbookone" id="id3">[SSS00]</a> .</p>
-<p id="bibtex-bibliography-Examples-0"><dl class="citation">
-<dt class="bibtex label" id="egarttwo"><span class="brackets"><a class="fn-backref" href="#id2">JJJ50</a></span></dt>
+<p>Citations like <span id="id1">[<a class="reference internal" href="#id7" title="Dick Johnson, Harry Johnson, and Tom Johnson. Example article entry 2. Journal of Foobar Engineering, 1950.">JJJ50</a>, <a class="reference internal" href="#id6" title="Tom Johnson, Dick Johnson, and Harry Johnson. Example article entry 1. Journal of Foobar Engineering, 2000.">JJJ00</a>]</span> and <span id="id2">[<a class="reference internal" href="#id4" title="Tom Smith, Dick Smith, and Harry Smith. Example book entry 1. The Foobar Press, 2000.">SSS00</a>]</span> .</p>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">JJJ50</a></span></dt>
 <dd><p>Dick Johnson, Harry Johnson, and Tom Johnson. Example article entry 2. <em>Journal of Foobar Engineering</em>, 1950.</p>
 </dd>
-<dt class="bibtex label" id="egartone"><span class="brackets"><a class="fn-backref" href="#id1">JJJ00</a></span></dt>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">JJJ00</a></span></dt>
 <dd><p>Tom Johnson, Dick Johnson, and Harry Johnson. Example article entry 1. <em>Journal of Foobar Engineering</em>, 2000.</p>
 </dd>
-<dt class="bibtex label" id="egbookone"><span class="brackets"><a class="fn-backref" href="#id3">SSS00</a></span></dt>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">SSS00</a></span></dt>
 <dd><p>Tom Smith, Dick Smith, and Harry Smith. <em>Example book entry 1</em>. The Foobar Press, 2000.</p>
 </dd>
 </dl>
 </p>
-</div>
-<div class="section" id="id4">
-<h3>Bibliography of all entries<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id10">
+<h3>Bibliography of all entries<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">:list:</span> <span class="pre">LISTTYPE</span></code> option will change the output to an enumerated/bullet list, where LISTTYPE can be either <code class="docutils literal notranslate"><span class="pre">bullet</span></code> or <code class="docutils literal notranslate"><span class="pre">enumerated</span></code>. Please note that you <strong>can't cite</strong> any entry from a reference list that has <code class="docutils literal notranslate"><span class="pre">:list:</span></code> option.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">:all:</span></code> option under the <code class="docutils literal notranslate"><span class="pre">bibliography</span></code> directive will print all entries disregarding they are cited or not.</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">bibliography</span><span class="p">::</span> refs.bib
@@ -178,16 +201,17 @@
     <span class="nc">:all:</span>
 </pre></div>
 </div>
-<ul class="simple" id="bibtex-bibliography-Examples-1">
-<li><p>Dick Johnson, Harry Johnson, and Tom Johnson. Example article entry 2. <em>Journal of Foobar Engineering</em>, 1950.</p></li>
-<li><p>Dick Johnson, Harry Johnson, and Tom Johnson. Example article entry 3. <em>Journal of Foobar Philosophy</em>, 1980.</p></li>
-<li><p>Tom Johnson, Dick Johnson, and Harry Johnson. Example article entry 1. <em>Journal of Foobar Engineering</em>, 2000.</p></li>
-<li><p>Tom Smith, Dick Smith, and Harry Smith. <em>Example book entry 1</em>. The Foobar Press, 2000.</p></li>
-<li><p>Tom Smith, Harry Smith, and Dick Smith. <em>Example book entry 2</em>. The Foobar Press, 1900.</p></li>
-<li><p>Tom D Williams, Harry S Williams, Dick Williams, Mary Williams, Linda Williams, James Williams, and John Williams. Example inproceedings entry 1. In <em>Collection of 2000 Foobar Conference</em>, 233–237. 2000.</p></li>
+<p id="id11"><ul class="simple">
+<li id="id15"><p>Dick Johnson, Harry Johnson, and Tom Johnson. Example article entry 2. <em>Journal of Foobar Engineering</em>, 1950.</p></li>
+<li id="id16"><p>Dick Johnson, Harry Johnson, and Tom Johnson. Example article entry 3. <em>Journal of Foobar Philosophy</em>, 1980.</p></li>
+<li id="id14"><p>Tom Johnson, Dick Johnson, and Harry Johnson. Example article entry 1. <em>Journal of Foobar Engineering</em>, 2000.</p></li>
+<li id="id12"><p>Tom Smith, Dick Smith, and Harry Smith. <em>Example book entry 1</em>. The Foobar Press, 2000.</p></li>
+<li id="id13"><p>Tom Smith, Harry Smith, and Dick Smith. <em>Example book entry 2</em>. The Foobar Press, 1900.</p></li>
+<li id="id17"><p>Tom D Williams, Harry S Williams, Dick Williams, Mary Williams, Linda Williams, James Williams, and John Williams. Example inproceedings entry 1. In <em>Collection of 2000 Foobar Conference</em>, 233–237. 2000.</p></li>
 </ul>
-</div>
-<div class="section" id="bibliography-of-book-entries">
+</p>
+</section>
+<section id="bibliography-of-book-entries">
 <h3>Bibliography of book entries<a class="headerlink" href="#bibliography-of-book-entries" title="永久链接至标题">¶</a></h3>
 <p>Filters can filter many fields, like type, year, author, and many more. See the <a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/usage.html#filtering">filtering</a> section of sphinxcontrib-bibtex doc.</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">bibliography</span><span class="p">::</span> refs.bib
@@ -195,13 +219,14 @@
    <span class="nc">:filter:</span> type == &quot;book&quot;
 </pre></div>
 </div>
-<ol class="arabic simple" id="bibtex-bibliography-Examples-2" start="1">
-<li><p>Tom Smith, Dick Smith, and Harry Smith. <em>Example book entry 1</em>. The Foobar Press, 2000.</p></li>
-<li><p>Tom Smith, Harry Smith, and Dick Smith. <em>Example book entry 2</em>. The Foobar Press, 1900.</p></li>
+<p id="id18"><ol class="arabic simple" start="1">
+<li id="id19"><p>Tom Smith, Dick Smith, and Harry Smith. <em>Example book entry 1</em>. The Foobar Press, 2000.</p></li>
+<li id="id20"><p>Tom Smith, Harry Smith, and Dick Smith. <em>Example book entry 2</em>. The Foobar Press, 1900.</p></li>
 </ol>
-</div>
-</div>
-</div>
+</p>
+</section>
+</section>
+</section>
 
 
             
@@ -209,12 +234,12 @@
     </div>
 
     
-    <div class="footer container" role="contentinfo">
+    <div class="footer simrofybox" role="contentinfo">
         <div class="footerwrapper">
         <div class="footersocial">
             <ul class="footersociallist">
             
-                <li><a class="socialicon" href=None>
+                <li><a class="socialicon" href=https://linkhere>
                     <span class="socialicon">
                         <img class="social" src="
     _static/icon/social-facebook.png"
@@ -223,7 +248,7 @@
                     <span class="socialuser">eg-facebook</span>
                 </a></li>
             
-                <li><a class="socialicon" href=None>
+                <li><a class="socialicon" href=https://linkhere>
                     <span class="socialicon">
                         <img class="social" src="
     _static/icon/social-linkedin.png"
@@ -235,9 +260,9 @@
             </ul>
         </div>
             &#169; 版权所有 2020, wklchris.
-            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
             <br>
-            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.3.0, a Sphinx theme for building portfolio/CV websites.
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.4.0, a Sphinx theme for building portfolio/CV websites.
         </div>
     </div>
     </div>

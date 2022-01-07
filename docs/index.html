@@ -1,1 +1,10 @@
-<!DOCTYPE html><head><meta http-equiv='refresh' content='0; URL=en/index.html'></head><body></body>
+<!DOCTYPE html><head>
+        <script>
+            var language = navigator.language || navigator.browserLanguage || "en";
+            if (language.slice(0, 2) === "en") {
+                window.location.replace("en/index.html");
+            } else {
+                window.location.replace("zh_CN/index.html");
+            }
+        </script></head>
+        <body></body>

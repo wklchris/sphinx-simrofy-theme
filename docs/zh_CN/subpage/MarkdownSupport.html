@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+    
+
+
+
+<head>
+
+    <meta charset="utf-8">
+        <title>Markdown Support - Simrofy</title>
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/en/subpage/MarkdownSupport.html">
+        <link rel="icon" type="image/x-icon" href="
+    ../_static/favicon.ico">
+    <link rel="stylesheet" href="../_static/simrofy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+            <link rel="stylesheet" type="text/css" href="../_static/simrofy.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+
+
+<div class="sidebar simrofybox" role="navigation" aria-label="main navigation">
+    <div class="sidebarwrapper">
+        <div id="sidebar_home">
+            
+            <a class="logo" href=../index.html>
+            
+                <img class="align-center" id="sidebar_logo" alt="Website logo"
+                    src="
+    ../_static/logo.png" />
+            
+            </a>
+                    <p class="home_text">Simrofy v0.4.0</p>
+        </div>
+        <div id="sidebar_rel">
+        
+                    <div class="sidetoc_collapse"><a href="../Development.html">Development</a></div>
+        
+                    <div class="sidetoc_collapse"><a href="../Documentation.html">Documentation</a></div>
+        
+                    <div class="sidetoc_collapse"><a href="../People.html">People</a></div>
+        
+        
+                    <div class="sidetoc_expand">
+                        <a href="index.html">Misc Support</a>
+                    </div>
+                    <div class="sidetocview">
+                        <div class="sidetoc_lower">
+                            <a href="#">Markdown Support</a>
+                        </div>
+                        <div class="sidetoc_lower">
+                            <a href="JupterSupport.html">Jupyter Support</a>
+                        </div>
+                    </div>
+        
+        </div>
+            <details id="sidebar_localtoc" >
+                <summary>Local ToC</summary>
+                <div class="localtoc"><ul>
+<li><a class="reference internal" href="#">Markdown Support</a><ul>
+<li><a class="reference internal" href="#markdown-syntax-test">Markdown syntax test</a></li>
+<li><a class="reference internal" href="#markdown-equation-test">Markdown equation test</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            </details>
+    </div>
+</div>
+
+
+
+<div class="headbar simrofybox" role="contenthead">
+    <div class="headbarwrapper">
+        <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
+    ../_static/logo.png" /><a href=../index.html>Homepage</a>&nbsp;|&nbsp;
+        </div>
+        <div id="headbar_lang"><details class="headbar_langmenu">
+            <summary>Languages</summary>
+            <details-menu class="dropdown"><a class="dropdown-item" href="
+    /en/subpage/MarkdownSupport.html">English</a><a class="dropdown-item" href="
+    /zh_CN/subpage/MarkdownSupport.html">简体中文</a></details-menu>
+        </details></div>
+        <div class="headbarsources">|&nbsp;<a class="sourcelink" href="../_sources/subpage/MarkdownSupport.md.txt">Raw</a>&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
+                <img src="
+    ../_static/icon/github.png" alt="Github Icon"
+                    style="height: 24px;" />
+            </a></div>
+        <div class="headbarlinks">
+        
+        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+</div>
+<div class="document">
+    <div class="documentwrapper">
+    <div class="body simrofybox" role="main">
+        <div class="bodywrapper">
+            
+            
+  <section id="markdown-support">
+<h1>Markdown Support<a class="headerlink" href="#markdown-support" title="永久链接至标题">¶</a></h1>
+<p>The Markdown support of Sphinx is provided by the <code class="docutils literal notranslate"><span class="pre">recommonmark</span></code> extension. The raw file of this page is <code class="docutils literal notranslate"><span class="pre">MarkdownSupport.md</span></code> under the <code class="docutils literal notranslate"><span class="pre">subpage</span></code> folder of the Simrofy project.</p>
+<p>Please keep in mind that Markdown is not the primary format that Sphinx supports. Same here for Simrofy.</p>
+<section id="markdown-syntax-test">
+<h2>Markdown syntax test<a class="headerlink" href="#markdown-syntax-test" title="永久链接至标题">¶</a></h2>
+<p>Nested list:</p>
+<ul class="simple">
+<li><p>Item A</p></li>
+<li><p>Item B</p>
+<ol class="simple">
+<li><p>Numbered item 1</p></li>
+<li><p>Numbered item 2</p></li>
+</ol>
+</li>
+<li><p>Item C</p></li>
+</ul>
+</section>
+<section id="markdown-equation-test">
+<h2>Markdown equation test<a class="headerlink" href="#markdown-equation-test" title="永久链接至标题">¶</a></h2>
+<p>The equation feature is supported by MathJax. However, for Sphinx compatibility, you should follow the reStructuredText syntax instead of Markdown syntax (i.e. avoid using <code class="docutils literal notranslate"><span class="pre">$</span></code> or <code class="docutils literal notranslate"><span class="pre">$$</span></code>).</p>
+<p><em>It is possible that you don't see any equation shown below. The recommonmark extension is known to have difficulty working properly with recent Sphinx versions.</em></p>
+<hr class="docutils" />
+<p>For example, inline math equation :math:<code class="docutils literal notranslate"><span class="pre">a^2</span> <span class="pre">+</span> <span class="pre">b^2</span> <span class="pre">=</span> <span class="pre">c^2</span></code> and display equation</p>
+<p>.. math::</p>
+<p>e^\pi + 1 = 0</p>
+<p>The above paragraph is given by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>For example, inline math equation :math:`a^2 + b^2 = c^2` and display equation
+
+.. math::
+   
+   e^\pi + 1 = 0
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            
+        </div>
+    </div>
+
+    
+    <div class="footer simrofybox" role="contentinfo">
+        <div class="footerwrapper">
+        <div class="footersocial">
+            <ul class="footersociallist">
+            
+                <li><a class="socialicon" href=https://linkhere>
+                    <span class="socialicon">
+                        <img class="social" src="
+    ../_static/icon/social-facebook.png"
+                            alt="facebook icon">
+                    </span>
+                    <span class="socialuser">eg-facebook</span>
+                </a></li>
+            
+                <li><a class="socialicon" href=https://linkhere>
+                    <span class="socialicon">
+                        <img class="social" src="
+    ../_static/icon/social-linkedin.png"
+                            alt="linkedin icon">
+                    </span>
+                    <span class="socialuser">eg-linkedin</span>
+                </a></li>
+            
+            </ul>
+        </div>
+            &#169; 版权所有 2020, wklchris.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+            <br>
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.4.0, a Sphinx theme for building portfolio/CV websites.
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>

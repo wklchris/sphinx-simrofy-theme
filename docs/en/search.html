@@ -7,19 +7,22 @@
 
     <meta charset="utf-8">
         <title>Search - Simrofy</title>
-        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/search.html">
+        <link rel="canonical" href="https://wklchris.github.io/sphinx-simrofy-theme/en/search.html">
         <link rel="icon" type="image/x-icon" href="
     _static/favicon.ico">
     <link rel="stylesheet" href="_static/simrofy.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+            <link rel="stylesheet" type="text/css" href="_static/simrofy.css" />
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
   <script src="searchindex.js" defer></script>
   
 
@@ -32,7 +35,7 @@
 <body>
 
 
-<div class="sidebar container" role="navigation" aria-label="main navigation">
+<div class="sidebar simrofybox" role="navigation" aria-label="main navigation">
     <div class="sidebarwrapper">
         <div id="sidebar_home">
             
@@ -43,7 +46,7 @@
     _static/logo.png" />
             
             </a>
-                    <p class="home_text">Simrofy v0.3.0</p>
+                    <p class="home_text">Simrofy v0.4.0</p>
         </div>
         <div id="sidebar_rel">
         
@@ -54,20 +57,28 @@
                     <div class="sidetoc_collapse"><a href="People.html">People</a></div>
         
         
+                    <div class="sidetoc_collapse"><a href="subpage/index.html">Misc Support</a></div>
+        
         </div>
+            <details id="sidebar_localtoc" >
+                <summary>Local ToC</summary>
+                <div class="localtoc"></div>
+            </details>
     </div>
 </div>
 
 
 
-<div class="headbar container" role="contenthead">
+<div class="headbar simrofybox" role="contenthead">
     <div class="headbarwrapper">
         <div id="headbar_home"><img id="headbar_logo" alt="Website logo" src="
     _static/logo.png" /><a href=index.html>Homepage</a>&nbsp;|&nbsp;
         </div>
         <div id="headbar_lang"><details class="headbar_langmenu">
             <summary>Languages</summary>
-            <details-menu class="dropdown"><a class="dropdown-item" href="../en/search.html">English</a><a class="dropdown-item" href="../zh_CN/search.html">简体中文</a></details-menu>
+            <details-menu class="dropdown"><a class="dropdown-item" href="
+    /en/search.html">English</a><a class="dropdown-item" href="
+    /zh_CN/search.html">简体中文</a></details-menu>
         </details></div>
         <div class="headbarsources">&nbsp;|&nbsp;<a class="sourcelink" href="https://github.com/wklchris/sphinx-simrofy-theme">
                 <img src="
@@ -82,48 +93,58 @@
         
         
             <a href="Examples.html">Examples</a>
+        
         </div>
     </div>
 </div>
 <div class="document">
     <div class="documentwrapper">
-    <div class="body container" role="main">
+    <div class="body simrofybox" role="main">
         <div class="bodywrapper">
             
             
   <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
+  
+  <noscript>
+  <div class="admonition warning">
   <p>
     Please activate JavaScript to enable the search
     functionality.
   </p>
   </div>
+  </noscript>
+  
+  
   <p>
     Searching for multiple words only shows matches that contain
     all words.
   </p>
+  
+  
   <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
+    <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
     <input type="submit" value="search" />
     <span id="search-progress" style="padding-left: 10px"></span>
   </form>
   
+  
+  
   <div id="search-results">
   
   </div>
+  
 
             
         </div>
     </div>
 
     
-    <div class="footer container" role="contentinfo">
+    <div class="footer simrofybox" role="contentinfo">
         <div class="footerwrapper">
         <div class="footersocial">
             <ul class="footersociallist">
             
-                <li><a class="socialicon" href=None>
+                <li><a class="socialicon" href=https://linkhere>
                     <span class="socialicon">
                         <img class="social" src="
     _static/icon/social-facebook.png"
@@ -132,7 +153,7 @@
                     <span class="socialuser">eg-facebook</span>
                 </a></li>
             
-                <li><a class="socialicon" href=None>
+                <li><a class="socialicon" href=https://linkhere>
                     <span class="socialicon">
                         <img class="social" src="
     _static/icon/social-linkedin.png"
@@ -144,9 +165,9 @@
             </ul>
         </div>
             &#169; Copyright 2020, wklchris.
-            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+            Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
             <br>
-            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.3.0, a Sphinx theme for building portfolio/CV websites.
+            Formatted by theme <a href=https://github.com/wklchris/sphinx-simrofy-theme>Simrofy</a> 0.4.0, a Sphinx theme for building portfolio/CV websites.
         </div>
     </div>
     </div>

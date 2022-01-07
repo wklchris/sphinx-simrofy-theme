@@ -27,7 +27,7 @@
 
 
 {%- set simrofy_url = "https://github.com/wklchris/sphinx-simrofy-theme" %}
-{%- set simrofy_version = '0.3.0' %}
+{%- set simrofy_version = '0.4.0' %}
 {%- set titlesuffix = ' - ' + project %}
 
 {%- set url_mainsite = pathto(master_doc) %}
@@ -326,7 +326,7 @@
             <ul class="footersociallist">
             {% for social, social_val in theme_social_accounts.items() %}
                 {%- set social_icon = "icon/social-" + social + ".png" %}
-                {%- set social_url = social_val.get(url) %}
+                {%- set social_url = social_val.get('url') %}
                 {%- set social_user = social_val.get('user') %}
                 <li><a class="socialicon" href={{ social_url|e }}>
                     <span class="socialicon">
