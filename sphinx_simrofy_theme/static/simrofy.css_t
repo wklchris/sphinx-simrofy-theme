@@ -254,6 +254,9 @@ div.admonition.note { {{ admn_style(theme_admonition_note_color) }} }
 div.admonition.tip { {{ admn_style(theme_admonition_tip_color) }} }
 div.admonition.warning { {{ admn_style(theme_admonition_warning_color) }} }
 
+/* admonition lists */
+
+div.admonition > ul { padding-left: 1.5em; }
 
 /* admonition titles */
 

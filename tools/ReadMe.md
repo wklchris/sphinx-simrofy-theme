@@ -9,11 +9,11 @@ Highlights:
 
 
 Table of contents:
-1. [Documentation-related doctree](#documentation-related-doctree)
-2. [make.py](#makepy)
-3. [release.py](#releasepy)
-4. [server.ps1](#serverps1)
-5. [Useful links:](#useful-links)
+- [Documentation-related doctree](#documentation-related-doctree)
+- [make.py](#makepy)
+- [release.py](#releasepy)
+- [server.ps1](#serverps1)
+- [Useful links:](#useful-links)
 
 
 ## Documentation-related doctree
@@ -100,6 +100,20 @@ And a list of **optional** tasks:
    password = pypi-...
    ```
    where the `username` is **literally** this weird string (i.e. `__token__`, not your username), but your need to replace the `password` value with your TestPypi API key.
+
+For test, you can use the following command to install the TestPypi package:
+
+```bash
+python -m pip install --index-url https://test.pypi.org/simple/ sphinx-simrofy-theme
+```
+
+Sometimes you need to specify the version, such as `sphinx-simrofy-theme==0.1.0pre1`. You can check the installed version by:
+
+```bash
+# In Bash, use "grep" instead of "select-string"
+pip show sphinx-simrofy-theme | select-string version
+```
+
 
 ## server.ps1
 

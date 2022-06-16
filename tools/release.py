@@ -41,6 +41,12 @@ def pip_install_editable():
     return "Installed via pip editable mode."
 
 def twine_upload(repo):
+    # Delete all non-standard versions when upload to Pypi
+    if repo == "pypi":
+        for f in os.listdir("dist"):
+            if 'rc' in f:  # Delete files whose name containing 'rc' 
+                os.remove(f)
+
     os.system(f"{PYTHON} -m twine upload --repository {repo} --skip-existing dist/*")
     return f"Upload to {repo}"
 
@@ -94,5 +100,5 @@ def main(release_new, ignore_tag_conflict=False, build=True, pip=False, repo=Non
 #     2.4.1-r1 > 2.4.1 > 2.4.1pre1
 
 
-release_new = "0.4.0"
-main(release_new, ignore_tag_conflict=True, repo='testpypi')
+release_new = "0.4.1"
+main(release_new, ignore_tag_conflict=True, repo='pypi')
